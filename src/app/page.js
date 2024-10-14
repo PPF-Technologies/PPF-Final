@@ -1,6 +1,10 @@
 import Faq from '@/components/Faq'
 import Hero from '@/components/Hero'
+import Products from '@/components/Products'
+import Reviews from '@/components/Reviews'
 import React from 'react'
+
+
 
 
 const page = () => {
@@ -8,6 +12,8 @@ const page = () => {
     <div className=''>
       <Hero/>
       <Faq />
+      <Reviews />
+      <Products />
     </div>
   )
 }
