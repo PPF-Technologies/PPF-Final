@@ -1,70 +1,99 @@
-'use client';
+"use client";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
+  AccordionIcon,
+  Box,
+  Heading,
+  Text,
+  Divider,
+} from "@chakra-ui/react";
+import React from "react";
 
-import React, { useState } from 'react';
-
-const FAQItem = ({ question, children }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
+const Faq = () => {
   return (
-    <div className="">
-      <button
-        className="flex justify-between items-center w-full py-4 text-left transition-all duration-500"
-        onClick={() => setIsOpen(!isOpen)}
+    <Box width={"full"} py={10} px={4} bg="gray.50">
+      {/* Main FAQ Heading */}
+      <Heading as="h1" textAlign="center" fontSize="3xl" mb={8} fontWeight="bold">
+        Frequently Asked Questions
+      </Heading>
+
+      {/* Accordion with enhanced UI */}
+      <Accordion
+        allowToggle
+        className="max-w-2xl mx-auto"
+       
+        bg="white"
+        borderRadius="md"
+        border="1px solid"
+        borderColor="gray.200"
+        boxShadow="md"
       >
-        <span className="text-black text-lg md:text-xl no-underline transition-colors duration-500">{question}</span>
-        <span className="text-black text-2xl md:text-3xl no-underline transition-transform duration-500">
-          {isOpen ? '−' : '+'}
-        </span>
-      </button>
-      <div
-        className={`overflow-hidden transition-all duration-500 ${isOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}
-      >
-        <div className="pb-4 text-black text-lg md:text-xl">
-          {children}
-        </div>
-      </div>
-    </div>
+        {/* FAQ Item 1 */}
+        <AccordionItem border="none">
+          <h2>
+            <AccordionButton _hover={{ bg: "gray.100" }} py={6} px={4} borderBottom="1px solid" borderColor="gray.200">
+              <Box flex="1" textAlign="left" fontWeight="medium" fontSize="lg">
+                What is your return policy?
+              </Box>
+              <AccordionIcon />
+            </AccordionButton>
+          </h2>
+          <AccordionPanel pb={4} px={4}>
+            <Text lineHeight="taller">
+              We offer a 30-day return policy for all unused products in their
+              original packaging. Simply contact our support team to start the
+              process, and we’ll guide you through every step.
+            </Text>
+          </AccordionPanel>
+        </AccordionItem>
+
+        <Divider />
+
+        {/* FAQ Item 2 */}
+        <AccordionItem border="none">
+          <h2>
+            <AccordionButton _hover={{ bg: "gray.100" }} py={6} px={4} borderBottom="1px solid" borderColor="gray.200">
+              <Box flex="1" textAlign="left" fontWeight="medium" fontSize="lg">
+                How long does shipping take?
+              </Box>
+              <AccordionIcon />
+            </AccordionButton>
+          </h2>
+          <AccordionPanel pb={4} px={4}>
+            <Text lineHeight="taller">
+              Shipping typically takes 3-7 business days within the U.S. For
+              international orders, it may take up to 14 business days,
+              depending on the destination.
+            </Text>
+          </AccordionPanel>
+        </AccordionItem>
+
+        <Divider />
+
+        {/* FAQ Item 3 */}
+        <AccordionItem border="none">
+          <h2>
+            <AccordionButton _hover={{ bg: "gray.100" }} py={6} px={4} borderBottom="1px solid" borderColor="gray.200">
+              <Box flex="1" textAlign="left" fontWeight="medium" fontSize="lg">
+                Can I track my order?
+              </Box>
+              <AccordionIcon />
+            </AccordionButton>
+          </h2>
+          <AccordionPanel pb={4} px={4}>
+            <Text lineHeight="taller">
+              Absolutely! Once your order has been shipped, you'll receive an
+              email with a tracking number and a link to track your package in
+              real-time.
+            </Text>
+          </AccordionPanel>
+        </AccordionItem>
+      </Accordion>
+    </Box>
   );
 };
 
-const FAQ = () => {
-  return (
-    <div className="bg-white text-black p-8 flex flex-col md:flex-row md:items-start md:space-x-8 align-middle md:justify-between">
-      <div className="mb-6 md:mb-0 md:pl-20">
-        <h2 className="text-md md:text-lg uppercase mb-2 text-[#6dd9cb]">Frequently Asked Questions</h2>
-        <h1 className="text-4xl md:text-5xl font-bold mb-6">Our FAQs</h1>
-      </div>
-
-      <div className="md:pr-20 md:w-1/2">
-        <div className="w-full md:max-w-2xl space-y-4 border border-[#5EC6B8] p-4 rounded-2xl">
-          <FAQItem question="Template styling and Support">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti nostrum veritatis consectetur dolore debitis in eveniet, esse enim molestiae a.
-          </FAQItem>
-          <FAQItem question="Troubleshooting Animation Issues">
-            Content for troubleshooting animation issues...
-          </FAQItem>
-          <FAQItem question="How to choose the right font license for Framer">
-            Content about choosing the right font license...
-          </FAQItem>
-          <FAQItem question="Is my personal information secure?">
-            Information about personal data security...
-          </FAQItem>
-          <FAQItem question="Template styling and Support">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti nostrum veritatis consectetur dolore debitis in eveniet, esse enim molestiae a.
-          </FAQItem>
-          <FAQItem question="Troubleshooting Animation Issues">
-            Content for troubleshooting animation issues...
-          </FAQItem>
-          <FAQItem question="How to choose the right font license for Framer">
-            Content about choosing the right font license...
-          </FAQItem>
-          <FAQItem question="Is my personal information secure?">
-            Information about personal data security...
-          </FAQItem>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default FAQ;
+export default Faq;

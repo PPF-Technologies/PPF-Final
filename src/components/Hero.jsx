@@ -2,33 +2,29 @@ import Link from "next/link";
 import React from "react";
 import ellipse from "@/assets/Ellipse.png";
 import Image from "next/image";
-import scooty from "@/assets/heroscooty.png";
+import scooty from "@/assets/car.png";
+import ellipse2 from '@/assets/Ellipse2.png'
+import Danda from "@/assets/Danda2.png"
+
 
 const Hero = () => {
   return (
     <div>
-      <div className="flex items-center h-[100vh] bg-gradient-to-bl from-[#FFFFFF] to-[#cdebf8] relative -z-10">
+      <div className="flex items-center h-[100vh] bg-gradient-to-bl from-[#fcfdd2] to-[#ffffff] relative -z-10">
         <Image
           src={ellipse}
           width={"full"}
           height={"full"}
           className="absolute left-[50%] bottom-[5%] -z-10 opacity-50"
         />
-        <div className="absolute right-0 top-0 h-full w-24">
-          {/* Blue Stripe */}
-          <div className="h-1/2 bg-gradient-to-tr from-[#9AE0D3] via-[#5dd1c9] to-[#35A7A0] flex items-center justify-center">
-            <p className="rotate-90 text-white font-bold">
-              Lorem ipsum dolor sit amet
-            </p>
-          </div>
-
-          {/* Green Stripe */}
-          <div className="h-1/2 bg-gradient-to-br from-[#89C8DD] to-[#73ADC1] flex items-center justify-center">
-            <p className="rotate-90 text-white font-bold ">
-              Lorem ipsum dolor sit amet
-            </p>
-          </div>
-        </div>
+        <Image
+          src={ellipse2}
+          width={300}
+          height={"full"}
+          className="absolute left-[50%] bottom-[2%] translate-y-1/2 -z-10 opacity-30"
+        />
+        <Image src={Danda} className="absolute rotate-90 w-[90vh] left-[73%] "  />
+      
 
         <div className="flex flex-col items-start h-full justify-center w-[50%] px-14">
           <div>
@@ -60,9 +56,10 @@ const Hero = () => {
         </div>
 
         {/* Image Section */}
-        <div className="w-[50%] flex flex-col items-center">
-          <Image src={scooty} width={500} />
-          <div className="border-2 p-4 rounded-xl border-blue-200 backdrop-blur-md w-[28rem] text-gray-800 mt-4">
+        <div className="w-[65%] relative flex flex-col items-center">
+          <p className="absolute text-[200px] -z-10 text-white text-stroke -top-20 left-10">CAMIO</p>
+          <Image src={scooty} className="w-[80vw]" />
+          <div className="border-2 p-4 rounded-xl border-blue-200 backdrop-blur-md w-[28rem] -translate-x-20 text-gray-800 mt-4">
             Shield your vehicle with CAMIO’s top-tier Paint Protection Film,
             trusted by professionals worldwide
           </div>

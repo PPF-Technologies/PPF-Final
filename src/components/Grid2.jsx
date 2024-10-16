@@ -1,4 +1,18 @@
 import React from "react";
+import underline from '@/assets/underline.png'
+import Image from "next/image";
+
+
+// Sample image URLs, replace these with actual URLs.
+const productImages = {
+  clearGloss:
+    "https://via.placeholder.com/300x200.png?text=CAMIO+TPU+Clear+Gloss",
+  blackGloss:
+    "https://via.placeholder.com/300x200.png?text=CAMIO+TPU+Black+Gloss",
+  matte: "https://via.placeholder.com/300x200.png?text=CAMIO+TPU+Matte",
+  tphGloss: "https://via.placeholder.com/300x200.png?text=CAMIO+TPH+Gloss",
+};
+
 const services = [
   {
     title: "Single Feature MVP",
@@ -46,29 +60,32 @@ const services = [
 
 const Products = () => {
   return (
-    <div className="bg-gradient-to-tr from-[#ecfffc] via-[#e6f2f1] to-[#d2f6f3] py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-5xl font-extrabold text-gray-800 mb-4">
-          Top Picks for Premium Protection
+    <div className=" py-16 px-4 sm:px-6 lg:px-8">
+      <div className=" mx-auto text-center">
+        <h2 className="text-5xl font-bold text-gray-600 mb-4">
+          Top Picks for <span className=" relative bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 via-yellow-600 to-yellow-700">
+            Premium Protection
+            <Image src={underline} className="absolute w-full left-0" />
+            </span>
         </h2>
-        <h3 className="text-xl text-gray-600 mb-10">
-          Explore our best-selling CAMIO PPF products, trusted for their unmatched protection and flawless finish.
+        <h3 className="text-xl text-gray-600 mb-10 py-10">
+          Explore our best-selling CAMIO PPF products, trusted for their
+          unmatched protection and flawless finish.
         </h3>
 
-        <div className="p-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className=" p-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {services.map((service, index) => (
-              <div
-                key={index}
-                className="flex flex-col items-center bg-gray-100 border rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300"
-              >
+              <div key={index} className="flex items-start justify-start space-x-4">
                 <img
                   src={service.image}
                   alt={service.alt}
-                  className="w-36 h-24 object-cover rounded-md mb-4"
+                  className="w-36 h-24 object-cover"
                 />
-                <h2 className="text-xl font-bold text-gray-800 mb-2 text-center">{service.title}</h2>
-                <p className="text-gray-600 text-center">{service.description}</p>
+                <div className="text-left">
+                  <h2 className="text-xl font-bold">{service.title}</h2>
+                  <p className="text-gray-600">{service.description}</p>
+                </div>
               </div>
             ))}
           </div>
