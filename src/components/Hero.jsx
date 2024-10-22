@@ -10,19 +10,16 @@ import Danda from "@/assets/Danda2.png"
 const Hero = () => {
   return (
     <div>
-      <div className="flex items-center h-[100vh] bg-gradient-to-bl from-[#fcfdd2] to-[#ffffff] relative -z-10">
-        <Image
-          src={ellipse}
-          width={"full"}
-          height={"full"}
-          className="absolute left-[50%] bottom-[5%] -z-10 opacity-50"
-        />
+      <div className="flex items-center h-[100vh]  relative -z-10">
+       <div className="absolute left-[50%] bottom-[5%] -z-10 blur-xl opacity-50 border  rounded-full bg-orange-200 h-[100vw] w-[100vw]"> </div>
+
         <Image
           src={ellipse2}
           width={300}
           height={"full"}
           className="absolute left-[50%] bottom-[2%] translate-y-1/2 -z-10 opacity-30"
         />
+
         <Image src={Danda} className="absolute rotate-90 w-[90vh] left-[73%] "  />
       
 
@@ -57,7 +54,7 @@ const Hero = () => {
 
         {/* Image Section */}
         <div className="w-[65%] relative flex flex-col items-center">
-          <p className="absolute text-[200px] -z-10 text-white text-stroke -top-20 left-10">CAMIO</p>
+          <p className="absolute text-[200px] -z-10  bg-clip-text text-transparent bg-gradient-to-b from-orange-400 to-yellow-400 -top-20 left-10">CAMIO</p>
           <Image src={scooty} className="w-[80vw]" />
           <div className="border-2 p-4 rounded-xl border-blue-200 backdrop-blur-md w-[28rem] -translate-x-20 text-gray-800 mt-4">
             Shield your vehicle with CAMIO’s top-tier Paint Protection Film,
