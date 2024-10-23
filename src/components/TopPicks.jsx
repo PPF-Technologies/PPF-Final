@@ -8,7 +8,6 @@ import {
   Grid,
   Heading,
   Text,
-  Image,
   VStack,
   Card,
   CardHeader,
@@ -19,6 +18,8 @@ import topPicks2 from "../assets/topPicks2.png";
 import topPicks3 from "../assets/topPicks3.png";
 import topPicks4 from "../assets/topPicks4.png";
 import topPicks5 from "../assets/topPicks5.png";
+import Image from "next/image";
+
 
 const PremiumProtection = () => {
   return (
