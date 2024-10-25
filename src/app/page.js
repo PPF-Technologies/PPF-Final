@@ -6,7 +6,7 @@ import Car from '@/components/Car'
 import WhyUs from '@/components/WhyUs'
 import TopPicks from '@/components/TopPicks'
 import Protection from '@/components/Protection'
-
+import { FaWhatsapp } from "react-icons/fa";
 
 
 
@@ -21,6 +21,7 @@ const page = () => {
       <Protection />
       <Reviews2 />
       <Faq />
+      <a href="https://wa.me/9560729291?text=hellomoto"><FaWhatsapp className='text-[50px] fixed bottom-14 right-14 text-green-400' /></a>
     </div>
   )
 }

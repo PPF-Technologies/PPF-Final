@@ -24,6 +24,7 @@ const Protection = () => {
 
   return (
     <Box bg={"gray.900"} color={"white"} minHeight="100vh" py={10} px={5}>
+        <Box className="flex justify-center py-6">
         <Button
               bg={"transparent"}
               margin={{ base: "auto", lg: 'auto' }}
@@ -39,11 +40,12 @@ const Protection = () => {
             >
               <Text pb={1}>Features</Text> <FiChevronRight />
             </Button>
+        </Box>
       {/* Heading with gradient */}
       <Heading
         as="h2"
         textAlign="center"
-        mb={8}
+        py={8}
         bgGradient="linear(to-r, red.400, yellow.400)"
         bgClip="text"
         fontSize={{ base: "3xl", md: "4xl" }}
@@ -87,6 +89,7 @@ const Protection = () => {
               mt={4}
               fontSize="md"
               fontWeight="bold"
+              textAlign={'center'}
             >
               {item.label}
             </Text>

@@ -90,7 +90,7 @@ const Reviews2 = () => {
                 ))}
                 <Text>{review.rating}</Text>
               </HStack>
-              <Text fontStyle="italic" fontWeight={'bold'}>"{review.text}"</Text>
+              <Text fontWeight={'bold'}>"{review.text}"</Text>
               <HStack spacing={3}>
                 <Avatar name={review.author} />
                 <VStack spacing={0} align="flex-start">
