@@ -64,13 +64,26 @@ const PremiumProtection = () => {
             borderRadius="3xl"
           >
             {/* First Product Card */}
-            <Card bg="white" borderRadius="2xl" overflow="hidden" boxShadow="sm">
-              <CardBody p={{base: "30px", lg: "25px"}}>
+            <Card
+              bg="white"
+              borderRadius="2xl"
+              overflow="hidden"
+              boxShadow="sm"
+            >
+              <CardBody p={{ base: "30px", lg: "25px" }}>
                 <VStack align="start" spacing={2}>
-                  <Text fontWeight="bold" fontSize={{ base: "16px", md: "20px" }}>
+                  <Text
+                    fontWeight="bold"
+                    fontSize={{ base: "16px", md: "20px" }}
+                  >
                     CAMIO TPU CLEAR GLOSS
                   </Text>
-                  <Box width="100%" height="auto" borderRadius="10px 0px 0px 0px" overflow="hidden">
+                  <Box
+                    width="100%"
+                    height="auto"
+                    borderRadius="10px 0px 0px 0px"
+                    overflow="hidden"
+                  >
                     <Image
                       src={topPicks1}
                       alt="CAMIO TPU CLEAR GLOSS"
@@ -78,7 +91,12 @@ const PremiumProtection = () => {
                       objectFit="cover" // Keeps the aspect ratio intact
                     />
                   </Box>
-                  <Text fontSize={{ base: "16px", lg: "18px" }} color="black" pt={4} pb={6}>
+                  <Text
+                    fontSize={{ base: "16px", lg: "18px" }}
+                    color="black"
+                    pt={4}
+                    pb={6}
+                  >
                     High gloss finish with self-healing protection—perfect for a
                     pristine look.
                   </Text>
@@ -87,13 +105,26 @@ const PremiumProtection = () => {
             </Card>
 
             {/* Second Product Card */}
-            <Card bg="white" borderRadius="2xl" overflow="hidden" boxShadow="sm">
-              <CardBody p={{base: "30px", lg: "25px"}}>
+            <Card
+              bg="white"
+              borderRadius="2xl"
+              overflow="hidden"
+              boxShadow="sm"
+            >
+              <CardBody p={{ base: "30px", lg: "25px" }}>
                 <VStack align="start" spacing={2}>
-                  <Text fontWeight="bold" fontSize={{ base: "16px", md: "20px" }}>
-                  CAMIO TPU Black Gloss
+                  <Text
+                    fontWeight="bold"
+                    fontSize={{ base: "16px", md: "20px" }}
+                  >
+                    CAMIO TPU Black Gloss
                   </Text>
-                  <Box width="100%" height="auto" borderRadius="10px 0px 0px 0px" overflow="hidden">
+                  <Box
+                    width="100%"
+                    height="auto"
+                    borderRadius="10px 0px 0px 0px"
+                    overflow="hidden"
+                  >
                     <Image
                       src={topPicks2}
                       alt="CAMIO TPU Black Gloss"
@@ -101,21 +132,40 @@ const PremiumProtection = () => {
                       objectFit="cover" // Keeps the aspect ratio intact
                     />
                   </Box>
-                  <Text fontSize={{ base: "16px", lg: "18px" }} color="black" pt={4} pb={6}>
-                  Glossy black finish with top protection, ideal for standout sports cars
+                  <Text
+                    fontSize={{ base: "16px", lg: "18px" }}
+                    color="black"
+                    pt={4}
+                    pb={6}
+                  >
+                    Glossy black finish with top protection, ideal for standout
+                    sports cars
                   </Text>
                 </VStack>
               </CardBody>
             </Card>
 
             {/* Third Product Card */}
-            <Card bg="white" borderRadius="2xl" overflow="hidden" boxShadow="sm">
-              <CardBody p={{base: "30px", lg: "25px"}}>
+            <Card
+              bg="white"
+              borderRadius="2xl"
+              overflow="hidden"
+              boxShadow="sm"
+            >
+              <CardBody p={{ base: "30px", lg: "25px" }}>
                 <VStack align="start" spacing={2}>
-                  <Text fontWeight="bold" fontSize={{ base: "16px", md: "20px" }}>
-                  CAMIO TPU Matte
+                  <Text
+                    fontWeight="bold"
+                    fontSize={{ base: "16px", md: "20px" }}
+                  >
+                    CAMIO TPU Matte
                   </Text>
-                  <Box width="100%" height="auto" borderRadius="10px 10px 10px 10px" overflow="hidden">
+                  <Box
+                    width="100%"
+                    height="auto"
+                    borderRadius="10px 10px 10px 10px"
+                    overflow="hidden"
+                  >
                     <Image
                       src={topPicks3}
                       alt="CAMIO TPU Matte"
@@ -123,25 +173,48 @@ const PremiumProtection = () => {
                       objectFit="cover" // Keeps the aspect ratio intact
                     />
                   </Box>
-                  <Text fontSize={{ base: "16px", lg: "18px" }} color="black" pt={4} pb={6}>
-                  Matte finish with self-healing, non-yellowing features, ideal for luxury vehicles.
+                  <Text
+                    fontSize={{ base: "16px", lg: "18px" }}
+                    color="black"
+                    pt={4}
+                    pb={6}
+                  >
+                    Matte finish with self-healing, non-yellowing features,
+                    ideal for luxury vehicles.
                   </Text>
                 </VStack>
               </CardBody>
             </Card>
 
-            <Box display="flex" justifyContent="center" alignItems="center">
-            <AnimButton>Explore Our Products</AnimButton>
+            <Box
+              display={{ base: "none", lg: "flex" }}
+              justifyContent="center"
+              alignItems="center"
+            >
+              <AnimButton>Explore Our Products</AnimButton>
             </Box>
 
             {/* Fourth Product Card */}
-            <Card bg="white" borderRadius="2xl" overflow="hidden" boxShadow="sm">
-              <CardBody p={{base: "30px", lg: "25px"}}>
+            <Card
+              bg="white"
+              borderRadius="2xl"
+              overflow="hidden"
+              boxShadow="sm"
+            >
+              <CardBody p={{ base: "30px", lg: "25px" }}>
                 <VStack align="start" spacing={2}>
-                  <Text fontWeight="bold" fontSize={{ base: "16px", md: "20px" }}>
-                  CAMIO TPH Gloss
+                  <Text
+                    fontWeight="bold"
+                    fontSize={{ base: "16px", md: "20px" }}
+                  >
+                    CAMIO TPH Gloss
                   </Text>
-                  <Box width="100%" height="auto" borderRadius="10px 10px 10px 10px" overflow="hidden">
+                  <Box
+                    width="100%"
+                    height="auto"
+                    borderRadius="10px 10px 10px 10px"
+                    overflow="hidden"
+                  >
                     <Image
                       src={topPicks4}
                       alt="CAMIO TPH Gloss"
@@ -149,21 +222,40 @@ const PremiumProtection = () => {
                       objectFit="cover" // Keeps the aspect ratio intact
                     />
                   </Box>
-                  <Text fontSize={{ base: "16px", lg: "18px" }} color="black" pt={4} pb={6}>
-                  Affordable glass finish with 3-year warranty, great protection for everyday vehicles.
+                  <Text
+                    fontSize={{ base: "16px", lg: "18px" }}
+                    color="black"
+                    pt={4}
+                    pb={6}
+                  >
+                    Affordable glass finish with 3-year warranty, great
+                    protection for everyday vehicles.
                   </Text>
                 </VStack>
               </CardBody>
             </Card>
 
             {/* Fifth Product Card */}
-            <Card bg="white" borderRadius="2xl" overflow="hidden" boxShadow="sm">
-              <CardBody p={{base: "30px", lg: "25px"}}>
+            <Card
+              bg="white"
+              borderRadius="2xl"
+              overflow="hidden"
+              boxShadow="sm"
+            >
+              <CardBody p={{ base: "30px", lg: "25px" }}>
                 <VStack align="start" spacing={2}>
-                  <Text fontWeight="bold" fontSize={{ base: "16px", md: "20px" }}>
-                  CAMIO TPU Clear Gloss
+                  <Text
+                    fontWeight="bold"
+                    fontSize={{ base: "16px", md: "20px" }}
+                  >
+                    CAMIO TPU Clear Gloss
                   </Text>
-                  <Box width="100%" height="auto" borderRadius="10px 0px 0px 0px" overflow="hidden">
+                  <Box
+                    width="100%"
+                    height="auto"
+                    borderRadius="10px 0px 0px 0px"
+                    overflow="hidden"
+                  >
                     <Image
                       src={topPicks5}
                       alt="CAMIO TPU Clear Gloss"
@@ -171,12 +263,26 @@ const PremiumProtection = () => {
                       objectFit="cover" // Keeps the aspect ratio intact
                     />
                   </Box>
-                  <Text fontSize={{ base: "16px", lg: "18px" }} color="black" pt={4} pb={6}>
-                  High gloss finish with premium, self-healing protection, ideal for a pristine look.
+                  <Text
+                    fontSize={{ base: "16px", lg: "18px" }}
+                    color="black"
+                    pt={4}
+                    pb={6}
+                  >
+                    High gloss finish with premium, self-healing protection,
+                    ideal for a pristine look.
                   </Text>
                 </VStack>
               </CardBody>
             </Card>
+
+            <Box
+              display={{ base: "flex", md: "flex", lg: "none" }} 
+              justifyContent="center"
+              alignItems="center"
+            >
+              <AnimButton>Hidden Button</AnimButton>
+            </Box>
           </Grid>
         </VStack>
       </Container>
