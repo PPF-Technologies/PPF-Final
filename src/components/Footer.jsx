@@ -11,7 +11,6 @@ import {
   InputRightElement,
   Link,
   Icon,
-  Image,
   HStack,
   VStack,
   Heading,
@@ -22,6 +21,8 @@ import { HiOutlineMail } from "react-icons/hi";
 import { IoLocationOutline } from "react-icons/io5";
 import { FiPhone } from "react-icons/fi";
 import logo from "@/assets/logo.png";
+import Image from "next/image";
+
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
