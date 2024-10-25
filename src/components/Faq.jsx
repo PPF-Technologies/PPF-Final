@@ -9,9 +9,8 @@ import {
   AccordionItem,
   AccordionButton,
   AccordionPanel,
-  Icon,
 } from "@chakra-ui/react";
-import { FiChevronRight, FiChevronDown } from "react-icons/fi";
+import { FiChevronDown } from "react-icons/fi";
 import AnimButton from "../components/props/Button";
 
 const FAQData = [
@@ -40,19 +39,22 @@ const FAQData = [
 const FaqItem = ({ question, answer }) => (
   <AccordionItem
     border="none"
-    mb={2}
+    mb={4}
     borderRadius="md"
     maxW="100%"
     mr={8}
-    background="linear-gradient(96.56deg, rgba(194, 218, 218, 0.3) 27.8%, rgba(240, 237, 226, 0.3) 53.91%)" 
+    background="linear-gradient(96.56deg, rgba(194, 218, 218, 0.3) 27.8%, rgba(240, 237, 226, 0.3) 53.91%)"
   >
     {({ isExpanded }) => (
       <>
-        <AccordionButton p={4} _hover={{ bg: "gray.100" }} borderRadius="md">
+        <AccordionButton p={4} borderRadius="md">
           <Flex flex="1" justify="space-between" align="center">
-            <Text fontWeight="medium">{question}</Text>
+            <Text fontSize="22px" fontWeight={500}>
+              {question}
+            </Text>
+
             <Text fontSize="2xl" ml={2}>
-              {isExpanded ? '×' : '+'}
+              {isExpanded ? "×" : "+"}
             </Text>
           </Flex>
         </AccordionButton>
@@ -60,21 +62,22 @@ const FaqItem = ({ question, answer }) => (
           pb={4}
           px={4}
           transition="max-height 0.3s ease-in-out, opacity 0.3s ease-in-out"
-          maxHeight={isExpanded ? "200px" : "0px"} 
-          overflow="hidden" 
+          maxHeight={isExpanded ? "200px" : "0px"}
+          overflow="hidden"
         >
-          <Text color="#6C6C6C">{answer}</Text>
+          <Text color="#6C6C6C" fontSize="16px" fontWeight={400}>
+            {answer}
+          </Text>
         </AccordionPanel>
       </>
     )}
   </AccordionItem>
 );
 
-
 const Faq = () => {
   return (
     <Flex
-      direction="row"
+      direction={{ base: "column", md: "row" }} // Column on small screens, row on medium and larger
       align="top"
       justify="space-between"
       w="100%"
@@ -82,13 +85,16 @@ const Faq = () => {
       mx={4}
       py={8}
       px={10}
-      
     >
-      <Box textAlign="start" mb={8} w="35%" >
-        <Heading size="2xl" mb={4}>
+      <Box textAlign="start" mb={8} w={{ base: "100%", md: "35%" }}>
+        {" "}
+        {/* Full width on small screens */}
+        <Heading fontSize="45px" fontWeight={600} mb={6}>
           Frequently Asked Questions
         </Heading>
-        <AnimButton>Customer Support</AnimButton>
+        <AnimButton fontSize="18.98px" fontWeight={500}>
+          Customer Support
+        </AnimButton>
       </Box>
 
       <Flex
@@ -96,7 +102,7 @@ const Faq = () => {
         justify="flex-end"
         alignItems="flex-end"
         gap={4}
-        w="60%"
+        w={{ base: "100%", md: "60%" }} // Full width on small screens
       >
         <Accordion allowToggle w="100%">
           {FAQData.map((faq, index) => (
@@ -106,9 +112,9 @@ const Faq = () => {
 
         <Button
           variant="link"
-          colorScheme="blue"
+          colorScheme="black"
           alignSelf="flex-end"
-          rightIcon={<FiChevronRight />}
+          rightIcon={<FiChevronDown />}
           mt={4}
           mr={6}
         >
