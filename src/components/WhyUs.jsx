@@ -10,12 +10,17 @@ import {
   AccordionButton,
   AccordionPanel,
   AccordionIcon,
-  Image,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { FiChevronRight } from "react-icons/fi";
-import AnimButton from "../components/props/Button";
+import Whyusimg1 from '../assets/whyusimg1.png'
+
+// import AnimButton from "../components/props/Button";
+
 import Link from "next/link";
+// import Button2 from "./props/Button2";
+import Button3 from "./props/Button3";
+import Image from "next/image";
 
 const WhyUs = () => {
   // State to track the currently active accordion and image
@@ -28,7 +33,7 @@ const WhyUs = () => {
       title: "Superior Protection",
       content:
         "CAMIO PPF is made from premium-grade material that offers superior durability.",
-      imageUrl: "/images/quality.jpg",
+      imageUrl: Whyusimg1,
     },
     {
       id: 2,
@@ -139,16 +144,16 @@ const WhyUs = () => {
           </Text>
           <Box px={8} py={4} className="flex justify-center lg:block" >
             <Link href={"/"}>
-              <AnimButton>Learn More</AnimButton>
+              <Button3>Learn More</Button3>
             </Link>
           </Box>
         </Box>
       </Flex>
 
       {/* Accordion and Image Section */}
-      <Flex mt={10}>
+      <Flex mt={10} flexDirection={{base:'column', lg:'row'}}>
         {/* Left Side: Accordion */}
-        <Box width={"60%"} pr={6}>
+        <Box width={{base:'100%', lg:"60%"}} pr={6}>
           <Accordion allowToggle>
             {accordionData.map((item, index) => (
               <AccordionItem key={item.id}>
@@ -189,12 +194,14 @@ const WhyUs = () => {
         </Box>
 
         {/* Right Side: Image */}
-        <Box width={"40%"}>
+        <Box width={"40%"} display={{base:'none', lg:'block'}}>
           <Image
             src={accordionData[activeAccordion].imageUrl}
             alt={`Accordion ${accordionData[activeAccordion].title} Image`}
             borderRadius="lg"
             boxShadow="md"
+            width={200}
+            height={500}
           />
         </Box>
       </Flex>

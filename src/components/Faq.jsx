@@ -50,7 +50,7 @@ const FaqItem = ({ question, answer }) => (
       <>
         <AccordionButton p={4} _hover={{ bg: "gray.100" }} borderRadius="md">
           <Flex flex="1" justify="space-between" align="center">
-            <Text fontWeight="medium">{question}</Text>
+            <Text fontWeight="medium" >{question}</Text>
             <Text fontSize="2xl" ml={2}>
               {isExpanded ? '×' : '+'}
             </Text>
