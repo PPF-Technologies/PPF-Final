@@ -81,7 +81,7 @@ const Faq = () => {
       maxW="100vw"
       mx={4}
       py={8}
-      px={4}
+      px={10}
       
     >
       <Box textAlign="start" mb={8} w="35%" >

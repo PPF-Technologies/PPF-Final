@@ -27,7 +27,7 @@ const Footer = () => {
 
   return (
     <Box
-      bg="linear-gradient(119.05deg, #282B33 20.98%, #4A7280 72.1%, #D2B6A0 99.13%)"
+      bg="linear-gradient(-49.05deg, #282B33 20.98%, #4A7280 72.1%, #D2B6A0 99.13%)"
       color="white"
       py={16}
     >
