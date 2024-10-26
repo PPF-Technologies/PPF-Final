@@ -41,13 +41,25 @@ const PremiumProtection = () => {
               <Text pb={1}>Features that we provide</Text> <FiChevronRight />
             </Button>
 
-            <Heading size="3xl" mb={8}>
+            <Heading
+              fontSize={{ base: "30px", lg: "45px" }}
+              fontWeight={600}
+              mb={8}
+              color="#010205"
+            >
               Top Picks for Premium Protection
             </Heading>
-            <Text color="#000000" mb={8}>
-              Explore our best-selling CAMIO PPF products, trusted for their{" "}
+
+            <Text
+              fontSize={{ base: "16px", lg: "18px" }}
+              fontWeight={400}
+              color="#000000"
+              mb={8}
+            >
+              Explore our best-selling CAMIO PPF products, trusted for their
+              unmatched protection
               <br />
-              unmatched protection and flawless finish.
+              and flawless finish.
             </Text>
           </Box>
 
@@ -59,7 +71,7 @@ const PremiumProtection = () => {
               lg: "repeat(3, 1fr)",
             }}
             gap={6}
-            p={12}
+            p={{ base: 6, lg: 12 }}
             mb={10}
             borderRadius="3xl"
           >
@@ -70,14 +82,16 @@ const PremiumProtection = () => {
               overflow="hidden"
               boxShadow="sm"
             >
-              <CardBody p={{ base: "30px", lg: "25px" }}>
+              <CardBody p={{ base: "15px", md:"25px", lg: "30px" }}>
                 <VStack align="start" spacing={2}>
                   <Text
-                    fontWeight="bold"
-                    fontSize={{ base: "16px", md: "20px" }}
+                    fontSize={{ base: "18px", lg: "20px" }}
+                    fontWeight={600}
+                    color="#111928"
                   >
                     CAMIO TPU CLEAR GLOSS
                   </Text>
+
                   <Box
                     width="100%"
                     height="auto"
@@ -87,13 +101,14 @@ const PremiumProtection = () => {
                     <Image
                       src={topPicks1}
                       alt="CAMIO TPU CLEAR GLOSS"
-                      layout="responsive" // Makes the image responsive
-                      objectFit="cover" // Keeps the aspect ratio intact
+                      layout="responsive"
+                      objectFit="cover"
                     />
                   </Box>
                   <Text
-                    fontSize={{ base: "16px", lg: "18px" }}
-                    color="black"
+                    fontSize={{ base: "14px", lg: "16px" }}
+                    fontWeight={400}
+                    color="#111928"
                     pt={4}
                     pb={6}
                   >
@@ -111,11 +126,12 @@ const PremiumProtection = () => {
               overflow="hidden"
               boxShadow="sm"
             >
-              <CardBody p={{ base: "30px", lg: "25px" }}>
+              <CardBody p={{ base: "15px", md:"25px", lg: "30px" }}>
                 <VStack align="start" spacing={2}>
                   <Text
-                    fontWeight="bold"
-                    fontSize={{ base: "16px", md: "20px" }}
+                    fontSize={{ base: "18px", lg: "20px" }}
+                    fontWeight={600}
+                    color="#111928"
                   >
                     CAMIO TPU Black Gloss
                   </Text>
@@ -128,13 +144,14 @@ const PremiumProtection = () => {
                     <Image
                       src={topPicks2}
                       alt="CAMIO TPU Black Gloss"
-                      layout="responsive" // Makes the image responsive
-                      objectFit="cover" // Keeps the aspect ratio intact
+                      layout="responsive"
+                      objectFit="cover"
                     />
                   </Box>
                   <Text
-                    fontSize={{ base: "16px", lg: "18px" }}
-                    color="black"
+                    fontSize={{ base: "14px", lg: "16px" }}
+                    fontWeight={400}
+                    color="#111928"
                     pt={4}
                     pb={6}
                   >
@@ -152,11 +169,12 @@ const PremiumProtection = () => {
               overflow="hidden"
               boxShadow="sm"
             >
-              <CardBody p={{ base: "30px", lg: "25px" }}>
+              <CardBody p={{ base: "15px", md:"25px", lg: "30px" }}>
                 <VStack align="start" spacing={2}>
                   <Text
-                    fontWeight="bold"
-                    fontSize={{ base: "16px", md: "20px" }}
+                    fontSize={{ base: "18px", lg: "20px" }}
+                    fontWeight={600}
+                    color="#111928"
                   >
                     CAMIO TPU Matte
                   </Text>
@@ -169,13 +187,14 @@ const PremiumProtection = () => {
                     <Image
                       src={topPicks3}
                       alt="CAMIO TPU Matte"
-                      layout="responsive" // Makes the image responsive
-                      objectFit="cover" // Keeps the aspect ratio intact
+                      layout="responsive"
+                      objectFit="cover"
                     />
                   </Box>
                   <Text
-                    fontSize={{ base: "16px", lg: "18px" }}
-                    color="black"
+                    fontSize={{ base: "14px", lg: "16px" }}
+                    fontWeight={400}
+                    color="#111928"
                     pt={4}
                     pb={6}
                   >
@@ -201,11 +220,12 @@ const PremiumProtection = () => {
               overflow="hidden"
               boxShadow="sm"
             >
-              <CardBody p={{ base: "30px", lg: "25px" }}>
+              <CardBody p={{ base: "15px", md:"25px", lg: "30px" }}>
                 <VStack align="start" spacing={2}>
                   <Text
-                    fontWeight="bold"
-                    fontSize={{ base: "16px", md: "20px" }}
+                    fontSize={{ base: "18px", lg: "20px" }}
+                    fontWeight={600}
+                    color="#111928"
                   >
                     CAMIO TPH Gloss
                   </Text>
@@ -218,13 +238,14 @@ const PremiumProtection = () => {
                     <Image
                       src={topPicks4}
                       alt="CAMIO TPH Gloss"
-                      layout="responsive" // Makes the image responsive
-                      objectFit="cover" // Keeps the aspect ratio intact
+                      layout="responsive"
+                      objectFit="cover"
                     />
                   </Box>
                   <Text
-                    fontSize={{ base: "16px", lg: "18px" }}
-                    color="black"
+                    fontSize={{ base: "14px", lg: "16px" }}
+                    fontWeight={400}
+                    color="#111928"
                     pt={4}
                     pb={6}
                   >
@@ -242,11 +263,12 @@ const PremiumProtection = () => {
               overflow="hidden"
               boxShadow="sm"
             >
-              <CardBody p={{ base: "30px", lg: "25px" }}>
+              <CardBody p={{ base: "15px", md:"25px", lg: "30px" }}>
                 <VStack align="start" spacing={2}>
                   <Text
-                    fontWeight="bold"
-                    fontSize={{ base: "16px", md: "20px" }}
+                    fontSize={{ base: "18px", lg: "20px" }}
+                    fontWeight={600}
+                    color="#111928"
                   >
                     CAMIO TPU Clear Gloss
                   </Text>
@@ -259,13 +281,14 @@ const PremiumProtection = () => {
                     <Image
                       src={topPicks5}
                       alt="CAMIO TPU Clear Gloss"
-                      layout="responsive" // Makes the image responsive
-                      objectFit="cover" // Keeps the aspect ratio intact
+                      layout="responsive"
+                      objectFit="cover"
                     />
                   </Box>
                   <Text
-                    fontSize={{ base: "16px", lg: "18px" }}
-                    color="black"
+                    fontSize={{ base: "14px", lg: "16px" }}
+                    fontWeight={400}
+                    color="#111928"
                     pt={4}
                     pb={6}
                   >
@@ -277,7 +300,7 @@ const PremiumProtection = () => {
             </Card>
 
             <Box
-              display={{ base: "flex", md: "flex", lg: "none" }} 
+              display={{ base: "flex", md: "flex", lg: "none" }}
               justifyContent="center"
               alignItems="center"
             >

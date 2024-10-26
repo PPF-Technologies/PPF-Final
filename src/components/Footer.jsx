@@ -23,7 +23,6 @@ import { FiPhone } from "react-icons/fi";
 import logo from "@/assets/logo.png";
 import Image from "next/image";
 
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -33,7 +32,7 @@ const Footer = () => {
       color="white"
       py={{ base: 8, md: 4 }}
     >
-      <Container maxW="100%" px={16} py={16}>
+      <Container maxW="100%" px={{ base: 8, lg: 16 }} py={{ base: 8, lg: 16 }}>
         <Stack spacing={10}>
           {/* Newsletter Section */}
           <Flex
@@ -45,7 +44,7 @@ const Footer = () => {
             <Heading
               as="h2"
               color="#FFFFEE"
-              fontSize={{ base: "45px", md: "45px" }}
+              fontSize={{ base: "35px", lg: "45px" }}
               fontWeight="600"
               mb={{ base: 4, md: 0 }}
               maxW={{ base: "100%", md: "60%" }}
@@ -59,19 +58,19 @@ const Footer = () => {
               mt={{ base: 4, md: 0 }}
               maxW={{ base: "100%", md: "40%" }}
             >
-              <InputGroup size="40px" bg="transparent">
+              <InputGroup size="30px" bg="transparent">
                 <Input
                   placeholder="Enter Your Email"
-                  fontSize="40px"
+                  fontSize="30px"
                   fontWeight="400"
                   color="#FFFFEE"
-                  _placeholder={{ color: "white", fontSize: "40px" }}
+                  _placeholder={{ color: "white", fontSize: "30px" }}
                   borderColor="white"
                   borderWidth={0}
                   borderBottomWidth={1}
                   borderRadius={0}
                   pl={0}
-                  pb={8} // Increased padding-bottom for more space between text and bottom border
+                  pb={{ base: 4, lg: 6 }}
                   _focus={{
                     borderColor: "white",
                     boxShadow: "none",
@@ -89,10 +88,14 @@ const Footer = () => {
             {/* Social Media Links Section */}
             <Box>
               <VStack align="start" spacing={6}>
-                <Text fontSize="24px" fontWeight="500" mb={4}>
+                <Text
+                  fontSize={{ base: "20px", lg: "24px" }}
+                  fontWeight="500"
+                  mb={{ base: 2, lg: 4 }}
+                >
                   Social Media
                 </Text>
-                <HStack spacing={6}>
+                <HStack spacing={{ base: 4, lg: 6 }}>
                   {["Instagram", "Twitter", "YouTube"].map((platform) => (
                     <Link
                       href="#"
@@ -118,13 +121,13 @@ const Footer = () => {
 
             {/* Links Section (Company, Help Center, Contact Information) */}
             <Box w="100%">
-              <SimpleGrid columns={{ base: 2, md: 3 }} spacing={8}>
+              <SimpleGrid columns={{ base: 2, lg: 3 }} spacing={8}>
                 <Box>
                   <Stack spacing={4}>
                     <Text fontWeight="500" fontSize="18px" mb="16px">
                       Company
                     </Text>
-                    <Stack spacing={4}>
+                    <Stack spacing={{ base: 3, lg: 4 }}>
                       {[
                         "About",
                         "Products",
@@ -134,7 +137,7 @@ const Footer = () => {
                         "FAQ",
                       ].map((link) => (
                         <Text
-                          fontSize="16px"
+                          fontSize={{ base: "14px", lg: "16px" }}
                           fontWeight="400"
                           color="#E0E0E0"
                           key={link}
@@ -147,7 +150,7 @@ const Footer = () => {
                 </Box>
 
                 <Box>
-                  <Stack spacing={4}>
+                  <Stack spacing={{ base: 3, lg: 4 }}>
                     <Text fontWeight="500" fontSize="18px" mb="16px">
                       Help Center
                     </Text>
@@ -159,7 +162,7 @@ const Footer = () => {
                         "Support",
                       ].map((help) => (
                         <Text
-                          fontSize="16px"
+                          fontSize={{ base: "14px", lg: "16px" }}
                           fontWeight="400"
                           color="#E0E0E0"
                           key={help}
@@ -172,9 +175,12 @@ const Footer = () => {
                 </Box>
 
                 {/* Contact Information Section */}
-                <Box>
+                <Box display={{ base: "none", lg: "flex" }}>
                   <VStack align="start" spacing={4} gap="14px">
-                    <HStack spacing={3} alignItems="flex-start">
+                    <HStack
+                      spacing={{ base: 1, lg: 3 }}
+                      alignItems="flex-start"
+                    >
                       <Icon
                         as={IoLocationOutline}
                         border="2px"
@@ -185,7 +191,12 @@ const Footer = () => {
                         p={1}
                         mt={1}
                       />
-                      <Text fontSize="16px" fontWeight="400" color="#E0E0E0">
+                      <Text
+                        fontSize={{ base: "14px", lg: "16px" }}
+                        fontWeight="400"
+                        color="#E0E0E0"
+                        width="100%" // Set width to 100%
+                      >
                         Ground Floor, Right Portion, KHASRA NO. 29/23, Theke
                         Wali Gali, Near Sai Baba Mandir, Alipur, Delhi 110036
                       </Text>
@@ -200,7 +211,12 @@ const Footer = () => {
                         boxSize={8}
                         p={1}
                       />
-                      <Text fontSize="16px" fontWeight="400" color="#E0E0E0">
+                      <Text
+                        fontSize={{ base: "14px", lg: "16px" }}
+                        fontWeight="400"
+                        color="#E0E0E0"
+                        width="100%" // Set width to 100%
+                      >
                         9212302362 / 9315892606
                       </Text>
                     </HStack>
@@ -214,7 +230,12 @@ const Footer = () => {
                         boxSize={8}
                         p={1}
                       />
-                      <Text fontSize="16px" fontWeight="400" color="#E0E0E0">
+                      <Text
+                        fontSize={{ base: "14px", lg: "16px" }}
+                        fontWeight="400"
+                        color="#E0E0E0"
+                        width="100%" // Set width to 100%
+                      >
                         contact@company.com
                       </Text>
                     </HStack>
@@ -223,6 +244,71 @@ const Footer = () => {
               </SimpleGrid>
             </Box>
           </SimpleGrid>
+
+          {/* Contact Information Section */}
+          <Box display={{ base: "flex", lg: "none" }}>
+            <VStack align="start" spacing={4} gap="14px">
+              <HStack spacing={{ base: 1, lg: 3 }} alignItems="flex-start">
+                <Icon
+                  as={IoLocationOutline}
+                  border="2px"
+                  borderRadius="md"
+                  borderColor="#676767"
+                  color="#FFBB4E"
+                  boxSize={8}
+                  p={1}
+                  mt={1}
+                />
+                <Text
+                  fontSize={{ base: "14px", lg: "16px" }}
+                  fontWeight="400"
+                  color="#E0E0E0"
+                  w="80%"
+                >
+                  Ground Floor, Right Portion, KHASRA NO. 29/23, Theke Wali
+                  Gali, Near Sai Baba Mandir, Alipur, Delhi 110036
+                </Text>
+              </HStack>
+              <HStack spacing={3}>
+                <Icon
+                  as={FiPhone}
+                  border="2px"
+                  borderRadius="md"
+                  borderColor="#676767"
+                  color="#FFBB4E"
+                  boxSize={8}
+                  p={1}
+                />
+                <Text
+                  fontSize={{ base: "14px", lg: "16px" }}
+                  fontWeight="400"
+                  color="#E0E0E0"
+                  width="100%" // Set width to 100%
+                >
+                  9212302362 / 9315892606
+                </Text>
+              </HStack>
+              <HStack spacing={3}>
+                <Icon
+                  as={HiOutlineMail}
+                  border="2px"
+                  borderRadius="md"
+                  borderColor="#676767"
+                  color="#FFBB4E"
+                  boxSize={8}
+                  p={1}
+                />
+                <Text
+                  fontSize={{ base: "14px", lg: "16px" }}
+                  fontWeight="400"
+                  color="#E0E0E0"
+                  width="100%" // Set width to 100%
+                >
+                  contact@company.com
+                </Text>
+              </HStack>
+            </VStack>
+          </Box>
 
           {/* Footer Bottom */}
           <Stack
@@ -235,14 +321,22 @@ const Footer = () => {
             borderColor="whiteAlpha.300"
             spacing={4}
           >
-            <Text fontSize="sm">© {currentYear} Copyright By Camio PPF</Text>
+            <Text fontSize={{ base: "10px", lg: "16px" }}>
+              © {currentYear} Copyright By Camio PPF
+            </Text>
             <Image src={logo} width={150} height="auto" />
             <HStack spacing={4}>
-              {["Terms", "Privacy", "Cookies", "Legal", "Recalls"].map((policy) => (
-                <Link href="#" fontSize="sm" key={policy}>
-                  {policy}
-                </Link>
-              ))}
+              {["Terms", "Privacy", "Cookies", "Legal", "Recalls"].map(
+                (policy) => (
+                  <Link
+                    href="#"
+                    fontSize={{ base: "10px", lg: "16px" }}
+                    key={policy}
+                  >
+                    {policy}
+                  </Link>
+                )
+              )}
             </HStack>
           </Stack>
         </Stack>

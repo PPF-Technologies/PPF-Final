@@ -47,9 +47,9 @@ const FaqItem = ({ question, answer }) => (
   >
     {({ isExpanded }) => (
       <>
-        <AccordionButton p={4} borderRadius="md">
+        <AccordionButton p={4} borderRadius="md" _hover={{ bg: "transparent" }}>
           <Flex flex="1" justify="space-between" align="center">
-            <Text fontSize="22px" fontWeight={500}>
+            <Text fontSize={{ base: "18", lg: "22" }} fontWeight={500}>
               {question}
             </Text>
 
@@ -65,7 +65,7 @@ const FaqItem = ({ question, answer }) => (
           maxHeight={isExpanded ? "200px" : "0px"}
           overflow="hidden"
         >
-          <Text color="#6C6C6C" fontSize="16px" fontWeight={400}>
+          <Text color="#6C6C6C" fontSize={{ base: "14px", lg: "16px" }} fontWeight={400}>
             {answer}
           </Text>
         </AccordionPanel>
@@ -77,22 +77,20 @@ const FaqItem = ({ question, answer }) => (
 const Faq = () => {
   return (
     <Flex
-      direction={{ base: "column", md: "row" }} // Column on small screens, row on medium and larger
+      direction={{ base: "column", md: "row" }}
       align="top"
       justify="space-between"
       w="100%"
       maxW="100vw"
       mx={4}
       py={8}
-      px={10}
+      px={{ base: 6, lg: 10 }}
     >
       <Box textAlign="start" mb={8} w={{ base: "100%", md: "35%" }}>
-        {" "}
-        {/* Full width on small screens */}
-        <Heading fontSize="45px" fontWeight={600} mb={6}>
+        <Heading fontSize={{ base: "35px", lg: "45px" }} fontWeight={600} mb={6}>
           Frequently Asked Questions
         </Heading>
-        <AnimButton fontSize="18.98px" fontWeight={500}>
+        <AnimButton fontSize="18.98px" fontWeight={500} _hover={{ bg: "transparent" }}>
           Customer Support
         </AnimButton>
       </Box>
@@ -102,7 +100,7 @@ const Faq = () => {
         justify="flex-end"
         alignItems="flex-end"
         gap={4}
-        w={{ base: "100%", md: "60%" }} // Full width on small screens
+        w={{ base: "100%", md: "60%" }}
       >
         <Accordion allowToggle w="100%">
           {FAQData.map((faq, index) => (
@@ -117,6 +115,7 @@ const Faq = () => {
           rightIcon={<FiChevronDown />}
           mt={4}
           mr={6}
+          _hover={{ bg: "transparent", color: "inherit" }}
         >
           More Questions
         </Button>
