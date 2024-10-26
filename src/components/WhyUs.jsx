@@ -151,7 +151,7 @@ const WhyUs = () => {
       </Flex>
 
       {/* Accordion and Image Section */}
-      <Flex mt={10} flexDirection={{base:'column', lg:'row'}}>
+      <Flex mt={16} flexDirection={{base:'column', lg:'row'}} >
         {/* Left Side: Accordion */}
         <Box width={{base:'100%', lg:"60%"}} pr={6}>
           <Accordion allowToggle>
@@ -194,7 +194,7 @@ const WhyUs = () => {
         </Box>
 
         {/* Right Side: Image */}
-        <Box width={"40%"} display={{base:'none', lg:'block'}}>
+        <Box width={"40%"} px={8} display={{base:'none', lg:'block'}}>
           <Image
             src={accordionData[activeAccordion].imageUrl}
             alt={`Accordion ${accordionData[activeAccordion].title} Image`}
@@ -202,6 +202,7 @@ const WhyUs = () => {
             boxShadow="md"
             width={200}
             height={500}
+            className="w-full rounded-xl"
           />
         </Box>
       </Flex>

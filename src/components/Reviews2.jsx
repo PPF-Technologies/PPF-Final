@@ -50,7 +50,7 @@ const Reviews2 = () => {
       
         <Button
         bg={"white"}
-        margin={{ base: "auto", lg: 'auto' }}
+        marginX={{ base: "auto", lg: 'auto' }}
         borderStyle={"solid"}
         borderRadius={"full"}
         fontWeight={500}
@@ -61,7 +61,7 @@ const Reviews2 = () => {
         display={"flex"}
         alignItems={"center"}
         height={'30px'}
-        
+        my={8}
       >
         <Text>Testimonial</Text> <FiChevronRight />
       </Button>

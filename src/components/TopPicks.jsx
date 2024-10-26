@@ -25,7 +25,7 @@ import Button2 from "./props/Button2";
 
 const PremiumProtection = () => {
   return (
-    <Box py={12} >
+    <Box py={16} pt={40}>
       <Container maxW="container.xl">
         <VStack spacing={{base:2, lg:8}} align="stretch">
           <Box textAlign={'center'}>
@@ -90,6 +90,7 @@ const PremiumProtection = () => {
                     fontSize={{ base: "18px", lg: "20px" }}
                     fontWeight={600}
                     color="#111928"
+                    pb={2}
                   >
                     CAMIO TPU CLEAR GLOSS
                   </Text>
@@ -134,6 +135,7 @@ const PremiumProtection = () => {
                     fontSize={{ base: "18px", lg: "20px" }}
                     fontWeight={600}
                     color="#111928"
+                    pb={2}
                   >
                     CAMIO TPU Black Gloss
                   </Text>
@@ -177,6 +179,7 @@ const PremiumProtection = () => {
                     fontSize={{ base: "18px", lg: "20px" }}
                     fontWeight={600}
                     color="#111928"
+                    pb={2}
                   >
                     CAMIO TPU Matte
                   </Text>
@@ -228,6 +231,7 @@ const PremiumProtection = () => {
                     fontSize={{ base: "18px", lg: "20px" }}
                     fontWeight={600}
                     color="#111928"
+                    pb={2}
                   >
                     CAMIO TPH Gloss
                   </Text>
@@ -271,6 +275,7 @@ const PremiumProtection = () => {
                     fontSize={{ base: "18px", lg: "20px" }}
                     fontWeight={600}
                     color="#111928"
+                    pb={2}
                   >
                     CAMIO TPU Clear Gloss
                   </Text>
