@@ -2,45 +2,53 @@ import { Box, Heading, Text, Grid, Flex, Button } from "@chakra-ui/react";
 import Image from "next/image";
 import React from "react";
 import scratchIcon from "../assets/icons/scratch.png";
+import stoneIcon from '../assets/icons/stone.png'
+import snowflakeIcon from '../assets/icons/snowflake.png'
+import cardoorIcon from '../assets/icons/car-door.png'
+import carcollisionIcon from '../assets/icons/car-collision.png'
+import colorpaletteIcon from '../assets/icons/color-palette.png'
+import caraccidentIcon from '../assets/icons/car-accident.png'
 import { FiChevronRight } from "react-icons/fi";
+import Button2 from "./props/Button2";
+
 
 const Protection = () => {
+
   // Array containing icon and text data
   const protectionData = [
     { icon: scratchIcon, label: "Various Life Scratches" },
-    { icon: scratchIcon, label: "Stone Chips" },
-    { icon: scratchIcon, label: "Snow-Removing Sand & Calcium Chloride" },
-    { icon: scratchIcon, label: "Door Dings" },
-    { icon: scratchIcon, label: "Paint Scuff" },
-    { icon: scratchIcon, label: "Painted Surface Discoloration" },
-    { icon: scratchIcon, label: "Surface Damage by Various Impacts" },
+    { icon: stoneIcon, label: "Stone Chips" },
+    { icon: snowflakeIcon, label: "Snow-Removing Sand & Calcium Chloride" },
+    { icon: cardoorIcon, label: "Door Dings" },
+    { icon: carcollisionIcon, label: "Paint Scuff" },
+    { icon: colorpaletteIcon, label: "Painted Surface Discoloration" },
+    { icon: caraccidentIcon, label: "Surface Damage by Various Impacts" },
     { icon: scratchIcon, label: "Bug Acid & Bird Droppings" },
-    {
-      icon: scratchIcon,
-      label: "All Sorts of Water/Oil Stains & Contaminations",
-    },
+    { icon: scratchIcon, label: "All Sorts of Water/Oil Stains & Contaminations" },
     { icon: scratchIcon, label: "Unique Design" },
   ];
 
   return (
-    <Box bg={"gray.900"} color={"white"} minHeight="100vh" py={10} px={5}>
-        <Box className="flex justify-center py-6">
+    <Box bg={"gray.900"} color={"white"} minHeight={{base:"100vh", '2xl':'85vh'}} py={10} px={{base:5, '2xl':80}}>
+      {/* Features Button */}
+      <Box display="flex" justifyContent="center" py={6}>
         <Button
-              bg={"transparent"}
-              margin={{ base: "auto", lg: 'auto' }}
-              borderStyle={"solid"}
-              borderRadius={"full"}
-              fontWeight={500}
-              fontSize={{ base: "12px", md: "14px" }} // Responsive font size
-              _hover={{ bg: "transparent" }}
-              borderWidth={"1px"}
-              borderColor={"#E2E2E2"}
-              color={'white'}
-              
-            >
-              <Text pb={1}>Features</Text> <FiChevronRight />
-            </Button>
-        </Box>
+          bg={"transparent"}
+          borderStyle={"solid"}
+          borderRadius={"full"}
+          fontWeight={500}
+          fontSize={{ base: "12px", md: "14px" }}
+          _hover={{ bg: "transparent" }}
+          borderWidth={"1px"}
+          borderColor={"#E2E2E2"}
+          color={'white'}
+          display="flex"
+          alignItems="center"
+        >
+          <Text pb={1}>Features</Text> <FiChevronRight />
+        </Button>
+      </Box>
+
       {/* Heading with gradient */}
       <Heading
         as="h2"
@@ -54,11 +62,11 @@ const Protection = () => {
         CLEAR AND COMPLETE <Text as="span" display="block">PROTECTION AGAINST</Text>
       </Heading>
 
-      {/* Grid for two rows, five items each */}
+      {/* Responsive Grid */}
       <Grid
-        templateColumns="repeat(5, 1fr)"
-        gap={8}
-        px={{ base: "20px", lg: "100px" }} // Responsive padding
+        templateColumns={{ base: "repeat(2, 1fr)", sm: "repeat(3, 1fr)", md: "repeat(4, 1fr)", lg: "repeat(5, 1fr)" }}
+        gap={6}
+        px={{ base: "10px", lg: "50px" }}
         justifyItems="center"
       >
         {protectionData.map((item, index) => (
@@ -68,14 +76,10 @@ const Protection = () => {
             align="center"
             bg="transparent"
             borderRadius="full"
-            border={'1px solid gray.700'}
-
             p={4}
-            boxShadow="xl"
             transition="transform 0.3s ease"
-            
+            _hover={{ transform: "scale(1.1)" }}
           >
-            {/* Icon with animation */}
             <Image
               src={item.icon}
               alt={item.label}
@@ -87,15 +91,16 @@ const Protection = () => {
             />
             <Text
               mt={4}
-              fontSize="md"
+              fontSize={{ base: "sm", md: "md" }}
               fontWeight="bold"
-              textAlign={'center'}
+              textAlign="center"
             >
               {item.label}
             </Text>
           </Flex>
         ))}
       </Grid>
+      <Box display={'flex'} justifyContent={'center'} py={10}><Button2>Contact Us</Button2></Box>
     </Box>
   );
 };

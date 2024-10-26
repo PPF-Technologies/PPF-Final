@@ -1,40 +1,49 @@
 import React from "react";
+import { Box, Container, Flex, Heading, Text} from "@chakra-ui/react";
+import Image from "next/image";
+import Button2 from "./props/Button2";
+import WButton from "./props/WButton";
+
+
 
 const Hero = () => {
   return (
-    <div>
-      <section className="py-10 md:py-20">
-        <div className="container mx-auto px-4 flex flex-col md:flex-row items-center md:space-x-8">
+    <Box as="section" py={{ base: 10, md: 20 }}>
+      <Container maxW={{base:"container.xl", '2xl':'full'}}  px={4}>
+        <Flex direction={{ base: "column", md: "row" }} align="center"  spacing={{ md: 8 }} pr={{lg:14, '2xl':0}}>
           {/* Image Section */}
-          <div className="w-full md:w-auto mb-8 md:mb-0">
-            <img
+          <Box w="full" mb={{ base: 8, md: 0 }} maxW={{ md: "990px" }}>
+            <Image
               src="/hero.svg" // Directly use the path from the public folder
               alt="Hero SUV"
-              className="w-full h-auto md:w-[990px] md:h-[475px] object-cover"
+              width={500}
+              height={300}
+              className="w-full h-auto"
+              objectFit="cover"
+              maxH={{ md: "475px", '2xl':'full' }}
             />
-          </div>
+          </Box>
 
           {/* Text Section */}
-          <div className="text-center md:text-left w-full md:w-[395px]">
-            <h1 className="text-2xl md:text-4xl font-bold mb-4">
+          <Box textAlign={{ base: "center", md: "left" }} w="full" maxW={{base:"395px", '2xl':'30%'}} >
+            <Heading as="h1" fontSize={{ base: "2xl", md: "4xl", '2xl':'5xl' }} fontWeight="bold" mb={4}>
               Unmatched Protection, Unbeatable Shine with Camio PPF
-            </h1>
-            <p className="mb-6 text-sm md:text-base">
-              Protect your vehicle with Camio's top-quality Paint Protection
-              Film. Experience superior protection and lasting shine.
-            </p>
-            <button
-              className="bg-[#F4F7FE] text-[#4174F4] hover:bg-[#4174F4] hover:text-[#F4F7FE] text-sm md:text-base px-8 py-3 md:px-10 md:py-3 rounded-full border border-transparent"
-              style={{
-                width: "auto", // Allow button to size based on its content
-              }}
-            >
+            </Heading>
+            <Text mb={6} fontSize={{ base: "sm", md: "md" }}>
+              Protect your vehicle with Camio's top-quality Paint Protection Film. Experience superior protection and lasting shine.
+            </Text>
+            <Flex alignItems={'center'} justifyContent={'center'} gap={2}> 
+            <Button2>
               Explore Our Products
-            </button>
-          </div>
-        </div>
-      </section>
-    </div>
+            </Button2>
+            <WButton>
+              +91 728377971
+            </WButton>
+            </Flex>
+          </Box>
+        </Flex>
+      </Container>
+    </Box>
   );
 };
 

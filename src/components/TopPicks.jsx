@@ -19,14 +19,16 @@ import topPicks4 from "../assets/topPicks4.png";
 import topPicks5 from "../assets/topPicks5.png";
 import Image from "next/image";
 import { FiChevronRight } from "react-icons/fi";
-import AnimButton from "../components/props/Button";
+import Button2 from "./props/Button2";
+// import AnimButton from "../components/props/Button";
+
 
 const PremiumProtection = () => {
   return (
-    <Box py={12} m={6}>
+    <Box py={12} >
       <Container maxW="container.xl">
-        <VStack spacing={8} align="stretch">
-          <Box>
+        <VStack spacing={{base:2, lg:8}} align="stretch">
+          <Box textAlign={'center'}>
             <Button
               bg={"transparent"}
               margin={{ base: "auto", lg: 0 }}
@@ -38,13 +40,14 @@ const PremiumProtection = () => {
               borderWidth={"1px"}
               borderColor={"#E2E2E2"}
             >
-              <Text pb={1}>Features that we provide</Text> <FiChevronRight />
+              <Text pb={{base:0, lg:1}}>Features that we provide</Text> <FiChevronRight />
             </Button>
 
             <Heading
               fontSize={{ base: "30px", lg: "45px" }}
               fontWeight={600}
-              mb={8}
+              mb={{base:2, lg:8}}
+              mt={{base:2}}
               color="#010205"
             >
               Top Picks for Premium Protection
@@ -57,9 +60,7 @@ const PremiumProtection = () => {
               mb={8}
             >
               Explore our best-selling CAMIO PPF products, trusted for their
-              unmatched protection
-              <br />
-              and flawless finish.
+              unmatched protection and flawless finish.
             </Text>
           </Box>
 
@@ -74,6 +75,7 @@ const PremiumProtection = () => {
             p={{ base: 6, lg: 12 }}
             mb={10}
             borderRadius="3xl"
+            
           >
             {/* First Product Card */}
             <Card
@@ -210,7 +212,7 @@ const PremiumProtection = () => {
               justifyContent="center"
               alignItems="center"
             >
-              <AnimButton>Explore Our Products</AnimButton>
+              <Button2>Explore Our Products</Button2>
             </Box>
 
             {/* Fourth Product Card */}
@@ -304,7 +306,7 @@ const PremiumProtection = () => {
               justifyContent="center"
               alignItems="center"
             >
-              <AnimButton>Hidden Button</AnimButton>
+              <Button2>Explore Our Products</Button2>
             </Box>
           </Grid>
         </VStack>

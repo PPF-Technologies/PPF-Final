@@ -87,7 +87,7 @@ const WhyUs = () => {
   ];
 
   return (
-    <Box px={{ base: 2, lg: 36, md:20 }}>
+    <Box px={{ base: 2, lg: 36, md:20, '2xl':80 }}>
       {/* Button Section */}
       <Button
         bg={"transparent"}
@@ -121,7 +121,7 @@ const WhyUs = () => {
           Why is CAMIO PPF the Ultimate Choice for Vehicle Protection?
         </Heading>
 
-        <Box width={{ base: "100%", lg: "50%" }} px={6}>
+        <Box width={{ base: "100%", lg: "50%" }} px={{base:0, lg:6}}>
           <Text
             // className="lg:border-l border-[#7F7F7F] border-t lg:border-t-0"
             borderColor={'#7F7F7F'}

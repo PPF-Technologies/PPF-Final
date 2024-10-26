@@ -5,6 +5,7 @@ import { FaStar } from 'react-icons/fa';
 import { FiChevronRight } from "react-icons/fi";
 
 const Reviews2 = () => {
+  
   const reviews = [
     {
       text: "Camio PPF transformed our vehicle protection. The high gloss finish delivers a stunning shine, and the self-healing technology keeps it pristine—an invaluable investment.",
@@ -45,7 +46,7 @@ const Reviews2 = () => {
   ];
 
   return (
-    <Box maxW="1200px" mx="auto" py={10} px={4} bgGradient="linear(96.56deg, rgba(158, 194, 194, 0.3) 27.8%, rgba(213, 203, 159, 0.3) 53.91%)" borderRadius={'24px'} mt={10}>
+    <Box maxW="1200px" mx={{base:"14px", xl:'auto'}} py={10} px={4} bgGradient="linear(96.56deg, rgba(158, 194, 194, 0.3) 27.8%, rgba(213, 203, 159, 0.3) 53.91%)" borderRadius={'24px'} mt={10}>
       
         <Button
         bg={"white"}

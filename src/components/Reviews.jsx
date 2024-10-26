@@ -36,10 +36,10 @@ const Reviews = () => {
   ];
 
   return (
-    <div className="bg-white py-10">
-     <h2 className="text-center text-5xl text-gray-600 mb-10  tracking-wide drop-shadow-md">
-  What Our Customers Are Saying
-</h2>
+    <div className="bg-white py-10 mx-2">
+      <h2 className="text-center text-5xl text-gray-600 mb-10  tracking-wide drop-shadow-md">
+        What Our Customers Are Saying
+      </h2>
 
 
       <Marquee gradient={false} speed={50} className="overflow-hidden ">

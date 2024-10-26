@@ -26,9 +26,17 @@ html {
 
 
 .custom-btn2{
-  box-shadow: inset 0px -2px 2px rgb(165, 108, 0);
-  border-radius: 20px;
-  padding: 4px 10px;
+  box-shadow: inset 0px -2px 4px rgb(163, 108, 4);
+  border-radius: 30px;
+  padding: 6px 10px;
+}
+
+@media (max-width:400px){
+  .custom-btn2{
+    box-shadow: inset 0px -2px 4px rgb(163, 108, 4);
+    border-radius: 30px;
+    padding: 4px 6px;
+  }
 }
 
 .custom-btn3{
