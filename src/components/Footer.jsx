@@ -31,8 +31,8 @@ const Footer = () => {
       bg="linear-gradient(-49.05deg, #282B33 20.98%, #4A7280 72.1%, #D2B6A0 99.13%)"
       color="white"
       py={{ base: 8, md: 4 }}
-      m={{'2xl':10}}
-      borderRadius={{'2xl':25}}
+      m={{lg:4,'2xl':10}}
+      borderRadius={{lg:25}}
     >
       <Container maxW="100%" px={{ base: 8, lg: 16 }} py={{ base: 8, lg: 16 }}>
         <Stack spacing={10}>
@@ -125,11 +125,11 @@ const Footer = () => {
             <Box w="100%">
               <SimpleGrid columns={{ base: 2, lg: 3 }} spacing={8}>
                 <Box>
-                  <Stack spacing={4}>
-                    <Text fontWeight="500" fontSize="18px" mb="16px">
+                  <Stack spacing={3}>
+                    <Text fontWeight="500" fontSize="18px" mb="12px">
                       Company
                     </Text>
-                    <Stack spacing={{ base: 3, lg: 4 }}>
+                    <Stack spacing={{ base: 2 }}>
                       {[
                         "About",
                         "Products",
@@ -152,11 +152,11 @@ const Footer = () => {
                 </Box>
 
                 <Box>
-                  <Stack spacing={{ base: 3, lg: 4 }}>
-                    <Text fontWeight="500" fontSize="18px" mb="16px">
+                  <Stack spacing={{ base: 3 }}>
+                    <Text fontWeight="500" fontSize="18px" mb="12px">
                       Help Center
                     </Text>
-                    <Stack spacing={4}>
+                    <Stack spacing={2}>
                       {[
                         "Community",
                         "Knowledge Base",

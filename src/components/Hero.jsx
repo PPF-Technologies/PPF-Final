@@ -32,14 +32,12 @@ const Hero = () => {
             <Text mb={6} fontSize={{ base: "sm", md: "md" }}>
               Protect your vehicle with Camio's top-quality Paint Protection Film. Experience superior protection and lasting shine.
             </Text>
-            <Flex alignItems={'center'} justifyContent={'center'} gap={2}> 
+            
             <Button2>
               Explore Our Products
             </Button2>
-            <WButton>
-              +91 728377971
-            </WButton>
-            </Flex>
+            
+           
           </Box>
         </Flex>
       </Container>

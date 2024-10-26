@@ -94,8 +94,8 @@ const WhyUs = () => {
         margin={{ base: "auto", lg: 0 }}
         borderStyle={"solid"}
         borderRadius={"full"}
-        fontWeight={500}
-        fontSize={{ base: "12px", md: "14px" }} // Responsive font size
+        fontWeight={'semibold'}
+        fontSize={{ base: "12px", md: "15px" }} // Responsive font size
         _hover={{ bg: "transparent" }}
         borderWidth={"1px"}
         borderColor={"#E2E2E2"}
@@ -183,7 +183,7 @@ const WhyUs = () => {
               <AccordionIcon color={isExpanded ? "black" : "gray.500"} />
             </AccordionButton>
           </h2>
-          <AccordionPanel pb={0} mt={2} mx={0} p={0}>
+          <AccordionPanel pb={0} mt={2} mx={0} py={3}>
             {item.content}
           </AccordionPanel>
         </>
