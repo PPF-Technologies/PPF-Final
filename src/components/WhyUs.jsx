@@ -154,43 +154,44 @@ const WhyUs = () => {
       <Flex mt={16} flexDirection={{base:'column', lg:'row'}} >
         {/* Left Side: Accordion */}
         <Box width={{base:'100%', lg:"60%"}} pr={6}>
-          <Accordion allowToggle>
-            {accordionData.map((item, index) => (
-              <AccordionItem key={item.id}>
-                {({ isExpanded }) => (
-                  <>
-                    <h2>
-                      <AccordionButton
-                        onClick={() => setActiveAccordion(index)}
-                        _expanded={{ bg: "gray.100" }}
-                        _hover={{ bg: "gray.100" }}
-                        _focus={{ boxShadow: "none" }}
-                      >
-                        <Box
-                          flex="1"
-                          textAlign="left"
-                          py={2}
-                          gap={16}
-                          display="flex"
-                          alignItems="center"
-                          color={isExpanded ? "black" : "gray.500"}
-                        >
-                          <Text fontWeight={600} mr={2}>
-                            {item.id}.
-                          </Text>
-                          <Text fontWeight={600}>{item.title}</Text>
-                        </Box>
-                        <AccordionIcon
-                          color={isExpanded ? "black" : "gray.500"}
-                        />
-                      </AccordionButton>
-                    </h2>
-                    <AccordionPanel pb={4}>{item.content}</AccordionPanel>
-                  </>
-                )}
-              </AccordionItem>
-            ))}
-          </Accordion>
+        <Accordion allowToggle>
+  {accordionData.map((item, index) => (
+    <AccordionItem key={item.id} flexShrink={0}>
+      {({ isExpanded }) => (
+        <>
+          <h2>
+            <AccordionButton
+              onClick={() => setActiveAccordion(index)}
+              _expanded={{ bg: "gray.100" }}
+              _hover={{ bg: "gray.100" }}
+              _focus={{ boxShadow: "none" }}
+            >
+              <Box
+                flex="1"
+                textAlign="left"
+                py={2}
+                gap={16}
+                display="flex"
+                alignItems="center"
+                color={isExpanded ? "black" : "gray.500"}
+              >
+                <Text fontWeight={600} mr={2}>
+                  {item.id}.
+                </Text>
+                <Text fontWeight={600}>{item.title}</Text>
+              </Box>
+              <AccordionIcon color={isExpanded ? "black" : "gray.500"} />
+            </AccordionButton>
+          </h2>
+          <AccordionPanel pb={0} mt={2} mx={0} p={0}>
+            {item.content}
+          </AccordionPanel>
+        </>
+      )}
+    </AccordionItem>
+  ))}
+</Accordion>
+
         </Box>
 
         {/* Right Side: Image */}
