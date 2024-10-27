@@ -121,12 +121,15 @@ const WhyUs = () => {
           Why is CAMIO PPF the Ultimate Choice for Vehicle Protection?
         </Heading>
 
-        <Box width={{ base: "100%", lg: "50%" }} px={{base:0, lg:6}}>
+        <Box width={{ base: "100%", lg: "50%" }} px={{base:0, lg:6}}  borderColor={'#7F7F7F'}
+            borderStyle={'solid'}
+            borderLeftWidth={{base:0, lg:1}}
+            borderTopWidth={{base:0, lg:0}}>
           <Text
             // className="lg:border-l border-[#7F7F7F] border-t lg:border-t-0"
             borderColor={'#7F7F7F'}
             borderStyle={'solid'}
-            borderLeftWidth={{base:0, lg:1}}
+            borderLeftWidth={{base:0, lg:0}}
             borderTopWidth={{base:1, lg:0}}
             pl={{ base: 0, lg: 10 }}
             fontWeight={400}
@@ -195,7 +198,7 @@ const WhyUs = () => {
         </Box>
 
         {/* Right Side: Image */}
-        <Box width={"40%"} px={8} display={{base:'none', lg:'block'}}>
+        <Box width={"35%"} px={8} display={{base:'none', lg:'block'}}>
           <Image
             src={accordionData[activeAccordion].imageUrl}
             alt={`Accordion ${accordionData[activeAccordion].title} Image`}

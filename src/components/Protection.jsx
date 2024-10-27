@@ -6,8 +6,11 @@ import stoneIcon from '../assets/icons/stone.png'
 import snowflakeIcon from '../assets/icons/snowflake.png'
 import cardoorIcon from '../assets/icons/car-door.png'
 import carcollisionIcon from '../assets/icons/car-collision.png'
-import colorpaletteIcon from '../assets/icons/color-palette.png'
+import carpaintIcon from '../assets/icons/car-painting.png'
 import caraccidentIcon from '../assets/icons/car-accident.png'
+import bugIcon from '../assets/icons/bug.png'
+import waterdropIcon from '../assets/icons/waterdrop.png'
+import carshineIcon from '../assets/icons/carshine.png'
 import { FiChevronRight } from "react-icons/fi";
 import Button2 from "./props/Button2";
 
@@ -21,11 +24,11 @@ const Protection = () => {
     { icon: snowflakeIcon, label: "Snow-Removing Sand & Calcium Chloride" },
     { icon: cardoorIcon, label: "Door Dings" },
     { icon: carcollisionIcon, label: "Paint Scuff" },
-    { icon: colorpaletteIcon, label: "Painted Surface Discoloration" },
+    { icon: carpaintIcon, label: "Painted Surface Discoloration" },
     { icon: caraccidentIcon, label: "Surface Damage by Various Impacts" },
-    { icon: scratchIcon, label: "Bug Acid & Bird Droppings" },
-    { icon: scratchIcon, label: "All Sorts of Water/Oil Stains & Contaminations" },
-    { icon: scratchIcon, label: "Unique Design" },
+    { icon: bugIcon, label: "Bug Acid & Bird Droppings" },
+    { icon: waterdropIcon, label: "All Sorts of Water/Oil Stains & Contaminations" },
+    { icon: carshineIcon, label: "Unique Design" },
   ];
 
   return (

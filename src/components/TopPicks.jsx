@@ -22,13 +22,12 @@ import { FiChevronRight } from "react-icons/fi";
 import Button2 from "./props/Button2";
 // import AnimButton from "../components/props/Button";
 
-
 const PremiumProtection = () => {
   return (
     <Box py={16} pt={40}>
       <Container maxW="container.xl">
-        <VStack spacing={{base:2, lg:8}} align="stretch">
-          <Box textAlign={'center'}>
+        <VStack spacing={{ base: 2, lg: 8 }} align="stretch">
+          <Box textAlign={"center"}>
             <Button
               bg={"transparent"}
               margin={{ base: "auto", lg: 0 }}
@@ -40,14 +39,15 @@ const PremiumProtection = () => {
               borderWidth={"1px"}
               borderColor={"#E2E2E2"}
             >
-              <Text pb={{base:0, lg:1}}>Features that we provide</Text> <FiChevronRight />
+              <Text pb={{ base: 0, lg: 1 }}>Features that we provide</Text>{" "}
+              <FiChevronRight />
             </Button>
 
             <Heading
               fontSize={{ base: "30px", lg: "45px" }}
               fontWeight={600}
-              mb={{base:2, lg:8}}
-              mt={{base:2}}
+              mb={{ base: 2, lg: 8 }}
+              mt={{ base: 2 }}
               color="#010205"
             >
               Top Picks for Premium Protection
@@ -75,7 +75,6 @@ const PremiumProtection = () => {
             p={{ base: 6, lg: 12 }}
             mb={10}
             borderRadius="3xl"
-            
           >
             {/* First Product Card */}
             <Card
@@ -84,7 +83,7 @@ const PremiumProtection = () => {
               overflow="hidden"
               boxShadow="sm"
             >
-              <CardBody p={{ base: "15px", md:"25px", lg: "30px" }}>
+              <CardBody p={{ base: "15px", md: "25px", lg: "30px" }}>
                 <VStack align="start" spacing={2}>
                   <Text
                     fontSize={{ base: "18px", lg: "20px" }}
@@ -129,7 +128,7 @@ const PremiumProtection = () => {
               overflow="hidden"
               boxShadow="sm"
             >
-              <CardBody p={{ base: "15px", md:"25px", lg: "30px" }}>
+              <CardBody p={{ base: "15px", md: "25px", lg: "30px" }}>
                 <VStack align="start" spacing={2}>
                   <Text
                     fontSize={{ base: "18px", lg: "20px" }}
@@ -173,7 +172,7 @@ const PremiumProtection = () => {
               overflow="hidden"
               boxShadow="sm"
             >
-              <CardBody p={{ base: "15px", md:"25px", lg: "30px" }}>
+              <CardBody p={{ base: "15px", md: "25px", lg: "30px" }}>
                 <VStack align="start" spacing={2}>
                   <Text
                     fontSize={{ base: "18px", lg: "20px" }}
@@ -225,7 +224,7 @@ const PremiumProtection = () => {
               overflow="hidden"
               boxShadow="sm"
             >
-              <CardBody p={{ base: "15px", md:"25px", lg: "30px" }}>
+              <CardBody p={{ base: "15px", md: "25px", lg: "30px" }}>
                 <VStack align="start" spacing={2}>
                   <Text
                     fontSize={{ base: "18px", lg: "20px" }}
@@ -269,7 +268,7 @@ const PremiumProtection = () => {
               overflow="hidden"
               boxShadow="sm"
             >
-              <CardBody p={{ base: "15px", md:"25px", lg: "30px" }}>
+              <CardBody p={{ base: "15px", md: "25px", lg: "30px" }}>
                 <VStack align="start" spacing={2}>
                   <Text
                     fontSize={{ base: "18px", lg: "20px" }}
@@ -305,17 +304,16 @@ const PremiumProtection = () => {
                 </VStack>
               </CardBody>
             </Card>
-
-            <Box
-              display={{ base: "flex", md: "flex", lg: "none" }}
-              justifyContent="center"
-              alignItems="center"
-            >
-              <Button2>Explore Our Products</Button2>
-            </Box>
           </Grid>
         </VStack>
       </Container>
+      <Box
+        display={{ base: "flex", md: "flex", lg: "none" }}
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Button2>Explore Our Products</Button2>
+      </Box>
     </Box>
   );
 };
