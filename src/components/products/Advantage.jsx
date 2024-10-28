@@ -208,7 +208,7 @@ const Advantage = () => {
             </Text>
             <Flex flexWrap={'wrap'} gap={4}  >
               {adv.advantages.map((adv, i) => (
-                <Flex key={i} width={{base:'46%', lg:"46%"}}  bg={'#F4F6FA'} p={4} gap={2} alignItems={'center'} borderRadius={'lg'}>
+                <Flex key={i} width={{ base: '46%', lg: "46%" }} bg={'#F4F6FA'} p={4} gap={2} alignItems={'center'} borderRadius={'lg'}>
                   <Box mb={2}>
                     <Image src={adv.icon} width={40} height={40} />
                   </Box>
