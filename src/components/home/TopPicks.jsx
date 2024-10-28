@@ -12,14 +12,14 @@ import {
   Card,
   CardBody,
 } from "@chakra-ui/react";
-import topPicks1 from "../assets/topPicks1.png";
-import topPicks2 from "../assets/topPicks2.png";
-import topPicks3 from "../assets/topPicks3.png";
-import topPicks4 from "../assets/topPicks4.png";
-import topPicks5 from "../assets/topPicks5.png";
+import topPicks1 from "../../assets/topPicks1.png";
+import topPicks2 from "../../assets/topPicks2.png";
+import topPicks3 from "../../assets/topPicks3.png";
+import topPicks4 from "../../assets/topPicks4.png";
+import topPicks5 from "../../assets/topPicks5.png";
 import Image from "next/image";
 import { FiChevronRight } from "react-icons/fi";
-import Button2 from "./props/Button2";
+import Button2 from "../props/Button2";
 // import AnimButton from "../components/props/Button";
 
 const PremiumProtection = () => {

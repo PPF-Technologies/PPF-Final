@@ -11,7 +11,7 @@ import {
   AccordionPanel,
 } from "@chakra-ui/react";
 import { FiChevronDown } from "react-icons/fi";
-import AnimButton from "../components/props/Button";
+import AnimButton from "../../components/props/Button";
 
 const FAQData = [
   {

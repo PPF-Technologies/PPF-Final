@@ -2,7 +2,7 @@
 import React, { useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Environment, Html, Line } from "@react-three/drei";
-import Earth from "../../public/Earth";
+import Earth from "../../../public/Earth";
 
 function LabeledBentLine({ start, bend, end, label }) {
   return (

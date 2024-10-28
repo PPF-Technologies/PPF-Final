@@ -13,13 +13,13 @@ import {
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { FiChevronRight } from "react-icons/fi";
-import Whyusimg1 from '../assets/whyusimg1.png'
+import Whyusimg1 from '../../assets/whyusimg1.png'
 
 // import AnimButton from "../components/props/Button";
 
 import Link from "next/link";
 // import Button2 from "./props/Button2";
-import Button3 from "./props/Button3";
+import Button3 from "../props/Button3";
 import Image from "next/image";
 
 const WhyUs = () => {
