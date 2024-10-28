@@ -10,7 +10,7 @@ import Danda from "@/assets/Danda2.png"
 const HeroOld = () => {
   return (
     <div>
-      <div className="flex items-center h-[100vh]  relative -z-10">
+      <div className="flex items-center h-[100vh]  -z-10">
        <div className="absolute left-[50%] bottom-[5%] -z-10 blur-xl opacity-50 border  rounded-full bg-orange-200 h-[100vw] w-[100vw]"> </div>
 
         <Image
