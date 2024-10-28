@@ -9,9 +9,6 @@ import WhyChoose from '@/components/products/WhyChoose'
 import React from 'react'
 
 
-
-
-
 const Page = () => {
   return (
     <div>

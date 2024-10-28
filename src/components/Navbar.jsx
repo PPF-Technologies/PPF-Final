@@ -25,7 +25,7 @@ const Navbar = () => {
         </Link>
         <Link
           className="opacity-80 hover:opacity-100 transition-all duration-100-"
-          href={"/"}
+          href={"/products"}
         >
           Products
         </Link>
