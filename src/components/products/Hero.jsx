@@ -18,7 +18,8 @@ const Hero = () => {
      width={'full'}
      px={{lg:20}}
  
-      maxW={{'2xl':"1200px"}} // Max width for large displays
+      maxW={{'2xl':"1500px"}} // Max width for large displays
+      mx={{'2xl':'auto'}}
      
     >
       <Stack

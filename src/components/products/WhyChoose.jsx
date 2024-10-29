@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Heading, Text, Flex,  Container, Stack, Circle } from '@chakra-ui/react';
+import { Box, Heading, Text, Flex, Container, Stack, Circle } from '@chakra-ui/react';
 import Image from 'next/image';
 import carimg from '@/assets/carimage.png'
 import Button3 from '../props/Button3';
@@ -28,7 +28,7 @@ const WhyChoose = () => {
   return (
     <Container maxW="7xl" py={12}>
       <Box position="relative">
-        <Flex 
+        <Flex
           direction={{ base: 'column', md: 'row' }}
           gap={8}
           align="center"
@@ -55,14 +55,14 @@ const WhyChoose = () => {
               width={900}
               height={700}
               borderRadius="lg"
-             
+
             />
           </Box>
 
           {/* Features Section */}
-          <Stack flex="1" spacing={8} transform="translateX(-50px)" pt={6}>
+          <Stack flex="1" spacing={{ base: 6, lg: 8 }} transform={{ base: "translateX(0px)", lg: "translateX(-50px)" }} pt={{ base: 0, lg: 6 }}>
             {features.map((feature) => (
-              <Flex key={feature.number} gap={4} align="flex-start">
+              <Flex key={feature.number} gap={{ base: 0, lg: 4 }} align="flex-start">
                 <Circle
                   size="40px"
                   bg="#FFD700"
@@ -73,7 +73,7 @@ const WhyChoose = () => {
                   {feature.number}
                 </Circle>
                 <Box px={10}>
-                  <Heading size="lg" mb={2}>
+                  <Heading size="lg" mb={{ base: 0, lg: 2 }}>
                     {feature.title}
                   </Heading>
                   <Text color="gray.600">

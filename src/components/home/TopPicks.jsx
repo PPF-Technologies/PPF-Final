@@ -103,8 +103,7 @@ const PremiumProtection = () => {
                     <Image
                       src={topPicks1}
                       alt="CAMIO TPU CLEAR GLOSS"
-                      layout="responsive"
-                      objectFit="cover"
+                     
                     />
                   </Box>
                   <Text
@@ -147,8 +146,7 @@ const PremiumProtection = () => {
                     <Image
                       src={topPicks2}
                       alt="CAMIO TPU Black Gloss"
-                      layout="responsive"
-                      objectFit="cover"
+                     
                     />
                   </Box>
                   <Text
@@ -191,8 +189,7 @@ const PremiumProtection = () => {
                     <Image
                       src={topPicks3}
                       alt="CAMIO TPU Matte"
-                      layout="responsive"
-                      objectFit="cover"
+                     
                     />
                   </Box>
                   <Text
@@ -243,8 +240,7 @@ const PremiumProtection = () => {
                     <Image
                       src={topPicks4}
                       alt="CAMIO TPH Gloss"
-                      layout="responsive"
-                      objectFit="cover"
+                     
                     />
                   </Box>
                   <Text
@@ -287,8 +283,7 @@ const PremiumProtection = () => {
                     <Image
                       src={topPicks5}
                       alt="CAMIO TPU Clear Gloss"
-                      layout="responsive"
-                      objectFit="cover"
+                     
                     />
                   </Box>
                   <Text
