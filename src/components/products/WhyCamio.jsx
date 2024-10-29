@@ -18,12 +18,12 @@ import {
 } from "@chakra-ui/react";
 import { HiChevronDown } from "react-icons/hi";
 import whycamio1 from "../../assets/whyCamio1.png";
-import tpuSeries1 from "../../assets/tpuSeries1.png";
-import tpuSeries2 from "../../assets/tpuSeries2.png";
-import tpuSeries3 from "../../assets/tpuSeries3.png";
-import tpuSeries4 from "../../assets/tpuSeries4.png";
+// import tpuSeries1 from "../../assets/tpuSeries1.png";
+// import tpuSeries2 from "../../assets/tpuSeries2.png";
+// import tpuSeries3 from "../../assets/tpuSeries3.png";
+// import tpuSeries4 from "../../assets/tpuSeries4.png";
 
-const WhyCamio = () => {
+const WhyCamio = ({ products }) => {
   const features = [
     {
       title: "Superior Protection, Stunning Finish",
@@ -37,33 +37,6 @@ const WhyCamio = () => {
     },
   ];
 
-  const products = [
-    {
-      name: "Camio TPU Clear Gloss",
-      image: tpuSeries1,
-      id: 1,
-      details: "Details about Camio TPU Clear Gloss.",
-    },
-    {
-      name: "CAMIO TPU Black Gloss",
-      image: tpuSeries2,
-      id: 2,
-      details: "Details about CAMIO TPU Black Gloss.",
-    },
-    {
-      name: "CAMIO TPU Clear Matte",
-      image: tpuSeries3,
-      id: 3,
-      details: "Details about CAMIO TPU Clear Matte.",
-    },
-    {
-      name: "CAMIO TPU Another Matte",
-      image: tpuSeries4,
-      id: 4,
-      details: "Details about CAMIO TPU Another Matte.",
-    },
-  ];
-
   return (
     <Flex direction="column" align="center" justify="center" minHeight="100vh">
       <h1>CAMIO Series</h1>
@@ -74,15 +47,14 @@ const WhyCamio = () => {
         features={features}
         flexDirection="reverse-flex"
       />
-
       <Box
-        width="100vw" 
+        width="100vw"
         p={4}
         bgGradient="linear(to-r, rgba(158, 194, 194, 0.2) 21.17%, rgba(213, 203, 159, 0.2) 91.44%)"
         position="relative"
         left="50%"
         right="50%"
-        transform="translateX(-50%)" // Center the Box on the page
+        transform="translateX(-50%)"
       >
         <Heading as="h1" size="xl" textAlign="center" mb={8}>
           Available Products in TPU Series
@@ -98,7 +70,7 @@ const WhyCamio = () => {
               bg="#FFFFFF"
               transition="box-shadow 0.3s"
               m={2}
-              maxW="300px" 
+              maxW="300px"
             >
               <Box className="aspect-square overflow-hidden p-5">
                 <Image
@@ -147,5 +119,4 @@ const WhyCamio = () => {
     </Flex>
   );
 };
-
 export default WhyCamio;
