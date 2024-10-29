@@ -76,7 +76,7 @@ const WhyChoose = () => {
                   <Heading size="lg" mb={{ base: 0, lg: 2 }}>
                     {feature.title}
                   </Heading>
-                  <Text color="gray.600">
+                  <Text color="gray.600" minH={42}>
                     {feature.description}
                   </Text>
                 </Box>
