@@ -1,7 +1,30 @@
+"use client"
 import React from "react";
 import icon from "@/assets/icons/icon.png";
 import { Box, Heading, Text, Flex } from "@chakra-ui/react";
 import Image from "next/image";
+import cp1 from "@/assets/svgs/cp1";
+import cp2 from "@/assets/svgs/cp2";
+import cp3 from "@/assets/svgs/cp3";
+import cp4 from "@/assets/svgs/cp4";
+import cp5 from "@/assets/svgs/cp5";
+import cp6 from "@/assets/svgs/cp6";
+import at1 from "@/assets/svgs/at1";
+import at2 from "@/assets/svgs/at2";
+import at3 from "@/assets/svgs/at3";
+import at4 from "@/assets/svgs/at4";
+import dl1 from "@/assets/svgs/dl1";
+import dl2 from "@/assets/svgs/dl2";
+import cv1 from "@/assets/svgs/cv1";
+import cv2 from "@/assets/svgs/cv2";
+import cv3 from "@/assets/svgs/cv3";
+import ea1 from "@/assets/svgs/ea1";
+import ea2 from "@/assets/svgs/ea2";
+import vm1 from "@/assets/svgs/vm1";
+import vm2 from "@/assets/svgs/vm2";
+import tq1 from "@/assets/svgs/tq1";
+import tq2 from "@/assets/svgs/tq2";
+//the icons are imported in the same order as they are in figma
 
 const Advantage = () => {
   const advantages = [
@@ -11,7 +34,7 @@ const Advantage = () => {
         "CAMIO PPF provides robust protection for your vehicle's paintwork:",
       advantages: [
         {
-          icon: icon,
+          icon: cp1,
           title: "Superior Defense Against Road Debris:",
           description:
             "Protects against stone chips, gravel, and other road hazards.",
@@ -204,7 +227,7 @@ const Advantage = () => {
               {adv.title}
             </Heading>
             <Text fontSize={"sm"} color={"gray.600"} pb={4}>
-              {adv.description}
+              {adv.description} 
             </Text>
             <Flex flexWrap={'wrap'} gap={4}  >
               {adv.advantages.map((adv, i) => (

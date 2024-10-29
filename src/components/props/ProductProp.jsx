@@ -15,7 +15,7 @@ const ProductProp = ({
     <div className="max-w-full mx-auto p-8">
       <Card overflow="hidden" boxShadow="none" border="none">
         <div
-          className={`lg:flex ${flexDirection === "reverse-flex" ? "flex-row-reverse" : "flex-row"} gap-8`} 
+          className={`md:flex ${flexDirection === "reverse-flex" ? "flex-row-reverse" : "flex-row"} gap-8`} 
         >
           <div className="p-6 flex items-center w-full md:w-1/2">
             <Image
