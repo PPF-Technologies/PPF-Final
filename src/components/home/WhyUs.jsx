@@ -87,7 +87,7 @@ const WhyUs = () => {
   ];
 
   return (
-    <Box px={{ base: 2, lg: 36, md:20, '2xl':80 }}>
+    <Box px={{ base: 2, lg: 36, md: 20, '2xl': 80 }}>
       {/* Button Section */}
       <Button
         bg={"transparent"}
@@ -109,7 +109,7 @@ const WhyUs = () => {
       <Flex
         mt={6}
         flexDirection={{ base: "column", lg: "row" }}
-        
+
       >
         <Heading
           as={"h2"}
@@ -121,23 +121,23 @@ const WhyUs = () => {
           Why is CAMIO PPF the Ultimate Choice for Vehicle Protection?
         </Heading>
 
-        <Box width={{ base: "100%", lg: "50%" }} px={{base:0, lg:6}}  borderColor={'#7F7F7F'}
-            borderStyle={'solid'}
-            borderLeftWidth={{base:0, lg:1}}
-            borderTopWidth={{base:0, lg:0}}>
+        <Box width={{ base: "100%", lg: "50%" }} px={{ base: 0, lg: 6 }} borderColor={'#7F7F7F'}
+          borderStyle={'solid'}
+          borderLeftWidth={{ base: 0, lg: 1 }}
+          borderTopWidth={{ base: 0, lg: 0 }}>
           <Text
             // className="lg:border-l border-[#7F7F7F] border-t lg:border-t-0"
             borderColor={'#7F7F7F'}
             borderStyle={'solid'}
-            borderLeftWidth={{base:0, lg:0}}
-            borderTopWidth={{base:1, lg:0}}
+            borderLeftWidth={{ base: 0, lg: 0 }}
+            borderTopWidth={{ base: 1, lg: 0 }}
             pl={{ base: 0, lg: 10 }}
             fontWeight={400}
             fontSize={{ base: "16px", md: "18px" }} // Responsive font size
             color={"#515151"}
-            textAlign={{base:'center', lg: "left"}}
-            pt={{base:4, lg:0}}
-            mt={{base:4, lg:0}}
+            textAlign={{ base: 'center', lg: "left" }}
+            pt={{ base: 4, lg: 0 }}
+            mt={{ base: 4, lg: 0 }}
           >
             When it comes to safeguarding your vehicle’s paintwork, CAMIO PPF
             stands out as the ultimate solution. Our Paint Protection Film (PPF)
@@ -154,51 +154,51 @@ const WhyUs = () => {
       </Flex>
 
       {/* Accordion and Image Section */}
-      <Flex mt={16} flexDirection={{base:'column', lg:'row'}} >
+      <Flex mt={16} flexDirection={{ base: 'column', lg: 'row' }} >
         {/* Left Side: Accordion */}
-        <Box width={{base:'100%', lg:"60%"}} pr={6}>
-        <Accordion allowToggle>
-  {accordionData.map((item, index) => (
-    <AccordionItem key={item.id} flexShrink={0}>
-      {({ isExpanded }) => (
-        <>
-          <h2>
-            <AccordionButton
-              onClick={() => setActiveAccordion(index)}
-              _expanded={{ bg: "gray.100" }}
-              _hover={{ bg: "gray.100" }}
-              _focus={{ boxShadow: "none" }}
-            >
-              <Box
-                flex="1"
-                textAlign="left"
-                py={2}
-                gap={16}
-                display="flex"
-                alignItems="center"
-                color={isExpanded ? "black" : "gray.500"}
-              >
-                <Text fontWeight={600} mr={2}>
-                  {item.id}.
-                </Text>
-                <Text fontWeight={600}>{item.title}</Text>
-              </Box>
-              <AccordionIcon color={isExpanded ? "black" : "gray.500"} />
-            </AccordionButton>
-          </h2>
-          <AccordionPanel pb={0} mt={2} mx={0} py={3}>
-            {item.content}
-          </AccordionPanel>
-        </>
-      )}
-    </AccordionItem>
-  ))}
-</Accordion>
+        <Box width={{ base: '100%', lg: "60%" }} pr={6}>
+          <Accordion allowToggle>
+            {accordionData.map((item, index) => (
+              <AccordionItem key={item.id} flexShrink={0}>
+                {({ isExpanded }) => (
+                  <>
+                    <h2>
+                      <AccordionButton
+                        onClick={() => setActiveAccordion(index)}
+                        _expanded={{ bg: "gray.100" }}
+                        _hover={{ bg: "gray.100" }}
+                        _focus={{ boxShadow: "none" }}
+                      >
+                        <Box
+                          flex="1"
+                          textAlign="left"
+                          py={2}
+                          gap={16}
+                          display="flex"
+                          alignItems="center"
+                          color={isExpanded ? "black" : "gray.500"}
+                        >
+                          <Text fontWeight={600} mr={2}>
+                            {item.id}.
+                          </Text>
+                          <Text fontWeight={600}>{item.title}</Text>
+                        </Box>
+                        <AccordionIcon color={isExpanded ? "black" : "gray.500"} />
+                      </AccordionButton>
+                    </h2>
+                    <AccordionPanel pb={0} mt={2} mx={0} py={3}>
+                      {item.content}
+                    </AccordionPanel>
+                  </>
+                )}
+              </AccordionItem>
+            ))}
+          </Accordion>
 
         </Box>
 
         {/* Right Side: Image */}
-        <Box width={"35%"} px={8} display={{base:'none', lg:'block'}}>
+        <Box width={"35%"} px={8} display={{ base: 'none', lg: 'block' }}>
           <Image
             src={accordionData[activeAccordion].imageUrl}
             alt={`Accordion ${accordionData[activeAccordion].title} Image`}

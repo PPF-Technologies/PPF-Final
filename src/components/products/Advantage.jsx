@@ -193,24 +193,24 @@ const Advantage = () => {
     },
   ];
   return (
-    <Box>
-      <Heading as={"h3"} mx={"auto"} width={"45%"} textAlign={"center"}>
+    <Box maxW={{ '2xl': '1500px' }} mx={{ '2xl': 'auto' }}>
+      <Heading as={"h3"} mx={"auto"} width={{ base: '100%', lg: "45%" }} textAlign={"center"}>
         Discover the CAMIO Advantage: Premium Protection for Your Vehicle
       </Heading>
-      <Box p={4} px={10}>
+      <Box p={4} px={{ base: 4, lg: 10 }} >
         {advantages.map((adv, i) => (
           <Box key={i} py={4}>
             <Heading as={"h4"} fontSize={"lg"}>
               {adv.title}
             </Heading>
-            <Text fontSize={"sm"} color={"gray.600"} pb={6}>
+            <Text fontSize={"sm"} color={"gray.600"} pb={4}>
               {adv.description}
             </Text>
             <Flex flexWrap={'wrap'} gap={4}  >
               {adv.advantages.map((adv, i) => (
-                <Flex key={i} width={{ base: '46%', lg: "46%" }} bg={'#F4F6FA'} p={4} gap={2} alignItems={'center'} borderRadius={'lg'}>
+                <Flex key={i} width={{ base: '98%', lg: "49%" }} bg={'#F4F6FA'} p={4} gap={2} alignItems={'center'} borderRadius={'lg'}>
                   <Box mb={2}>
-                    <Image src={adv.icon} width={40} height={40} />
+                    <Image src={adv.icon} width={40} height={40} alt="icon" />
                   </Box>
                   <Box>
                     <Heading as={"h5"} fontSize={"sm"}>

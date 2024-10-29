@@ -18,9 +18,10 @@ const HeroOld = () => {
           width={300}
           height={"full"}
           className="absolute left-[50%] bottom-[2%] translate-y-1/2 -z-10 opacity-30"
+          alt="banner image"
         />
 
-        <Image src={Danda} className="absolute rotate-90 w-[90vh] left-[73%] "  />
+        <Image src={Danda} className="absolute rotate-90 w-[90vh] left-[73%] " alt="Danda"  />
       
 
         <div className="flex flex-col items-start h-full justify-center w-[50%] px-14">
@@ -55,7 +56,7 @@ const HeroOld = () => {
         {/* Image Section */}
         <div className="w-[65%] relative flex flex-col items-center">
           <p className="absolute text-[200px] -z-10  bg-clip-text text-transparent bg-gradient-to-b from-orange-400 to-yellow-400 -top-20 left-10">CAMIO</p>
-          <Image src={scooty} className="w-[80vw]" />
+          <Image src={scooty} className="w-[80vw]" alt="scooty" />
           <div className="border-2 p-4 rounded-xl border-blue-200 backdrop-blur-md w-[28rem] -translate-x-20 text-gray-800 mt-4">
             Shield your vehicle with CAMIO’s top-tier Paint Protection Film,
             trusted by professionals worldwide
