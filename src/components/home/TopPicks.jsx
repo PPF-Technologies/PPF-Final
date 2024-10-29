@@ -1,4 +1,3 @@
-"use client";
 
 import React from "react";
 import {
@@ -20,6 +19,7 @@ import topPicks5 from "../../assets/topPicks5.png";
 import Image from "next/image";
 import { FiChevronRight } from "react-icons/fi";
 import Button2 from "../props/Button2";
+import Link from "next/link";
 // import AnimButton from "../components/props/Button";
 
 const PremiumProtection = () => {
@@ -211,7 +211,8 @@ const PremiumProtection = () => {
               justifyContent="center"
               alignItems="center"
             >
-              <Button2>Explore Our Products</Button2>
+              <Link href={'/products'}>
+              <Button2>Explore Our Products</Button2></Link>
             </Box>
 
             {/* Fourth Product Card */}
@@ -307,7 +308,8 @@ const PremiumProtection = () => {
         justifyContent="center"
         alignItems="center"
       >
-        <Button2>Explore Our Products</Button2>
+         <Link href={'/products'}>
+         <Button2>Explore Our Products</Button2></Link>
       </Box>
     </Box>
   );

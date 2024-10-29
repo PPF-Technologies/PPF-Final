@@ -210,7 +210,7 @@ const Advantage = () => {
               {adv.advantages.map((adv, i) => (
                 <Flex key={i} width={{ base: '98%', lg: "49%" }} bg={'#F4F6FA'} p={4} gap={2} alignItems={'center'} borderRadius={'lg'}>
                   <Box mb={2}>
-                    <Image src={adv.icon} width={40} height={40} />
+                    <Image src={adv.icon} width={40} height={40} alt="icon" />
                   </Box>
                   <Box>
                     <Heading as={"h5"} fontSize={"sm"}>

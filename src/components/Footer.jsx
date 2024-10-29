@@ -326,7 +326,7 @@ const Footer = () => {
             <Text fontSize={{ base: "10px", lg: "16px" }}>
               © {currentYear} Copyright By Camio PPF
             </Text>
-            <Image src={logo} width={150} height="auto" />
+            <Image src={logo} width={150} height="auto"  alt="logo" />
             <HStack spacing={4}>
               {["Terms", "Privacy", "Cookies", "Legal", "Recalls"].map(
                 (policy) => (
