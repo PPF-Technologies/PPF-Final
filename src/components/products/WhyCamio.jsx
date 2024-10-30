@@ -35,14 +35,19 @@ const WhyCamio = ({ products }) => {
 
   return (
     <Box width="100vw" height="auto">
-      <Flex direction="column" align="center" justify="center" minHeight="100vh">
+      <Flex
+        direction="column"
+        align="center"
+        justify="center"
+        minHeight="100vh"
+      >
         <Box maxW={{ "2xl": "1500px" }} mx={{ "2xl": "auto" }}>
           <ProductProp
             imageSrc={whycamio1}
             title="CAMIO Elite TPU Protection Series"
             description="When it comes to safeguarding your vehicle’s paintwork, CAMIO PPF stands out as the ultimate solution."
             features={features}
-            flexDirection="reverse-flex"
+            flexDirection="flex"
           />
         </Box>
 
@@ -52,7 +57,7 @@ const WhyCamio = ({ products }) => {
           bgGradient="linear(to-r, rgba(158, 194, 194, 0.2) 21.17%, rgba(213, 203, 159, 0.2) 91.44%)"
           position="relative"
         >
-          <Heading as="h1" size="xl" textAlign="center" mb={8}>
+          <Heading as="h1" size="xl" textAlign="center" mb={8} mt={4}>
             Available Products in TPU Series
           </Heading>
 
@@ -81,17 +86,20 @@ const WhyCamio = ({ products }) => {
                     />
                   </Box>
 
-                  <VStack spacing={5} p={5} align="start" flex="1">
-                    <Heading fontSize="24px" fontWeight="700" pb={2}>
+                  <Box minH="58px" p={5} mb={10} align="start" flex="1">
+                    {" "}
+                    {/* Add mt={4} for spacing */}
+                    <Heading fontSize="24px" fontWeight="700" m={0}>
                       {product.name}
                     </Heading>
-                  </VStack>
+                  </Box>
 
                   <Popover>
                     <PopoverTrigger>
                       <Flex justify="center" pb={4}>
                         <Button
                           variant="outline"
+                          borderRadius="50px"
                           colorScheme="gray"
                           width="262px"
                           rightIcon={<HiChevronDown />}
@@ -107,8 +115,8 @@ const WhyCamio = ({ products }) => {
                       <PopoverBody>{product.details}</PopoverBody>
                       <PopoverFooter>
                         {/* <Button variant="outline" colorScheme="blue" width="full">
-                          Close
-                        </Button> */}
+          Close
+        </Button> */}
                       </PopoverFooter>
                     </PopoverContent>
                   </Popover>
