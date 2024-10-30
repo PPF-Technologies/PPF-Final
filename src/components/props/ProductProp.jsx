@@ -14,12 +14,10 @@ const ProductProp = ({
   return (
     <div className="max-w-full mx-auto p-4 md:p-8">
       <Card overflow="hidden" boxShadow="none" border="none">
-        <div
-          className={`md:flex flex-col ${
-            flexDirection === "reverse-flex"
-              ? "md:flex-row-reverse"
-              : "md:flex-row"
-          } gap-6 md:gap-8`}
+        <div className={`md:flex flex-col ${flexDirection === "reverse-flex"
+            ? "md:flex-row-reverse"
+            : "md:flex-row"
+            } gap-6 md:gap-8`}
         >
           {/* Image Section */}
           <div className="p-4 flex justify-center items-center w-full md:w-1/2">
@@ -44,29 +42,27 @@ const ProductProp = ({
             <CardHeader padding="0">
               <Heading
                 as="h2"
-                fontSize={{ base: "28px", md: "36px", lg: "42px" }}
+                fontSize={{ base: "28px", md: "32px", lg: "42px" }}
                 fontWeight="700"
                 textAlign="left"
-                mb={{ base: "18px", md: "24px" }}
+                mb={{ base: "18px", lg: "24px" }}
               >
                 {title}
               </Heading>
               <p
                 style={{
-                  fontSize: "18px",
-                  fontWeight: 400,
-                  lineHeight: "1.6",
+                  lineHeight: "1.4",
                   textAlign: "left",
-                  marginBottom: "36px",
                 }}
+                className="lg:text-[18px] font-[400] mb-0"
               >
                 {description}
               </p>
             </CardHeader>
             <CardBody padding="0">
-              <div className="space-y-8 flex flex-col">
+              <div className="lg:space-y-8 space-y-4 flex flex-col">
                 {features.map((feature, index) => (
-                  <div key={index} className="flex items-start space-x-4">
+                  <div key={index} className="flex items-start space-x-2">
                     <div className="pt-2">
                       <HiOutlineCheckCircle
                         className="text-[#007660]"
@@ -75,9 +71,9 @@ const ProductProp = ({
                     </div>
                     <div>
                       <Heading
-                        fontSize={{ base: "20px", md: "24px", lg: "30px" }}
+                        fontSize={{ base: "20px", md: "20px", lg: "30px" }}
                         fontWeight="500"
-                        mb="24px"
+                        mb={{ base: 2, md: 0, lg: "10px" }}
                       >
                         {feature.title}
                       </Heading>
@@ -85,7 +81,7 @@ const ProductProp = ({
                         style={{
                           fontSize: "16px",
                           fontWeight: 400,
-                          lineHeight: "1.6",
+                          lineHeight: "1.4",
                         }}
                       >
                         {feature.description}
