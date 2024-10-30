@@ -61,11 +61,11 @@ const WhyCamio = ({ products }) => {
             Available Products in TPU Series
           </Heading>
 
-          <Flex justify="center" wrap="wrap" gap={0} p={1}>
+          <Flex justify="center" wrap="wrap" gap={0} p={1} maxW={{'2xl':"1500px"}} mx={{'2xl':"auto"}}>
             {products.map((product) => (
               <Box
                 key={product.id}
-                width="310px"
+                width={{ base: "95%", sm: "45%", lg: "22%" }}
                 height="399px"
                 borderWidth="1px"
                 borderRadius="20px 20px 20px 20px"
@@ -87,9 +87,7 @@ const WhyCamio = ({ products }) => {
                   </Box>
 
                   <Box minH="58px" p={5} mb={10} align="start" flex="1">
-                    {" "}
-                    {/* Add mt={4} for spacing */}
-                    <Heading fontSize="24px" fontWeight="700" m={0}>
+                    <Heading fontSize="24px" fontWeight="600" m={0}>
                       {product.name}
                     </Heading>
                   </Box>

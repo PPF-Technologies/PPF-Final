@@ -15,9 +15,19 @@ const productData = [
         image: camio,
         description: 'CAMIO TPU Clear Gloss offers premium paint protection with an ultra-high gloss finish. Ideal for luxury vehicles, it enhances the natural shine of the paintwork while providing superior protection against scratches, road debris, and environmental elements.',
         details: {
-          keyFeatures: ['Feature 1', 'Feature 2', 'Feature 3', 'Feature 4'],
+          keyFeatures: ["Ultra-gloss finish for enhanced shine.",
+            "Self-healing technology for minor scratches.",
+            "Ultra-gloss finish for enhanced shine.",
+            "Ultra-gloss finish for enhanced shine.",
+            "Ultra-gloss finish for enhanced shine.",
+            "Ultra-gloss finish for enhanced shine."],
           usages: ['Usage 1', 'Usage 2', 'Usage 3', 'Usage 4'],
-          specifications: ['Spec 1', 'Spec 2', 'Spec 3', 'Spec 4']
+          specifications: ["Ultra-gloss finish for enhanced shine.",
+            "Self-healing technology for minor scratches.",
+            "Ultra-gloss finish for enhanced shine.",
+            "Ultra-gloss finish for enhanced shine.",
+            "Ultra-gloss finish for enhanced shine.",
+            "Ultra-gloss finish for enhanced shine."]
         }
       },
 
@@ -52,7 +62,7 @@ const ProductsTab = () => {
         >
           {productData.map((tab, index) => (
             <Tab
-            fontSize={{base:'xl', md:'2xl', lg:'4xl'}} fontWeight={'semibold'}
+              fontSize={{ base: 'xl', md: '2xl', lg: '4xl' }} fontWeight={'semibold'}
               key={index}
               _selected={{ borderBottom: '2px solid', borderColor: 'black' }} // Customizes selected tab border
             >
@@ -71,17 +81,17 @@ const ProductsTab = () => {
                   alignItems="center"
                   direction={{ base: 'column', md: 'row' }} // Stack on small screens, row on larger
                 >
-                  <Box width={{ base: '100%', md: '50%' }} padding={{ base: 4, md: 8, lg: 20, '2xl': 32 }}>
+                  <Box width={{ base: '100%', md: '50%' }} padding={{ base: 4, md: 8, lg: 16, '2xl': 28 }}>
                     <Image
                       src={product.image}
                       alt="Product image"
                       width={{ base: '100%', md: 500 }}
                       height={{ base: 'auto', md: 500 }}
-                      objectFit="contain" // Scale image to fit its container
+
                     />
                   </Box>
                   <Box width={{ base: '100%', md: '50%' }} padding={{ base: 4, md: 8 }}>
-                    <Heading as="h3" py={{ base: 2, md: 4 }} fontSize={{ base: 'lg', md: '2xl' }}>
+                    <Heading as="h3" py={{ base: 2, md: 4 }} fontSize={{ base: 'lg', md: '2xl', lg: '4xl' }}>
                       {product.title}
                     </Heading>
                     <Text py={{ base: 2, md: 4 }} fontSize={{ base: 'sm', md: 'md' }}>
@@ -93,7 +103,7 @@ const ProductsTab = () => {
                         <Tab py={{ base: 3, md: 6 }}>Usages</Tab>
                         <Tab py={{ base: 3, md: 6 }}>Specifications</Tab>
                       </TabList>
-                      <TabPanels minHeight="200px">
+                      <TabPanels height="230px" overflowY={'auto'}>
                         <TabPanel>
                           <UnorderedList>
                             {product.details.keyFeatures.map((feature, i) => (
