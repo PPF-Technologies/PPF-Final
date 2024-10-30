@@ -21,7 +21,7 @@ const Gallery = () => {
         Gallery
       </Heading>
       <Text mb={{base:5, md:10}} textAlign="center" fontSize={{base:"16px", md:"20px"}} fontWeight="400" color="#121212CC">
-      "Unmatched Protection, Unbeatable Shine"
+      &&quot;Unmatched Protection, Unbeatable Shine&&quot;
       </Text>
 
       {/* Image Grid */}
