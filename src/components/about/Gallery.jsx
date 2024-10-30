@@ -1,137 +1,34 @@
-import React from "react";
-import { Box, Grid, Flex, Link } from "@chakra-ui/react";
-import Image from "next/image";
-import gallery1 from "../../assets/aboutGallery1.png";
-import gallery2 from "../../assets/aboutGallery2.png";
-import gallery3 from "../../assets/aboutGallery3.png";
-import gallery4 from "../../assets/aboutGallery4.png";
+import { Flex, Box } from '@chakra-ui/react'
+import Image from 'next/image'
+import React from 'react'
+import camio from "@/assets/camio.png"
+import carimage from "@/assets/carimage.png"
+import logo from "@/assets/logo.png"
+import danda from "@/assets/CAMIO1.png"
+
 
 const Gallery = () => {
   return (
-    <Grid templateColumns={{ base: "1fr", lg: "repeat(3, 1fr)" }} gap={6}>
-      {/* Main large image */}
-      <Box
-        position="relative"
-        bg="white"
-        borderRadius="lg"
-        boxShadow="md"
-        h="600px"
-        w="auto"
-        borderWidth="3px"
-        borderColor="gray.300"
-      >
-        <Image src={gallery1} alt="Gallery 1" layout="fill" objectFit="cover" />
+    <Flex width={'100%'} p={{ lg: 4, '2xl': 40 }} flexDir={{base:'column', lg:'row'}} >
+      <Box width={{base:'100%', lg:'66%'}}>
+        <Flex width={'100%'}>
+          <Box width={'full'} p={2}><Image src={camio} alt='camio' width={400} height={420} className='w-full' /></Box>
+          <Box width={'full'} >
+            <Box width={'full'} p={2}><Image src={carimage} alt='carimage' width={400} height={300} className='w-full' /></Box>
+            <Box width={'full'} p={2}><Image src={logo} alt='logo' className='w-full' height={120} width={400} /></Box>
+          </Box>
+        </Flex>
+        <Box width={'100%'} p={2}>
+          <Image src={danda} alt='camio' width={800} height={60} className='w-full' />
+        </Box>
       </Box>
-
-      {/* Left column with images */}
-      <Flex direction="column" gap={6}>
-        <Box
-          position="relative"
-          bg="white"
-          borderRadius="lg"
-          boxShadow="md"
-          h="400px"
-          w="auto"
-        >
-          <Image
-            src={gallery2}
-            alt="Gallery 2"
-            layout="fill"
-            objectFit="cover"
-          />
-        </Box>
-        <Box
-          position="relative"
-          bg="white"
-          borderRadius="lg"
-          boxShadow="md"
-          h="200px"
-          w="auto"
-        >
-          <Image
-            src={gallery3}
-            alt="Gallery 3"
-            layout="fill"
-            objectFit="cover"
-          />
-        </Box>
+      <Flex width={{base:'100%', lg:'33%'}} flexDir={'column'}>
+        <Box p={2}><Image src={logo} alt='logo' className='w-full' height={60} width={400} /></Box>
+        <Box p={2}><Image src={camio} alt='camio' width={400} height={520} className='w-full' /></Box>
+        {/* <Box><Image src={camio} alt='camio' width={400} height={300} className='w-full' /></Box> */}
       </Flex>
+    </Flex>
+  )
+}
 
-      {/* Large vertical box with three images */}
-      <Box
-        position="relative"
-        bg="white"
-        borderRadius="lg"
-        boxShadow="md"
-        h="450px"
-        w="auto"
-        d="flex"
-        flexDirection="column"
-        justifyContent="space-between"
-      >
-        <Flex align="center" justify="space-between" mb={2}>
-          <Box position="relative" h="200px" w={{base:"100%", lg:"fill"}}>
-            <Image
-              src={gallery1}
-              alt="Gallery 1 - Small"
-              layout="fill"
-              objectFit="cover"
-            />
-          </Box>
-        </Flex>
-        <Flex align="center" justify="space-between" mb={2}>
-          <Box position="relative" h="150px" w={{base:"100%", lg:"fill"}}>
-            <Image
-              src={gallery2}
-              alt="Gallery 2 - Small"
-              layout="fill"
-              objectFit="cover"
-            />
-          </Box>
-        </Flex>
-        <Flex align="center" justify="space-between" mb={2}>
-          <Box position="relative" h="270px" w={{base:"100%", lg:"fill"}}>
-            <Image
-              src={gallery3}
-              alt="Gallery 3 - Small"
-              layout="fill"
-              objectFit="cover"
-            />
-          </Box>
-        </Flex>
-      </Box>
-
-      {/* Right column with images */}
-      <Box
-        position="relative"
-        bg="white"
-        borderRadius="lg"
-        boxShadow="md"
-        h="400px"
-        w={{base:"100%", lg:"600px"}}
-      >
-        <Image src={gallery4} alt="Gallery 4" layout="fill" objectFit="cover" />
-      </Box>
-
-      {/* App Store and Google Play links */}
-        <Box position="relative" w={{base:"100%", lg:"350px"}} h="400px">
-          <Image
-            src={gallery1}
-            alt="App Store"
-            layout="fill"
-            objectFit="cover"
-          />
-        </Box>
-        <Box ml={4} position="relative" w={{base:"100%", lg:"500px"}} h="400px">
-          <Image
-            src={gallery2}
-            alt="Google Play"
-            layout="fill"
-            objectFit="cover"
-          />
-        </Box>
-    </Grid>
-  );
-};
-
-export default Gallery;
+export default Gallery

@@ -75,18 +75,18 @@ const WhyCamio = ({ products }) => {
                 m={2}
               >
                 <Flex direction="column" height="100%">
-                  <Box className="aspect-square overflow-hidden p-5">
+                  <Box className=" overflow-hidden p-5">
                     <Image
                       src={product.image}
                       alt={product.name}
-                      layout="responsive"
+                      
                       width={400}
                       height={400}
-                      objectFit="cover"
+                      
                     />
                   </Box>
 
-                  <Box minH="58px" p={5} mb={10} align="start" flex="1">
+                  <Box minH="58px" px={5} mb={10} align="start" flex="1">
                     <Heading fontSize="24px" fontWeight="600" m={0}>
                       {product.name}
                     </Heading>
