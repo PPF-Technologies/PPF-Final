@@ -91,6 +91,7 @@ const WhyUs = () => {
       {/* Button Section */}
       <Button
         bg={"transparent"}
+        cursor={'default'}
         margin={{ base: "auto", lg: 0 }}
         borderStyle={"solid"}
         borderRadius={"full"}
@@ -114,14 +115,14 @@ const WhyUs = () => {
         <Heading
           as={"h2"}
           fontWeight={600}
-          width={{ base: "100%", lg: "50%" }}
+          width={{ base: "100%", lg: "55%" }}
           fontSize={{ base: "32px", lg: "48px" }}
           textAlign={{ base: "center", lg: "left" }}
         >
           Why is CAMIO PPF the Ultimate Choice for Vehicle Protection?
         </Heading>
 
-        <Box width={{ base: "100%", lg: "50%" }} px={{ base: 0, lg: 6 }} borderColor={'#7F7F7F'}
+        <Box width={{ base: "100%", lg: "45%" }} px={{ base: 0, lg: 6 }} borderColor={'#7F7F7F'}
           borderStyle={'solid'}
           borderLeftWidth={{ base: 0, lg: 1 }}
           borderTopWidth={{ base: 0, lg: 0 }}>
@@ -156,7 +157,7 @@ const WhyUs = () => {
       {/* Accordion and Image Section */}
       <Flex mt={16} flexDirection={{ base: 'column', lg: 'row' }} >
         {/* Left Side: Accordion */}
-        <Box width={{ base: '100%', lg: "60%" }} pr={6}>
+        <Box width={{ base: '100%', lg: "55%" }} pr={6}>
           <Accordion allowToggle>
             {accordionData.map((item, index) => (
               <AccordionItem key={item.id} flexShrink={0}>
@@ -198,7 +199,7 @@ const WhyUs = () => {
         </Box>
 
         {/* Right Side: Image */}
-        <Box width={"35%"} px={8} display={{ base: 'none', lg: 'block' }}>
+        <Box width={"45%"} px={8} display={{ base: 'none', lg: 'block' }}>
           <Image
             src={accordionData[activeAccordion].imageUrl}
             alt={`Accordion ${accordionData[activeAccordion].title} Image`}
@@ -206,7 +207,7 @@ const WhyUs = () => {
             boxShadow="md"
             width={200}
             height={500}
-            className="w-full rounded-xl"
+            className="w-auto h-[455px] rounded-xl"
           />
         </Box>
       </Flex>

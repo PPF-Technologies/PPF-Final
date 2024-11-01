@@ -18,7 +18,7 @@ import topPicks4 from "../../assets/topPicks4.png";
 import topPicks5 from "../../assets/topPicks5.png";
 import Image from "next/image";
 import { FiChevronRight } from "react-icons/fi";
-import Button2 from "../props/Button2";
+import Button2 from "../props/Button";
 import Link from "next/link";
 // import AnimButton from "../components/props/Button";
 
@@ -38,6 +38,7 @@ const PremiumProtection = () => {
               _hover={{ bg: "transparent" }}
               borderWidth={"1px"}
               borderColor={"#E2E2E2"}
+              cursor={'default'}
             >
               <Text pb={{ base: 0, lg: 1 }}>Features that we provide</Text>{" "}
               <FiChevronRight />

@@ -54,7 +54,7 @@ const Reviews2 = () => {
         borderStyle={"solid"}
         borderRadius={"full"}
         fontWeight={500}
-        fontSize={{ base: "10px", md: "12px" }} // Responsive font size
+        fontSize={{ base: "12px", md: "16px" }} // Responsive font size
         _hover={{ bg: "white" }}
         borderWidth={"1px"}
         borderColor={"#E2E2E2"}
@@ -62,8 +62,9 @@ const Reviews2 = () => {
         alignItems={"center"}
         height={'30px'}
         my={8}
+        py={5}
       >
-        <Text>Testimonial</Text> <FiChevronRight />
+        <Text pb={{base:0, lg:1}}>Testimonial</Text> <FiChevronRight />
       </Button>
     
       <Text fontSize="3xl" fontWeight="bold" textAlign="center" mb={8}>
@@ -91,7 +92,7 @@ const Reviews2 = () => {
                 ))}
                 <Text>{review.rating}</Text>
               </HStack>
-              <Text fontWeight={'bold'}>&quot;{review.text}&quot;</Text>
+              <Text fontWeight={'bold'} minH={'144px'}>&quot;{review.text}&quot;</Text>
               <HStack spacing={3}>
                 <Avatar name={review.author} />
                 <VStack spacing={0} align="flex-start">

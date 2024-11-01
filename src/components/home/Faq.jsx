@@ -84,7 +84,7 @@ const Faq = () => {
       maxW="100vw"
       mx={4}
       py={32}
-      px={{ base: 6, lg: 10, '2xl':80 }}
+      px={{ base: 6, lg: 40, '2xl':80 }}
     >
       <Box textAlign="start" mb={8} w={{ base: "100%", md: "35%" }}>
         <Heading fontSize={{ base: "35px", lg: "45px" }} fontWeight={600} mb={6}>

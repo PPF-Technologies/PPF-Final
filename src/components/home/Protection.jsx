@@ -32,7 +32,7 @@ const Protection = () => {
   ];
 
   return (
-    <Box bg={"gray.900"} color={"white"} minHeight={{base:"100vh", '2xl':'85vh'}} py={10} px={{base:5, '2xl':80}}>
+    <Box bg={"gray.900"} color={"white"} minHeight={{base:"100vh", '2xl':'85vh'}} pt={10} px={{base:5, '2xl':80}}>
       {/* Features Button */}
       <Box display="flex" justifyContent="center" py={6}>
         <Button
@@ -103,7 +103,7 @@ const Protection = () => {
           </Flex>
         ))}
       </Grid>
-      <Box display={'flex'} justifyContent={'center'} py={10}><Button2>Contact Us</Button2></Box>
+      {/* <Box display={'flex'} justifyContent={'center'} py={10}><Button2>Contact Us</Button2></Box> */}
     </Box>
   );
 };
