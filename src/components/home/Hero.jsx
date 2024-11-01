@@ -32,7 +32,7 @@ const Hero = () => {
               Unmatched Protection, Unbeatable Shine with Camio PPF
             </Heading>
             <Text mb={6} fontSize={{ base: "md", md: "md" }}>
-              Protect your vehicle with Camio&apos;s top-quality Paint Protection Film. Experience superior protection and lasting shine.
+            Shield your vehicle with CAMIO’s top-tier Paint Protection Film, trusted by professionals worldwide.
             </Text>
 
             <Link href={'/products'} >

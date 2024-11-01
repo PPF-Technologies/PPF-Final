@@ -32,56 +32,63 @@ const WhyUs = () => {
       id: 1,
       title: "Superior Protection",
       content:
-        "CAMIO PPF is made from premium-grade material that offers superior durability.",
+        "CAMIO PPF offers unmatched protection against road debris, scratches, and environmental elements, ensuring your vehicle stays in top condition.",
       imageUrl: Whyusimg1,
     },
     {
       id: 2,
       title: "Self-Healing Technology",
       content:
-        "Our film protects against scratches and harmful UV rays, maintaining the car’s appearance.",
+        "Minor scratches heal automatically, keeping your car’s surface flawless.",
       imageUrl: "/images/scratch-resistant.jpg",
     },
     {
       id: 3,
       title: "Non-Yellowing Formula",
       content:
-        "CAMIO PPF incorporates self-healing properties to repair minor scratches automatically.",
+        " CAMIO PPF is designed with anti-yellowing technology, ensuring the film remains crystal clear and doesn’t discolor over time.",
       imageUrl: "/images/self-healing.jpg",
     },
     {
       id: 4,
       title: "Long-Lasting Durability",
       content:
-        "CAMIO PPF incorporates self-healing properties to repair minor scratches automatically.",
+        " Engineered for durability, CAMIO PPF maintains its integrity for years, providing reliable protection without cracking or peeling.",
       imageUrl: "/images/self-healing.jpg",
     },
     {
       id: 5,
-      title: "Customizable Coverage",
+      title: "5-Year Warranty",
       content:
-        "CAMIO PPF incorporates self-healing properties to repair minor scratches automatically.",
+        "CAMIO PPF comes with a 5-year warranty, giving you peace of mind that your vehicle is protected by a product that stands the test of time.",
       imageUrl: "/images/self-healing.jpg",
     },
     {
       id: 6,
-      title: "Ultra Hydrophobic",
+      title: "Customizable Coverage",
       content:
-        "CAMIO PPF incorporates self-healing properties to repair minor scratches automatically.",
+        "Available in various finishes and customizable for any vehicle, CAMIO PPF ensures a perfect fit and full protection wherever you need it.",
       imageUrl: "/images/self-healing.jpg",
     },
     {
       id: 7,
-      title: "Enhanced Gloss Finish",
+      title: "Ultra Hydrophobic",
       content:
-        "CAMIO PPF incorporates self-healing properties to repair minor scratches automatically.",
+        "CAMIO PPF features ultra-hydrophobic properties, allowing water to bead off easily and making the film resistant to stains and contaminants.",
       imageUrl: "/images/self-healing.jpg",
     },
     {
       id: 8,
+      title: "Enhanced Gloss Finish",
+      content:
+        "The high-gloss finish of CAMIO PPF enhances your vehicle’s appearance, providing a sleek and polished look while protecting the paint underneath.",
+      imageUrl: "/images/self-healing.jpg",
+    },
+    {
+      id: 9,
       title: "No Residue",
       content:
-        "CAMIO PPF incorporates self-healing properties to repair minor scratches automatically.",
+        "CAMIO PPF can be removed cleanly without leaving any adhesive residue, ensuring your vehicle’s paintwork remains unblemished even after the film is removed.",
       imageUrl: "/images/self-healing.jpg",
     },
   ];
@@ -144,7 +151,7 @@ const WhyUs = () => {
             stands out as the ultimate solution. Our Paint Protection Film (PPF)
             is engineered to offer unparalleled protection and aesthetic
             enhancement, making it the preferred choice for discerning vehicle
-            owners.
+            owners. Here’s why CAMIO PPF is the ultimate choice:
           </Text>
           <Box px={8} py={4} className="flex justify-center lg:block" >
             <Link href={"/"}>

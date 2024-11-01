@@ -27,14 +27,15 @@ const Values = () => {
       <Heading mb={6} fontSize="24px" fontWeight="700" lineHeight={"37px"}>
         Our Values
       </Heading>
-      <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} w="100%" spacing={6}>
+      <SimpleGrid columns={{ base: 1, lg: 4 }} w="100%" spacing={6}>
         {valuesData.map((value, index) => (
           <Box
             key={index}
             textAlign="center"
             px={4}
             py={6}
-            borderRight={index < valuesData.length - 1 ? "3px solid" : "none"}
+            borderRight={{ base: "none", lg: index < valuesData.length - 1 ? "3px solid" : "none" }} 
+            borderBottom={{ base: "3px solid", lg: "none" }} 
             borderImage="linear-gradient(270deg, rgba(76, 111, 255, 0) 0%, #4C6FFF 50%, rgba(76, 111, 255, 0) 100%) 1"
           >
             <Heading fontSize="18px" fontWeight="700" lineHeight={"21.78px"} mb={2}>

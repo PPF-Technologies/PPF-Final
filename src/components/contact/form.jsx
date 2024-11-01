@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import {
   Box,
-  Button,
   Checkbox,
   FormControl,
   FormLabel,
@@ -18,6 +17,14 @@ import {
   Flex,
   Grid,
 } from "@chakra-ui/react";
+
+// import {
+//   MenuContent,
+//   MenuItem,
+//   MenuRoot,
+//   MenuTrigger,
+// } from "@/components/ui/menu";
+
 import {
   FaMapMarkerAlt,
   FaRegEnvelope,
@@ -28,6 +35,7 @@ import {
   FaUser,
   FaPenSquare,
 } from "react-icons/fa";
+import { FaPen } from "react-icons/fa6";
 import Image from "next/image";
 import whatsApp from "../../assets/icons/whatsapp.svg";
 import Button2 from "../props/Button2";
@@ -71,8 +79,8 @@ const ContactForm = () => {
       direction="column"
       align="center"
       justify="center"
-      width="100%"
-      px={{ base: "20px", lg: "150px" }}
+      width="100vw" // Set to 100vw to ensure full width
+      px={{ base: "20px", lg: "150px" }} // Padding for larger screens
     >
       <Heading
         my={{ base: "20px", lg: "50px" }}
@@ -85,12 +93,12 @@ const ContactForm = () => {
       </Heading>
 
       <Flex
-        maxW={{ base: "100%", md: "1500px" }}
+        // Remove maxW to allow full width
         mx="auto"
         p={{ base: 4, md: 6 }}
         direction={{ base: "column", lg: "row" }}
         spacing={6}
-        width="100%"
+        width="100%" // Ensure full width
         justify="center"
         my={{ base: "30px", lg: "50px" }}
       >
@@ -104,13 +112,12 @@ const ContactForm = () => {
           <Heading
             fontSize={{ base: "30px", md: "35px", lg: "43px" }} // Responsive font size
             fontWeight={700}
-            lineHeight="61.1px"
+            lineHeight={{ base: "40px", md: "50px", lg: "62px" }}
             color="#34113F"
             mb={2}
           >
             Have Questions?
-            <br />
-            Get in Touch!
+            <br /> Get in Touch!
           </Heading>
 
           <Text
@@ -118,7 +125,7 @@ const ContactForm = () => {
             fontWeight="400"
             lineHeight="23.8px"
             color="#454D55"
-            mb={8}
+            mb={6}
           >
             Rudra Enterprises
           </Text>
@@ -132,8 +139,8 @@ const ContactForm = () => {
               fontWeight="400"
               color="#344054"
             >
-              Ground Floor, Right Portion, KHASRA NO. 292/3, Thada Wali Gali,
-              Near Bai Baba Mandir, Alipur, Delhi 110036
+              Ground Floor, Right Portion, KHASRA NO. 29/23, Theke Wali Gali,
+              Near Sai Baba Mandir, Alipur, Delhi 110036
             </Text>
           </HStack>
 
@@ -186,13 +193,15 @@ const ContactForm = () => {
           <Flex justify="center">
             <form onSubmit={handleSubmit}>
               <Stack spacing={{ base: 6, md: 8, lg: 12 }}>
-                {" "}
                 <Grid
-                  templateColumns="repeat(2, 1fr)" // Responsive grid
-                  gap={6} // Adjust gap for responsiveness
+                  templateColumns={{
+                    base: "repeat(1, 1fr)",
+                    md: "repeat(2, 1fr)",
+                  }}
+                  gap={6}
                 >
-                  <FormControl isRequired>
-                    <HStack>
+                  <FormControl isRequired width="100%">
+                    <HStack spacing={2} width="100%">
                       <Icon as={FaUser} color="#98A2B3" boxSize={5} />
                       <Input
                         type="text"
@@ -202,6 +211,7 @@ const ContactForm = () => {
                         borderRadius="none"
                         borderBottom="2px solid #98A2B3"
                         focusBorderColor="transparent"
+                        width="100%" // Ensure Input takes 100% width
                         value={formData.name}
                         onChange={handleChange}
                         sx={{
@@ -217,8 +227,8 @@ const ContactForm = () => {
                     </HStack>
                   </FormControl>
 
-                  <FormControl isRequired>
-                    <HStack>
+                  <FormControl isRequired width="100%">
+                    <HStack spacing={2} width="100%">
                       <Icon as={FaRegEnvelope} color="#98A2B3" boxSize={5} />
                       <Input
                         type="email"
@@ -228,6 +238,7 @@ const ContactForm = () => {
                         borderRadius="none"
                         borderBottom="2px solid #98A2B3"
                         focusBorderColor="transparent"
+                        width="100%" // Ensure Input takes 100% width
                         value={formData.email}
                         onChange={handleChange}
                         sx={{
@@ -243,8 +254,8 @@ const ContactForm = () => {
                     </HStack>
                   </FormControl>
 
-                  <FormControl>
-                    <HStack>
+                  <FormControl width="100%">
+                    <HStack spacing={2} width="100%">
                       <Icon as={FaPhoneAlt} color="#98A2B3" boxSize={5} />
                       <Input
                         type="tel"
@@ -254,6 +265,7 @@ const ContactForm = () => {
                         borderRadius="none"
                         borderBottom="2px solid #98A2B3"
                         focusBorderColor="transparent"
+                        width="100%" // Ensure Input takes 100% width
                         value={formData.phone}
                         onChange={handleChange}
                         sx={{
@@ -269,72 +281,69 @@ const ContactForm = () => {
                     </HStack>
                   </FormControl>
 
-                  <FormControl>
-                    <HStack>
+                  {/* <FormControl width="100%">
+                    <HStack spacing={2} width="100%">
                       <Icon as={FaPenSquare} color="#98A2B3" boxSize={5} />
-                      <Select
-                        name="subject"
-                        placeholder="Select Subject"
-                        border="none"
-                        borderRadius="none"
-                        borderBottom="2px solid #98A2B3"
-                        focusBorderColor="transparent"
-                        value={formData.subject}
-                        onChange={handleChange}
-                        sx={{
-                          "::placeholder": {
-                            fontSize: "16px",
-                            fontWeight: 400,
-                            lineHeight: "24px",
-                            textAlign: "left",
-                            color: "#98A2B3",
-                          },
-                        }}
-                      >
-                        <option value="general">General Inquiry</option>
-                        <option value="support">Support</option>
-                        <option value="feedback">Feedback</option>
-                      </Select>
+                      <MenuRoot>
+                        <MenuTrigger asChild>
+                          <Button variant="outline" size="sm">
+                            Subject
+                          </Button>
+                        </MenuTrigger>
+                        <MenuContent>
+                          <MenuItem value="new-txt">General Enquiry</MenuItem>
+                          <MenuItem value="new-file">Support</MenuItem>
+                          <MenuItem value="new-win">Complaint</MenuItem>
+                        </MenuContent>
+                      </MenuRoot>
                     </HStack>
-                  </FormControl>
+                  </FormControl> */}
+
                 </Grid>
+
                 <FormControl isRequired>
-                  <Textarea
-                    name="message"
-                    placeholder="Message"
-                    border="none"
-                    borderRadius="none"
-                    borderBottom="2px solid #98A2B3"
-                    focusBorderColor="transparent"
-                    value={formData.message}
-                    onChange={handleChange}
-                    rows={4}
-                    sx={{
-                      "::placeholder": {
-                        fontSize: "16px",
-                        fontWeight: 400,
-                        lineHeight: "24px",
-                        textAlign: "left",
-                        color: "#98A2B3",
-                      },
-                    }}
-                  />
+                  <HStack spacing={2} alignItems="flex-start">
+                    {" "}
+                    <Icon as={FaPen} color="#98A2B3" boxSize={5} mt={3} />
+                    <Textarea
+                      name="message"
+                      placeholder="Message"
+                      border="none"
+                      borderRadius="none"
+                      borderBottom="2px solid #98A2B3"
+                      focusBorderColor="transparent"
+                      value={formData.message}
+                      onChange={handleChange}
+                      rows={4}
+                      maxHeight="100px" // Set your desired max height here
+                      resize="none" // Prevent resizing if needed
+                      sx={{
+                        "::placeholder": {
+                          fontSize: "16px",
+                          fontWeight: 400,
+                          lineHeight: "24px",
+                          textAlign: "left",
+                          color: "#98A2B3",
+                        },
+                      }}
+                      flex="1" // Allow the Textarea to take the remaining width
+                    />
+                  </HStack>
                 </FormControl>
-                <HStack spacing={3}>
+
+                <HStack spacing={2}>
                   <Checkbox
                     name="agreeToTerms"
                     isChecked={formData.agreeToTerms}
                     onChange={handleChange}
-                    colorScheme="teal"
-                  >
-                    <Text fontSize="14px" color="#3B3D3F">
-                      I agree to the terms and conditions
-                    </Text>
-                  </Checkbox>
+                    colorScheme="green"
+                  />
+                  <Text fontSize="sm" color="#98A2B3">
+                    I agree to the terms and conditions
+                  </Text>
                 </HStack>
-                <Button2 style={{ width: "100px", alignSelf: "flex-start" }}>
-                  Get In Touch
-                </Button2>
+
+                <Button2>Get In Touch</Button2>
               </Stack>
             </form>
           </Flex>

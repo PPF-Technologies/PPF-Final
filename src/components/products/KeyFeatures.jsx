@@ -27,19 +27,19 @@ const KeyFeatures = () => {
       icon: icon,
       title: "UV Protection",
       description:
-        "Protects your paint from harmful UV rays, preventing fading and damage.",
+        "Safeguards your paint from harmful UV rays, preventing fading and degradation.",
     },
     {
       icon: icon,
       title: "Superior Durability",
       description:
-        "Crack, peel, and bubble-resistant, ensuring long-lasting protection.",
+        "Resistant to cracking, peeling, and bubbling, providing long-term protection against environmental hazards.",
     },
     {
       icon: icon,
       title: "Chemical Resistant",
       description:
-        "Protects against acidic contaminants like bird droppings and tree sap.",
+        "Protects against acidic contaminants, such as bird droppings, tree sap, and road salt.",
     },
     {
       icon: icon,
@@ -50,7 +50,7 @@ const KeyFeatures = () => {
       icon: icon,
       title: "Enhanced Flexibility",
       description:
-        "Easily stretches to fit complex surfaces for faster installation.",
+        "Stretches easily to conform to complex surfaces, making installation smoother and faster.",
     },
   ];
 

@@ -86,7 +86,7 @@ const WhyCamio = ({ products }) => {
                     />
                   </Box>
 
-                  <Box minH="58px" px={5} mb={10} align="start" flex="1">
+                  <Box minH="48px" px={5} mb={2} align="start" flex="1">
                     <Heading fontSize="24px" fontWeight="600" m={0}>
                       {product.name}
                     </Heading>

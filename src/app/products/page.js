@@ -22,7 +22,7 @@ const Page = () => {
     },
     {
       name: "CAMIO TPU Black Gloss",
-      image: tpuSeries2,
+      image: tpuSeries1,
       id: 2,
       details: "Details about CAMIO TPU Black Gloss.",
     },

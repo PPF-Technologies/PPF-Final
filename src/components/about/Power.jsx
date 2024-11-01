@@ -54,106 +54,108 @@ const Power = () => {
         </Box>
       </Flex>
 
+      
       <Flex
-      justify="space-between"
-      align="center"
-      py={{ base: "20px", md: "50px" }} // Responsive padding
-      px={{ base: "20px", md: "150px" }} // Responsive padding
-      flexDirection={{ base: "column", lg: "row" }} // Stack on small screens
-    >
-      <Box position="relative" textAlign="center" mb={{ base: 4, md: 0 }}>
-        <Text
-          fontSize={{ base: "60px", md: "120px" }} // Responsive font size
-          fontWeight="700"
-          lineHeight={{ base: "70px", md: "178.5px" }} // Responsive line height
-          color="#E0E5D0"
-          whiteSpace="nowrap" // Prevent wrapping
-        >
-          08
-        </Text>
-        <Text
-          position="absolute"
-          left="50%"
-          top="50%"
-          transform="translate(-50%, -50%)"
-          fontSize={{ base: "16px", md: "21px" }} // Responsive font size
-          fontWeight="700"
-          lineHeight="25.41px"
-          whiteSpace="nowrap" // Prevent wrapping
-        >
-          Years of Expertise
-        </Text>
-      </Box>
+        justify="center" 
+        align="center"
+        gap={10}
+        px={{ base: "20px", md: "150px" }}
+        py={{ base: "20px", md: "50px" }} // Responsive padding
+        flexDirection={{ base: "column", lg: "row" }} // Stack on small screens
+      >
+        <Box position="relative" textAlign="center" mb={{ base: 4, md: 0 }}>
+          <Text
+            fontSize={{ base: "60px", md: "120px" }} // Responsive font size
+            fontWeight="700"
+            lineHeight={{ base: "70px", md: "178.5px" }} // Responsive line height
+            color="#E0E5D0"
+            whiteSpace="nowrap" // Prevent wrapping
+          >
+            08
+          </Text>
+          <Text
+            position="absolute"
+            left="50%"
+            top="50%"
+            transform="translate(-50%, -50%)"
+            fontSize={{ base: "16px", md: "21px" }} // Responsive font size
+            fontWeight="700"
+            lineHeight="25.41px"
+            whiteSpace="nowrap" // Prevent wrapping
+          >
+            Years of Expertise
+          </Text>
+        </Box>
 
-      <Box position="relative" textAlign="center" mb={{ base: 4, md: 0 }}>
-        <Text
-          fontSize={{ base: "60px", md: "120px" }} // Responsive font size
-          fontWeight="700"
-          lineHeight={{ base: "70px", md: "178.5px" }} // Responsive line height
-          color="#E0E5D0"
-        >
-          40,000+
-        </Text>
-        <Text
-          position="absolute"
-          left="50%"
-          top="50%"
-          transform="translate(-50%, -50%)"
-          fontSize={{ base: "16px", md: "21px" }} // Responsive font size
-          fontWeight="700"
-          lineHeight="25.41px"
-          whiteSpace="nowrap" 
-        >
-          Vehicles Protected
-        </Text>
-      </Box>
+        <Box position="relative" textAlign="center" mb={{ base: 4, md: 0 }}>
+          <Text
+            fontSize={{ base: "60px", md: "120px" }} // Responsive font size
+            fontWeight="700"
+            lineHeight={{ base: "70px", md: "178.5px" }} // Responsive line height
+            color="#E0E5D0"
+          >
+            40,000+
+          </Text>
+          <Text
+            position="absolute"
+            left="50%"
+            top="50%"
+            transform="translate(-50%, -50%)"
+            fontSize={{ base: "16px", md: "21px" }} // Responsive font size
+            fontWeight="700"
+            lineHeight="25.41px"
+            whiteSpace="nowrap" 
+          >
+            Vehicles Protected
+          </Text>
+        </Box>
 
-      <Box position="relative" textAlign="center" mb={{ base: 4, md: 0 }}>
-        <Text
-          fontSize={{ base: "60px", md: "120px" }} // Responsive font size
-          fontWeight="700"
-          lineHeight={{ base: "70px", md: "178.5px" }} // Responsive line height
-          color="#E0E5D0"
-        >
-          28
-        </Text>
-        <Text
-          position="absolute"
-          left="50%"
-          top="50%"
-          transform="translate(-50%, -50%)"
-          fontSize={{ base: "16px", md: "21px" }} // Responsive font size
-          fontWeight="700"
-          lineHeight="25.41px"
-        >
-          States
-        </Text>
-      </Box>
+        <Box position="relative" textAlign="center" mb={{ base: 4, md: 0 }}>
+          <Text
+            fontSize={{ base: "60px", md: "120px" }} // Responsive font size
+            fontWeight="700"
+            lineHeight={{ base: "70px", md: "178.5px" }} // Responsive line height
+            color="#E0E5D0"
+          >
+            28
+          </Text>
+          <Text
+            position="absolute"
+            left="50%"
+            top="50%"
+            transform="translate(-50%, -50%)"
+            fontSize={{ base: "16px", md: "21px" }} // Responsive font size
+            fontWeight="700"
+            lineHeight="25.41px"
+          >
+            States
+          </Text>
+        </Box>
 
-      <Box position="relative" textAlign="center">
-        <Text
-          fontSize={{ base: "60px", md: "120px" }} // Responsive font size
-          fontWeight="700"
-          lineHeight={{ base: "70px", md: "178.5px" }} // Responsive line height
-          color="#E0E5D0"
-          whiteSpace="nowrap" // Prevent wrapping
-        >
-          08
-        </Text>
-        <Text
-          position="absolute"
-          left="50%"
-          top="50%"
-          transform="translate(-50%, -50%)"
-          fontSize={{ base: "16px", md: "21px" }} // Responsive font size
-          fontWeight="700"
-          lineHeight="25.41px"
-          whiteSpace="nowrap" // Prevent wrapping
-        >
-          Union Territories
-        </Text>
-      </Box>
-    </Flex>
+        <Box position="relative" textAlign="center">
+          <Text
+            fontSize={{ base: "60px", md: "120px" }} // Responsive font size
+            fontWeight="700"
+            lineHeight={{ base: "70px", md: "178.5px" }} // Responsive line height
+            color="#E0E5D0"
+            whiteSpace="nowrap" // Prevent wrapping
+          >
+            08
+          </Text>
+          <Text
+            position="absolute"
+            left="50%"
+            top="50%"
+            transform="translate(-50%, -50%)"
+            fontSize={{ base: "16px", md: "21px" }} // Responsive font size
+            fontWeight="700"
+            lineHeight="25.41px"
+            whiteSpace="nowrap" // Prevent wrapping
+          >
+            Union Territories
+          </Text>
+        </Box>
+      </Flex>
     </Box>
   );
 };

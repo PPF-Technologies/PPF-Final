@@ -39,7 +39,7 @@ const productData = [
       {
         title: 'Camio TPH Clear Gloss',
         image: camio,
-        description: 'CAMIO TPU Clear Gloss offers premium paint protection with an ultra-high gloss finish. Ideal for luxury vehicles, it enhances the natural shine of the paintwork while providing superior protection against scratches, road debris, and environmental elements.',
+        description: 'The CAMIO TPH (Thermoplastic Hybrid) Series offers a budget-friendly solution without compromising on essential features. Perfect for those who seek reliable protection at an accessible price, the TPH series combines a high-gloss or matte finish with self-healing and hydrophobic properties. Each product in the TPH series comes with a 3-year warranty, offering excellent value for money.',
         details: {
           keyFeatures: ['Feature 1', 'Feature 2', 'Feature 3', 'Feature 4'],
           usages: ['Usage 1', 'Usage 2', 'Usage 3', 'Usage 4'],
