@@ -3,7 +3,7 @@ import React from "react";
 import icon from "@/assets/icons/icon.png";
 import { Box, Heading, Text, Flex } from "@chakra-ui/react";
 import Image from "next/image";
-import cp1 from "@/assets/svgs/cp1";
+import Cp1 from "@/assets/svgs/cp1";
 import cp2 from "@/assets/svgs/cp2";
 import cp3 from "@/assets/svgs/cp3";
 import cp4 from "@/assets/svgs/cp4";
@@ -34,7 +34,7 @@ const Advantage = () => {
         "CAMIO PPF provides robust protection for your vehicle's paintwork:",
       advantages: [
         {
-          icon: cp1,
+          icon: Cp1,
           title: "Superior Defense Against Road Debris:",
           description:
             "Protects against stone chips, gravel, and other road hazards.",
@@ -216,7 +216,7 @@ const Advantage = () => {
     },
   ];
   return (
-    <Box maxW={{ '2xl': '1500px' }} mx={{ '2xl': 'auto' }}>
+    <Box maxW={{ '2xl': '1500px' }} mx={{ '2xl': 'auto' }} px={{lg:20}}>
       <Heading as={"h3"} mx={"auto"} width={{ base: '100%', lg: "45%" }} textAlign={"center"}>
         Discover the CAMIO Advantage: Premium Protection for Your Vehicle
       </Heading>
@@ -224,6 +224,7 @@ const Advantage = () => {
         {advantages.map((adv, i) => (
           <Box key={i} py={4}>
             <Heading as={"h4"} fontSize={"lg"}>
+              <Cp1 />
               {adv.title}
             </Heading>
             <Text fontSize={"sm"} color={"gray.600"} pb={4}>

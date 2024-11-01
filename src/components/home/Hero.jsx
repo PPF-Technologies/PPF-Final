@@ -28,17 +28,19 @@ const Hero = () => {
 
           {/* Text Section */}
           <Box textAlign={{ base: "center", md: "left" }} w="full" maxW={{ base: "395px", lg: '50%'}}  >
-            <Heading as="h1" fontSize={{ base: "2xl", md: "4xl", lg: '5xl', '2xl': '5xl' }} fontWeight="bold" mb={4}>
+            <Heading as="h1" fontSize={{ base: "3xl", md: "4xl", lg: '5xl', '2xl': '5xl' }} fontWeight="bold" mb={4}>
               Unmatched Protection, Unbeatable Shine with Camio PPF
             </Heading>
-            <Text mb={6} fontSize={{ base: "sm", md: "md" }}>
+            <Text mb={6} fontSize={{ base: "md", md: "md" }}>
               Protect your vehicle with Camio&apos;s top-quality Paint Protection Film. Experience superior protection and lasting shine.
             </Text>
 
-            <Link href={'/products'}>
-              <Button2>
+            <Link href={'/products'} >
+              <Box className="flex justify-center md:block">
+              <Button2 >
                 Explore Our Products
-              </Button2></Link>
+              </Button2>
+                </Box></Link>
 
 
           </Box>

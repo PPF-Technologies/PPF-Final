@@ -3,7 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { Providers } from "./providers";
 import Footer from "@/components/Footer";
-
+import { FaWhatsapp } from "react-icons/fa";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -30,6 +30,7 @@ export default function RootLayout({ children }) {
         <Providers>
         <Navbar />
         {children}
+        <a href="https://wa.me/728377971?text=awesome product" target='_blank'><FaWhatsapp className='text-[50px] bg-white rounded-full p-1 fixed bottom-14 right-14 text-green-400' /></a>
         <Footer />
         </Providers>
       </body>
