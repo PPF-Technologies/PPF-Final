@@ -61,7 +61,7 @@ const Navbar = () => {
           >
             About Us
           </Link>
-          <Link
+          {/* <Link
             className="opacity-80 hover:opacity-100 transition-all duration-100"
             href={"/warranty"}
           >
@@ -72,7 +72,7 @@ const Navbar = () => {
             href={"/contact"}
           >
             Contact
-          </Link>
+          </Link> */}
         </nav>
 
         {/* Quote Button for larger screens */}

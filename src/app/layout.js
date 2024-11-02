@@ -38,9 +38,9 @@ export default function RootLayout({ children }) {
             target="_blank"
             aria-label="Message us on WhatsApp about this awesome product"
           >
-           <div className="bg-white p-2">
+           {/* <div className="bg-white p-2">
            <IoLogoWhatsapp className="text-[50px] p-1 fixed bottom-14 right-14 text-green-400" />
-           </div>
+           </div> */}
           </a>
           <Footer />
         </Providers>
