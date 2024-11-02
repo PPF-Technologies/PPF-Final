@@ -55,9 +55,9 @@ const KeyFeatures = () => {
   ];
 
   return (
-    <Box px={{ base: 0, sm:4, lg: 14 }} py={10} maxW={{'2xl':'1500px'}} mx={{'2xl':'auto'}}>
+    <Box px={{ base: 0, sm:4, lg: 32 }} py={10} maxW={{'2xl':'1500px'}} mx={{'2xl':'auto'}}>
       <Heading
-              fontFamily="" textAlign="center" py={14} fontSize={{ base: "xl", md: "4xl" }} color="gray.800">
+              fontFamily="" textAlign="center" p={10} fontSize={{ base: "3xl", md: "4xl" }} color="gray.800">
         Key Features of Our Paint Protection Film
       </Heading>
       <Flex wrap="wrap" justify="center" gap={6}>

@@ -94,7 +94,7 @@ const WhyUs = () => {
   ];
 
   return (
-    <Box px={{ base: 2, lg: 36, md: 20, '2xl': 80 }}>
+    <Box px={{ base: 2, lg: 36, md: 20, '2xl': 80 }} pt={{base:8}}>
       {/* Button Section */}
       <Button
         bg={"transparent"}
@@ -154,7 +154,7 @@ const WhyUs = () => {
             enhancement, making it the preferred choice for discerning vehicle
             owners. Here’s why CAMIO PPF is the ultimate choice:
           </Text>
-          <Box px={8} py={4} className="flex justify-center lg:block" >
+          <Box px={8} py={4} my={{base:6, lg:0}} className="flex justify-center lg:block" >
             <Link href={"/"}>
               <Button3>Learn More</Button3>
             </Link>
@@ -163,7 +163,7 @@ const WhyUs = () => {
       </Flex>
 
       {/* Accordion and Image Section */}
-      <Flex mt={16} flexDirection={{ base: 'column', lg: 'row' }} >
+      <Flex mt={{base:0, lg:16}} flexDirection={{ base: 'column', lg: 'row' }} >
         {/* Left Side: Accordion */}
         <Box width={{ base: '100%', lg: "55%" }} pr={{base:0, lg:6}}>
           <Accordion allowToggle>

@@ -16,7 +16,7 @@ const Hero = () => {
       bg="white"
       rounded="xl"
      width={'full'}
-     px={{lg:20}}
+     px={{lg:36}}
  
       maxW={{'2xl':"1500px"}} // Max width for large displays
       mx={{'2xl':'auto'}}

@@ -34,7 +34,7 @@ const WhyCamio = ({ products }) => {
   ];
 
   return (
-    <Box width="100vw" height="auto">
+    <Box width="100vw" height="auto" px={{base:0, lg:32}}>
       <Flex
         direction="column"
         align="center"
@@ -56,6 +56,7 @@ const WhyCamio = ({ products }) => {
           p={4}
           bgGradient="linear(to-r, rgba(158, 194, 194, 0.2) 21.17%, rgba(213, 203, 159, 0.2) 91.44%)"
           position="relative"
+          borderRadius={14}
         >
           <Heading
               fontFamily="" as="h1" size="xl" textAlign="center" mb={8} mt={4}>
