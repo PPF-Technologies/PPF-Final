@@ -90,7 +90,7 @@ const ContactForm = () => {
       <Heading
         fontFamily=""
         my={{ base: "20px", lg: "50px" }}
-        fontSize={{ base: "30px", md: "47px" }}
+        fontSize={{ base: "5xl", md: "47px" }}
         fontWeight={700}
         lineHeight="61.1px"
         textAlign="center"
@@ -120,7 +120,6 @@ const ContactForm = () => {
             fontSize={{ base: "30px", md: "35px", lg: "43px" }} // Responsive font size
             fontWeight={700}
             lineHeight={{ base: "40px", md: "50px", lg: "62px" }}
-            color="#34113F"
             mb={2}
           >
             Have Questions?

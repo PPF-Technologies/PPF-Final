@@ -20,7 +20,7 @@ const Journey = () => {
           as="h2"
           fontSize={{ base: "28px", md: "36px", lg: "42px" }} // Responsive font size
           fontWeight="700"
-          mb={{ base: "18px", md: "24px" }}
+          mb={{ base: "18px", md: "24px", lg:"5xl" }}
         >
           Our Journey
         </Heading>

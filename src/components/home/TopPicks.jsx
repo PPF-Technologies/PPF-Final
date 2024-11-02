@@ -39,7 +39,7 @@ const PremiumProtection = () => {
               borderColor={"#E2E2E2"}
               cursor={"default"}
             >
-              <Text pb={{ base: 0, lg: 1 }}>Features that we provide</Text>{" "}
+              <Text pb={{ base: 0, lg: 0 }}>Features that we provide</Text>{" "}
               <FiChevronRight />
             </Button>
 

@@ -34,7 +34,7 @@ const Protection = () => {
   return (
     <Box bg={"gray.900"} color={"white"} minHeight={{base:"100vh", '2xl':'85vh'}} pt={10} px={{base:5, '2xl':80}}>
       {/* Features Button */}
-      <Box display="flex" justifyContent="center" py={6}>
+      <Box display="flex" justifyContent="center" py={0}>
         <Button
           bg={"transparent"}
           borderStyle={"solid"}
@@ -48,7 +48,7 @@ const Protection = () => {
           display="flex"
           alignItems="center"
         >
-          <Text pb={1}>Features</Text> <FiChevronRight />
+          <Text pb={0}>Features</Text> <FiChevronRight />
         </Button>
       </Box>
 

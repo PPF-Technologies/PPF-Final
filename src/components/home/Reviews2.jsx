@@ -64,7 +64,7 @@ const Reviews2 = () => {
         my={8}
         py={5}
       >
-        <Text pb={{base:0, lg:1}}>Testimonial</Text> <FiChevronRight />
+        <Text pb={{base:0, lg:0}}>Testimonial</Text> <FiChevronRight />
       </Button>
     
       <Text fontSize="3xl" fontWeight="bold" textAlign="center" mb={8}>

@@ -110,7 +110,7 @@ const WhyUs = () => {
         display={"flex"}
         alignItems={"center"}
       >
-        <Text pb={1}>Why choose us</Text> <FiChevronRight />
+        <Text pb={0}>Why choose us</Text> <FiChevronRight />
       </Button>
 
       {/* Heading and Description Section */}

@@ -34,7 +34,7 @@ function RotatingEarth({ isInteracting }) {
   // Rotate the Earth only when the user is not interacting
   useFrame(() => {
     if (!isInteracting && earthRef.current) {
-      earthRef.current.rotation.y += 0; // Adjust speed as needed
+      earthRef.current.rotation.y += 0.005; // Adjust speed as needed
     }
   });
 

@@ -11,14 +11,14 @@ const Mission = () => {
       justify="center"
       direction={{ base: "column", lg: "row" }}
       px={{ base: "20px", md: "150px" }} // Responsive padding
-      py="50px"
+      py="10px"
       gap={{ base: "30px", md: "50px" }} // Responsive gap
     >
       <Box textAlign="left" maxW={{ base: "100%", md: "600px" }}>
         <Heading
               fontFamily=""
           as="h2"
-          fontSize={{ base: "28px", md: "36px", lg: "42px" }} // Responsive font size
+          fontSize={{ base: "28px", md: "36px", lg: "5xl" }} // Responsive font size
           fontWeight="700"
           mb={{ base: "18px", md: "24px" }}
         >

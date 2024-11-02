@@ -25,7 +25,7 @@ const Values = () => {
   return (
     <Flex direction="column" align="center" p={8}>
       <Heading
-              fontFamily="" mb={6} fontSize="24px" fontWeight="700" lineHeight="37px">
+              fontFamily="" pb={{base:6, lg:0}} py={{base:0, lg:16}} fontSize={{base:'3xl', lg:"5xl"}} fontWeight="700" lineHeight="37px">
         Our Values
       </Heading>
       <SimpleGrid columns={{ base: 1, lg: 4 }} w="100%" spacing={6}>
@@ -34,7 +34,7 @@ const Values = () => {
             key={index}
             textAlign="center"
             px={4}
-            py={6}
+            py={4}
             position="relative"
             borderBottom={{ base: index < valuesData.length - 1 ? '3px solid' : 'none', lg: 'none' }}
             borderColor={{ base: 'transparent', lg: 'transparent' }}
@@ -43,7 +43,7 @@ const Values = () => {
                 content: '""',
                 position: 'absolute',
                 height: { base: '3px', lg: '100%' },
-                width: { base: '100%', lg: '3px' },
+                width: { base: '0', lg: '3px' },
                 top: { base: 'auto', lg: 0 },
                 bottom: { base: 0, lg: 'auto' },
                 right: { base: 'auto', lg: 0 },
@@ -56,7 +56,7 @@ const Values = () => {
             }
           >
             <Heading
-              fontFamily="" fontSize="18px" fontWeight="700" lineHeight="21.78px" mb={2}>
+              fontFamily="" fontSize="20px" fontWeight="700" lineHeight="21.78px" mb={2}>
               {value.title}
             </Heading>
             <Text fontSize="18px" fontWeight="400" lineHeight="21.78px">

@@ -7,6 +7,7 @@ const Map = () => {
       justify="center"
       mb={10}
       gap="0px"
+      p={{base:4, lg:0}}
     >
       <Box 
         w="1140px"

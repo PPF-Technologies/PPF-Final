@@ -14,7 +14,7 @@ const page = () => {
       <Mission/>
       <Values/>
       <Journey/>
-      <Choose/>
+      {/* <Choose/> */}
       <Power/>
       <Gallery/>
     </div>
