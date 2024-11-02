@@ -3,7 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { Providers } from "./providers";
 import Footer from "@/components/Footer";
-import { FaWhatsapp } from "react-icons/fa";
+import { IoLogoWhatsapp } from "react-icons/io";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -34,8 +34,9 @@ export default function RootLayout({ children }) {
             href="https://wa.me/728377971?text=awesome product"
             target="_blank"
             aria-label="Message us on WhatsApp about this awesome product"
+          
           >
-            <FaWhatsapp className="text-[50px] bg-white rounded-full p-1 fixed bottom-14 right-14 text-green-400" />
+            <IoLogoWhatsapp className="text-[50px] p-1    fixed bottom-14 right-14 text-green-400" />
           </a>
           <Footer />
         </Providers>
