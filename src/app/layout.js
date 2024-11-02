@@ -34,9 +34,10 @@ export default function RootLayout({ children }) {
             href="https://wa.me/728377971?text=awesome product"
             target="_blank"
             aria-label="Message us on WhatsApp about this awesome product"
-          
           >
-            <IoLogoWhatsapp className="text-[50px] p-1    fixed bottom-14 right-14 text-green-400" />
+           <div className="bg-white p-2">
+           <IoLogoWhatsapp className="text-[50px] p-1 fixed bottom-14 right-14 text-green-400" />
+           </div>
           </a>
           <Footer />
         </Providers>

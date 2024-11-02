@@ -58,7 +58,7 @@ const Power = () => {
       <Flex
         justify="center" 
         align="center"
-        gap={10}
+        gap={{base:10, lg:20}}
         px={{ base: "20px", md: "150px" }}
         py={{ base: "20px", md: "50px" }} // Responsive padding
         flexDirection={{ base: "column", lg: "row" }} // Stack on small screens

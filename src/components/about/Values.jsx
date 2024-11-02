@@ -24,7 +24,7 @@ const valuesData = [
 const Values = () => {
   return (
     <Flex direction="column" align="center" p={8}>
-      <Heading mb={6} fontSize="24px" fontWeight="700" lineHeight={"37px"}>
+      <Heading mb={6} fontSize="24px" fontWeight="700" lineHeight="37px">
         Our Values
       </Heading>
       <SimpleGrid columns={{ base: 1, lg: 4 }} w="100%" spacing={6}>
@@ -34,14 +34,30 @@ const Values = () => {
             textAlign="center"
             px={4}
             py={6}
-            borderRight={{ base: "none", lg: index < valuesData.length - 1 ? "3px solid" : "none" }} 
-            borderBottom={{ base: "3px solid", lg: "none" }} 
-            borderImage="linear-gradient(270deg, rgba(76, 111, 255, 0) 0%, #4C6FFF 50%, rgba(76, 111, 255, 0) 100%) 1"
+            position="relative"
+            borderBottom={{ base: index < valuesData.length - 1 ? '3px solid' : 'none', lg: 'none' }}
+            borderColor={{ base: 'transparent', lg: 'transparent' }}
+            _before={
+              index < valuesData.length - 1 && {
+                content: '""',
+                position: 'absolute',
+                height: { base: '3px', lg: '100%' },
+                width: { base: '100%', lg: '3px' },
+                top: { base: 'auto', lg: 0 },
+                bottom: { base: 0, lg: 'auto' },
+                right: { base: 'auto', lg: 0 },
+                left: { base: 0, lg: 'auto' },
+                bgGradient: {
+                  base: 'transparent',
+                  lg: 'linear(to-b, rgba(76, 111, 255, 0) 0%, #4C6FFF 50%, rgba(76, 111, 255, 0) 100%)',
+                },
+              }
+            }
           >
-            <Heading fontSize="18px" fontWeight="700" lineHeight={"21.78px"} mb={2}>
+            <Heading fontSize="18px" fontWeight="700" lineHeight="21.78px" mb={2}>
               {value.title}
             </Heading>
-            <Text fontSize="18px" fontWeight="400" lineHeight={"21.78px"}>
+            <Text fontSize="18px" fontWeight="400" lineHeight="21.78px">
               {value.description}
             </Text>
           </Box>
@@ -49,6 +65,7 @@ const Values = () => {
       </SimpleGrid>
     </Flex>
   );
-}
+};
 
 export default Values;
+

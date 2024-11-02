@@ -80,7 +80,7 @@ const ContactForm = () => {
       align="center"
       justify="center"
       width="100vw" // Set to 100vw to ensure full width
-      px={{ base: "20px", lg: "150px" }} // Padding for larger screens
+      px={{ base: "10px", lg: "150px" }} // Padding for larger screens
     >
       <Heading
         my={{ base: "20px", lg: "50px" }}
@@ -189,7 +189,7 @@ const ContactForm = () => {
         </Box>
 
         {/* Form */}
-        <Box w={{ base: "100%", md: "592px" }} h="auto" px={3}>
+        <Box w={{ base: "100%", md: "592px" }} h="auto" px={0}>
           <Flex justify="center">
             <form onSubmit={handleSubmit}>
               <Stack spacing={{ base: 6, md: 8, lg: 12 }}>
@@ -281,23 +281,7 @@ const ContactForm = () => {
                     </HStack>
                   </FormControl>
 
-                  {/* <FormControl width="100%">
-                    <HStack spacing={2} width="100%">
-                      <Icon as={FaPenSquare} color="#98A2B3" boxSize={5} />
-                      <MenuRoot>
-                        <MenuTrigger asChild>
-                          <Button variant="outline" size="sm">
-                            Subject
-                          </Button>
-                        </MenuTrigger>
-                        <MenuContent>
-                          <MenuItem value="new-txt">General Enquiry</MenuItem>
-                          <MenuItem value="new-file">Support</MenuItem>
-                          <MenuItem value="new-win">Complaint</MenuItem>
-                        </MenuContent>
-                      </MenuRoot>
-                    </HStack>
-                  </FormControl> */}
+                 
 
                 </Grid>
 
@@ -331,7 +315,7 @@ const ContactForm = () => {
                   </HStack>
                 </FormControl>
 
-                <HStack spacing={2}>
+                <HStack spacing={2} >
                   <Checkbox
                     name="agreeToTerms"
                     isChecked={formData.agreeToTerms}

@@ -48,12 +48,7 @@ const Navbar = () => {
           >
             Home
           </Link>
-          <Link
-            className="opacity-80 hover:opacity-100 transition-all duration-100"
-            href={"/ppf"}
-          >
-            PPF
-          </Link>
+         
           <Link
             className="opacity-80 hover:opacity-100 transition-all duration-100"
             href={"/products"}
@@ -137,15 +132,7 @@ const Navbar = () => {
                 Home
               </Link>
             </li>
-            <li>
-              <Link
-                className="block py-2 px-3 rounded hover:bg-gray-100"
-                onClick={toggleMenu}
-                href={"/ppf"}
-              >
-                PPF
-              </Link>
-            </li>
+            
             <li>
               <Link
                 className="block py-2 px-3 rounded hover:bg-gray-100"
