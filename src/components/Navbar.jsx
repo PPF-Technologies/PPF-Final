@@ -23,7 +23,7 @@ const Navbar = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    
+
     // Clean up the event listener on component unmount
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -35,17 +35,49 @@ const Navbar = () => {
       <div className="flex items-center justify-between w-full">
         {/* Logo */}
         <div className="p-2 flex items-center space-x-3">
-          <Image src={logo} width={150} alt="logo" />
+          <Link href={"/"}>
+            <Image src={logo} width={150} alt="logo" />
+          </Link>
         </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex gap-10 md:gap-8 font-semibold w-full justify-center text-gray-700 items-center">
-          <Link className="opacity-80 hover:opacity-100 transition-all duration-100" href={"/"}>Home</Link>
-          <Link className="opacity-80 hover:opacity-100 transition-all duration-100" href={"/ppf"}>PPF</Link>
-          <Link className="opacity-80 hover:opacity-100 transition-all duration-100" href={"/products"}>Products</Link>
-          <Link className="opacity-80 hover:opacity-100 transition-all duration-100" href={"/about"}>About Us</Link>
-          <Link className="opacity-80 hover:opacity-100 transition-all duration-100" href={"/warranty"}>Warranty</Link>
-          <Link className="opacity-80 hover:opacity-100 transition-all duration-100" href={"/contact"}>Contact</Link>
+          <Link
+            className="opacity-80 hover:opacity-100 transition-all duration-100"
+            href={"/"}
+          >
+            Home
+          </Link>
+          <Link
+            className="opacity-80 hover:opacity-100 transition-all duration-100"
+            href={"/ppf"}
+          >
+            PPF
+          </Link>
+          <Link
+            className="opacity-80 hover:opacity-100 transition-all duration-100"
+            href={"/products"}
+          >
+            Products
+          </Link>
+          <Link
+            className="opacity-80 hover:opacity-100 transition-all duration-100"
+            href={"/about"}
+          >
+            About Us
+          </Link>
+          <Link
+            className="opacity-80 hover:opacity-100 transition-all duration-100"
+            href={"/warranty"}
+          >
+            Warranty
+          </Link>
+          <Link
+            className="opacity-80 hover:opacity-100 transition-all duration-100"
+            href={"/contact"}
+          >
+            Contact
+          </Link>
         </nav>
 
         {/* Quote Button for larger screens */}
@@ -79,7 +111,11 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <nav className={`md:hidden w-full mt-4 border border-gray-100 rounded-lg pt-4 shadow-md fixed top-0 left-0 z-50 transition-transform duration-300 transform ${isOpen ? "translate-y-0" : "-translate-y-full"}`}>
+        <nav
+          className={`md:hidden w-full mt-4 border border-gray-100 rounded-lg pt-4 shadow-md fixed top-0 left-0 z-50 transition-transform duration-300 transform ${
+            isOpen ? "translate-y-0" : "-translate-y-full"
+          }`}
+        >
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-lg font-semibold"></h2>
             <IconButton
@@ -93,22 +129,58 @@ const Navbar = () => {
           </div>
           <ul className="bg-white flex flex-col gap-4 font-medium text-gray-700 pl-6 pb-4">
             <li>
-              <Link className="block py-2 px-3 rounded hover:bg-gray-100" onClick={toggleMenu} href={"/"}>Home</Link>
+              <Link
+                className="block py-2 px-3 rounded hover:bg-gray-100"
+                onClick={toggleMenu}
+                href={"/"}
+              >
+                Home
+              </Link>
             </li>
             <li>
-              <Link className="block py-2 px-3 rounded hover:bg-gray-100" onClick={toggleMenu} href={"/ppf"}>PPF</Link>
+              <Link
+                className="block py-2 px-3 rounded hover:bg-gray-100"
+                onClick={toggleMenu}
+                href={"/ppf"}
+              >
+                PPF
+              </Link>
             </li>
             <li>
-              <Link className="block py-2 px-3 rounded hover:bg-gray-100" onClick={toggleMenu} href={"/products"}>Products</Link>
+              <Link
+                className="block py-2 px-3 rounded hover:bg-gray-100"
+                onClick={toggleMenu}
+                href={"/products"}
+              >
+                Products
+              </Link>
             </li>
             <li>
-              <Link className="block py-2 px-3 rounded hover:bg-gray-100" onClick={toggleMenu} href={"/about"}>About Us</Link>
+              <Link
+                className="block py-2 px-3 rounded hover:bg-gray-100"
+                onClick={toggleMenu}
+                href={"/about"}
+              >
+                About Us
+              </Link>
             </li>
             <li>
-              <Link className="block py-2 px-3 rounded hover:bg-gray-100" onClick={toggleMenu} href={"/warranty"}>Warranty</Link>
+              <Link
+                className="block py-2 px-3 rounded hover:bg-gray-100"
+                onClick={toggleMenu}
+                href={"/warranty"}
+              >
+                Warranty
+              </Link>
             </li>
             <li>
-              <Link className="block py-2 px-3 rounded hover:bg-gray-100" onClick={toggleMenu} href={"/contact"}>Contact</Link>
+              <Link
+                className="block py-2 px-3 rounded hover:bg-gray-100"
+                onClick={toggleMenu}
+                href={"/contact"}
+              >
+                Contact
+              </Link>
             </li>
             <li>
               <Button

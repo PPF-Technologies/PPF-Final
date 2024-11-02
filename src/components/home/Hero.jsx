@@ -16,13 +16,14 @@ const Hero = () => {
           {/* Image Section */}
           <Box w="full" mb={{ base: 8, md: 0 }} maxW={{ md: "990px", lg: '50%' }} p={4}>
             <Image
-              src={car} // Directly use the path from the public folder
+              src={car} 
               alt="Hero SUV"
               width={600}
               height={400}
               className="w-full h-auto"
+              priority
 
-            // maxH={{ md: "475px",lg:'full', '2xl':'full' }}
+            
             />
           </Box>
 

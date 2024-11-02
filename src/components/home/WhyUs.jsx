@@ -184,7 +184,7 @@ const WhyUs = () => {
                           gap={16}
                           display="flex"
                           alignItems="center"
-                          color={isExpanded ? "black" : "gray.500"}
+                          color={isExpanded ? "black" : "gray.600"}
                         >
                           <Text fontWeight={600} mr={2}>
                             {item.id}.
@@ -214,7 +214,7 @@ const WhyUs = () => {
             boxShadow="md"
             width={200}
             height={500}
-            className="w-auto h-[455px] rounded-xl"
+            className="w-auto h-[512px] rounded-xl"
           />
         </Box>
       </Flex>

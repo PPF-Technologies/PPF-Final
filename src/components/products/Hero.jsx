@@ -75,7 +75,7 @@ const Hero = () => {
           boxShadow="md"
           width={500}
           height={500}
-          
+          priority
         />
       </Box>
     </Flex>

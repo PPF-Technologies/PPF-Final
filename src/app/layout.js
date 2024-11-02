@@ -28,10 +28,16 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}
       >
         <Providers>
-        <Navbar />
-        {children}
-        <a href="https://wa.me/728377971?text=awesome product" target='_blank'><FaWhatsapp className='text-[50px] bg-white rounded-full p-1 fixed bottom-14 right-14 text-green-400' /></a>
-        <Footer />
+          <Navbar />
+          {children}
+          <a
+            href="https://wa.me/728377971?text=awesome product"
+            target="_blank"
+            aria-label="Message us on WhatsApp about this awesome product"
+          >
+            <FaWhatsapp className="text-[50px] bg-white rounded-full p-1 fixed bottom-14 right-14 text-green-400" />
+          </a>
+          <Footer />
         </Providers>
       </body>
     </html>
