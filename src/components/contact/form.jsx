@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import {
+  Button,
   Box,
   Checkbox,
   FormControl,
@@ -16,14 +17,15 @@ import {
   Text,
   Flex,
   Grid,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  MenuItemOption,
+  MenuGroup,
+  MenuOptionGroup,
+  MenuDivider,
 } from "@chakra-ui/react";
-
-// import {
-//   MenuContent,
-//   MenuItem,
-//   MenuRoot,
-//   MenuTrigger,
-// } from "@/components/ui/menu";
 
 import {
   FaMapMarkerAlt,
@@ -35,10 +37,13 @@ import {
   FaUser,
   FaPenSquare,
 } from "react-icons/fa";
+import { FaChevronDown } from "react-icons/fa6";
+import { GoTriangleDown } from "react-icons/go";
 import { FaPen } from "react-icons/fa6";
 import Image from "next/image";
 import whatsApp from "../../assets/icons/whatsapp.svg";
 import Button2 from "../props/Button2";
+import { color } from "framer-motion";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -83,7 +88,7 @@ const ContactForm = () => {
       px={{ base: "10px", lg: "150px" }} // Padding for larger screens
     >
       <Heading
-              fontFamily=""
+        fontFamily=""
         my={{ base: "20px", lg: "50px" }}
         fontSize={{ base: "30px", md: "47px" }}
         fontWeight={700}
@@ -111,7 +116,7 @@ const ContactForm = () => {
           mb={{ base: 6, lg: 0 }}
         >
           <Heading
-              fontFamily=""
+            fontFamily=""
             fontSize={{ base: "30px", md: "35px", lg: "43px" }} // Responsive font size
             fontWeight={700}
             lineHeight={{ base: "40px", md: "50px", lg: "62px" }}
@@ -202,7 +207,13 @@ const ContactForm = () => {
                   }}
                   gap={6}
                 >
-                  <FormControl isRequired width="100%">
+                  <FormControl
+                    isRequired
+                    borderBottom="2px"
+                    borderColor="#98A2B3"
+                    pb={1}
+                    width="100%"
+                  >
                     <HStack spacing={2} width="100%">
                       <Icon as={FaUser} color="#98A2B3" boxSize={5} />
                       <Input
@@ -210,8 +221,6 @@ const ContactForm = () => {
                         name="name"
                         placeholder="Name"
                         border="none"
-                        borderRadius="none"
-                        borderBottom="2px solid #98A2B3"
                         focusBorderColor="transparent"
                         width="100%" // Ensure Input takes 100% width
                         value={formData.name}
@@ -229,7 +238,13 @@ const ContactForm = () => {
                     </HStack>
                   </FormControl>
 
-                  <FormControl isRequired width="100%">
+                  <FormControl
+                    isRequired
+                    borderBottom="2px"
+                    borderColor="#98A2B3"
+                    pb={1}
+                    width="100%"
+                  >
                     <HStack spacing={2} width="100%">
                       <Icon as={FaRegEnvelope} color="#98A2B3" boxSize={5} />
                       <Input
@@ -237,8 +252,6 @@ const ContactForm = () => {
                         name="email"
                         placeholder="Email Address"
                         border="none"
-                        borderRadius="none"
-                        borderBottom="2px solid #98A2B3"
                         focusBorderColor="transparent"
                         width="100%" // Ensure Input takes 100% width
                         value={formData.email}
@@ -256,7 +269,12 @@ const ContactForm = () => {
                     </HStack>
                   </FormControl>
 
-                  <FormControl width="100%">
+                  <FormControl
+                    borderBottom="2px"
+                    borderColor="#98A2B3"
+                    pb={1}
+                    width="100%"
+                  >
                     <HStack spacing={2} width="100%">
                       <Icon as={FaPhoneAlt} color="#98A2B3" boxSize={5} />
                       <Input
@@ -264,8 +282,6 @@ const ContactForm = () => {
                         name="phone"
                         placeholder="Phone"
                         border="none"
-                        borderRadius="none"
-                        borderBottom="2px solid #98A2B3"
                         focusBorderColor="transparent"
                         width="100%" // Ensure Input takes 100% width
                         value={formData.phone}
@@ -282,12 +298,46 @@ const ContactForm = () => {
                       />
                     </HStack>
                   </FormControl>
-
-                 
-
+                  <FormControl
+                    borderBottom="2px"
+                    borderColor="#98A2B3"
+                    pb={1}
+                    width="100%"
+                  >
+                    <HStack spacing={2} width="100%">
+                      <Menu>
+                        <MenuButton
+                          as={Button}
+                          bg="white"
+                          color="#98A2B3"
+                          gap={36}
+                          rightIcon={<GoTriangleDown />}
+                          _hover={{ bg: "white" }}
+                          _active={{ bg: "white", color: "#98A2B3" }} 
+                          _focus={{
+                            boxShadow: "none",
+                            bg: "white",
+                            color: "#98A2B3",
+                          }} 
+                        >
+                          Subject
+                        </MenuButton>
+                        <MenuList>
+                          <MenuItem>Enquiry</MenuItem>
+                          <MenuItem>Order Related</MenuItem>
+                          <MenuItem>Complaint</MenuItem>
+                        </MenuList>
+                      </Menu>
+                    </HStack>
+                  </FormControl>
                 </Grid>
 
-                <FormControl isRequired>
+                <FormControl
+                  isRequired
+                  borderBottom="2px"
+                  borderColor="#98A2B3"
+                  pb={1}
+                >
                   <HStack spacing={2} alignItems="flex-start">
                     {" "}
                     <Icon as={FaPen} color="#98A2B3" boxSize={5} mt={3} />
@@ -296,7 +346,6 @@ const ContactForm = () => {
                       placeholder="Message"
                       border="none"
                       borderRadius="none"
-                      borderBottom="2px solid #98A2B3"
                       focusBorderColor="transparent"
                       value={formData.message}
                       onChange={handleChange}
@@ -317,7 +366,7 @@ const ContactForm = () => {
                   </HStack>
                 </FormControl>
 
-                <HStack spacing={2} >
+                <HStack spacing={2}>
                   <Checkbox
                     name="agreeToTerms"
                     isChecked={formData.agreeToTerms}

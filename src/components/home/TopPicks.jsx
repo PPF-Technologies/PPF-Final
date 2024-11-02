@@ -1,4 +1,3 @@
-
 import React from "react";
 import {
   Box,
@@ -24,7 +23,7 @@ import Link from "next/link";
 
 const PremiumProtection = () => {
   return (
-    <Box py={16} pt={{base:20, lg:40}}>
+    <Box py={16} pt={{ base: 20, lg: 40 }}>
       <Container maxW="container.xl">
         <VStack spacing={{ base: 2, lg: 8 }} align="stretch">
           <Box textAlign={"center"}>
@@ -38,7 +37,7 @@ const PremiumProtection = () => {
               _hover={{ bg: "transparent" }}
               borderWidth={"1px"}
               borderColor={"#E2E2E2"}
-              cursor={'default'}
+              cursor={"default"}
             >
               <Text pb={{ base: 0, lg: 1 }}>Features that we provide</Text>{" "}
               <FiChevronRight />
@@ -105,7 +104,10 @@ const PremiumProtection = () => {
                     <Image
                       src={topPicks1}
                       alt="CAMIO TPU CLEAR GLOSS"
-                     
+                      width="100%"
+                      height="auto"
+                      layout="responsive" // Ensures responsive behavior
+                      objectFit="cover"
                     />
                   </Box>
                   <Text
@@ -142,13 +144,16 @@ const PremiumProtection = () => {
                   <Box
                     width="100%"
                     height="auto"
-                    borderRadius="10px 0px 0px 0px"
+                    borderRadius="10px 10px 10px 10px"
                     overflow="hidden"
                   >
                     <Image
                       src={topPicks2}
                       alt="CAMIO TPU Black Gloss"
-                     
+                      width="100%"
+                      height="auto"
+                      layout="responsive" // Ensures responsive behavior
+                      objectFit="cover"
                     />
                   </Box>
                   <Text
@@ -191,7 +196,10 @@ const PremiumProtection = () => {
                     <Image
                       src={topPicks3}
                       alt="CAMIO TPU Matte"
-                     
+                      width="100%"
+                      height="auto"
+                      layout="responsive" // Ensures responsive behavior
+                      objectFit="cover"
                     />
                   </Box>
                   <Text
@@ -213,8 +221,9 @@ const PremiumProtection = () => {
               justifyContent="center"
               alignItems="center"
             >
-              <Link href={'/products'}>
-              <Button2>Explore Our Products</Button2></Link>
+              <Link href={"/products"}>
+                <Button2>Explore Our Products</Button2>
+              </Link>
             </Box>
 
             {/* Fourth Product Card */}
@@ -243,7 +252,10 @@ const PremiumProtection = () => {
                     <Image
                       src={topPicks4}
                       alt="CAMIO TPH Gloss"
-                     
+                      width="100%"
+                      height="auto"
+                      layout="responsive" // Ensures responsive behavior
+                      objectFit="cover"
                     />
                   </Box>
                   <Text
@@ -280,13 +292,16 @@ const PremiumProtection = () => {
                   <Box
                     width="100%"
                     height="auto"
-                    borderRadius="10px 0px 0px 0px"
+                    borderRadius="10px 10px 10px 10px"
                     overflow="hidden"
                   >
                     <Image
                       src={topPicks5}
                       alt="CAMIO TPU Clear Gloss"
-                     
+                      width="100%"
+                      height="auto"
+                      layout="responsive" // Ensures responsive behavior
+                      objectFit="cover"
                     />
                   </Box>
                   <Text
@@ -310,8 +325,9 @@ const PremiumProtection = () => {
         justifyContent="center"
         alignItems="center"
       >
-         <Link href={'/products'}>
-         <Button2>Explore Our Products</Button2></Link>
+        <Link href={"/products"}>
+          <Button2>Explore Our Products</Button2>
+        </Link>
       </Box>
     </Box>
   );
