@@ -57,7 +57,8 @@ const WhyCamio = ({ products }) => {
           bgGradient="linear(to-r, rgba(158, 194, 194, 0.2) 21.17%, rgba(213, 203, 159, 0.2) 91.44%)"
           position="relative"
         >
-          <Heading as="h1" size="xl" textAlign="center" mb={8} mt={4}>
+          <Heading
+              fontFamily="" as="h1" size="xl" textAlign="center" mb={8} mt={4}>
             Available Products in TPU Series
           </Heading>
 
@@ -87,7 +88,8 @@ const WhyCamio = ({ products }) => {
                   </Box>
 
                   <Box minH="48px" px={5} mb={2} align="start" flex="1">
-                    <Heading fontSize="24px" fontWeight="600" m={0}>
+                    <Heading
+              fontFamily="" fontSize="24px" fontWeight="600" m={0}>
                       {product.name}
                     </Heading>
                   </Box>

@@ -24,7 +24,7 @@ import Link from "next/link";
 
 const PremiumProtection = () => {
   return (
-    <Box py={16} pt={40}>
+    <Box py={16} pt={{base:20, lg:40}}>
       <Container maxW="container.xl">
         <VStack spacing={{ base: 2, lg: 8 }} align="stretch">
           <Box textAlign={"center"}>
@@ -45,6 +45,7 @@ const PremiumProtection = () => {
             </Button>
 
             <Heading
+              fontFamily=""
               fontSize={{ base: "30px", lg: "45px" }}
               fontWeight={600}
               mb={{ base: 2, lg: 8 }}

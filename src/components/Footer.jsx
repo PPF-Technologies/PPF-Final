@@ -33,6 +33,7 @@ const Footer = () => {
       py={{ base: 8, md: 4 }}
       m={{lg:4,'2xl':10}}
       borderRadius={{lg:25}}
+      
     >
       <Container maxW="100%" px={{ base: 8, lg: 16 }} py={{ base: 8, lg: 16 }}>
         <Stack spacing={10}>
@@ -44,6 +45,7 @@ const Footer = () => {
             wrap="wrap"
           >
             <Heading
+              fontFamily=""
               as="h2"
               color="#FFFFEE"
               fontSize={{ base: "35px", lg: "45px" }}

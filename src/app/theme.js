@@ -11,9 +11,14 @@ const breakpoints = {
     "2xl": "98em", // ~1536px
   }
 
+  
 // Extend the theme with custom breakpoints
 const customTheme = extendTheme({
-  breakpoints
+  breakpoints,
+  fonts: {
+    heading: "Sora, sans-serif", // Use Sora for headings
+    body: "Sora, sans-serif",    // Use Sora for body text
+  },
 
 });
 

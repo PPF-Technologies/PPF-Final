@@ -120,6 +120,7 @@ const WhyUs = () => {
 
       >
         <Heading
+              fontFamily=""
           as={"h2"}
           fontWeight={600}
           width={{ base: "100%", lg: "55%" }}
@@ -164,7 +165,7 @@ const WhyUs = () => {
       {/* Accordion and Image Section */}
       <Flex mt={16} flexDirection={{ base: 'column', lg: 'row' }} >
         {/* Left Side: Accordion */}
-        <Box width={{ base: '100%', lg: "55%" }} pr={6}>
+        <Box width={{ base: '100%', lg: "55%" }} pr={{base:0, lg:6}}>
           <Accordion allowToggle>
             {accordionData.map((item, index) => (
               <AccordionItem key={item.id} flexShrink={0}>

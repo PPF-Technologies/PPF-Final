@@ -219,6 +219,7 @@ const Advantage = () => {
   return (
     <Box maxW={{ "2xl": "1500px" }} mx={{ "2xl": "auto" }} px={{ lg: 20 }}>
       <Heading
+              fontFamily=""
         as={"h3"}
         mx={"auto"}
         width={{ base: "100%", lg: "45%" }}
@@ -229,7 +230,8 @@ const Advantage = () => {
       <Box p={4} px={{ base: 4, lg: 10 }}>
         {advantages.map((adv, i) => (
           <Box key={i} py={4}>
-            <Heading as={"h4"} fontSize={"lg"}>
+            <Heading
+              fontFamily="" as={"h4"} fontSize={"lg"}>
               {adv.title}
             </Heading>
             <Text fontSize={"sm"} color={"gray.600"} pb={4}>
@@ -250,7 +252,8 @@ const Advantage = () => {
                     {advItem.icon} {/* Render the icon JSX here */}
                   </Box>
                   <Box>
-                    <Heading as={"h5"} fontSize={"sm"}>
+                    <Heading
+              fontFamily="" as={"h5"} fontSize={"sm"}>
                       {advItem.title}
                     </Heading>
                     <Text fontSize={"sm"} color={"gray.600"}>

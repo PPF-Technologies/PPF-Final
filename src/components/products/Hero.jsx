@@ -31,6 +31,7 @@ const Hero = () => {
         
       >
         <Heading
+              fontFamily=""
           as="h1"
           fontSize={{ base: '3xl', md: '3xl', lg:'44px', '2xl':'5xl' }}
           fontWeight="bold"

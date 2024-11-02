@@ -91,7 +91,8 @@ const ProductsTab = () => {
                     />
                   </Box>
                   <Box width={{ base: '100%', md: '50%' }} padding={{ base: 4, md: 8 }}>
-                    <Heading as="h3" py={{ base: 2, md: 4 }} fontSize={{ base: 'lg', md: '2xl', lg: '4xl' }}>
+                    <Heading
+              fontFamily="" as="h3" py={{ base: 2, md: 4 }} fontSize={{ base: 'lg', md: '2xl', lg: '4xl' }}>
                       {product.title}
                     </Heading>
                     <Text py={{ base: 2, md: 4 }} fontSize={{ base: 'sm', md: 'md' }}>

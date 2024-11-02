@@ -41,6 +41,7 @@ const ProductProp = ({
           >
             <CardHeader padding="0">
               <Heading
+              fontFamily=""
                 as="h2"
                 fontSize={{ base: "28px", md: "32px", lg: "42px" }}
                 fontWeight="700"
@@ -71,6 +72,7 @@ const ProductProp = ({
                     </div>
                     <div>
                       <Heading
+              fontFamily=""
                         fontSize={{ base: "20px", md: "20px", lg: "30px" }}
                         fontWeight="500"
                         mb={{ base: 2, md: 0, lg: "10px" }}

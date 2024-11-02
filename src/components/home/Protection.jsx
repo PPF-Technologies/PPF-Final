@@ -54,6 +54,7 @@ const Protection = () => {
 
       {/* Heading with gradient */}
       <Heading
+              fontFamily=""
         as="h2"
         textAlign="center"
         py={8}

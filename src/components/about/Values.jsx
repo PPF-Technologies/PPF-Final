@@ -24,7 +24,8 @@ const valuesData = [
 const Values = () => {
   return (
     <Flex direction="column" align="center" p={8}>
-      <Heading mb={6} fontSize="24px" fontWeight="700" lineHeight="37px">
+      <Heading
+              fontFamily="" mb={6} fontSize="24px" fontWeight="700" lineHeight="37px">
         Our Values
       </Heading>
       <SimpleGrid columns={{ base: 1, lg: 4 }} w="100%" spacing={6}>
@@ -54,7 +55,8 @@ const Values = () => {
               }
             }
           >
-            <Heading fontSize="18px" fontWeight="700" lineHeight="21.78px" mb={2}>
+            <Heading
+              fontFamily="" fontSize="18px" fontWeight="700" lineHeight="21.78px" mb={2}>
               {value.title}
             </Heading>
             <Text fontSize="18px" fontWeight="400" lineHeight="21.78px">

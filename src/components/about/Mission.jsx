@@ -16,6 +16,7 @@ const Mission = () => {
     >
       <Box textAlign="left" maxW={{ base: "100%", md: "600px" }}>
         <Heading
+              fontFamily=""
           as="h2"
           fontSize={{ base: "28px", md: "36px", lg: "42px" }} // Responsive font size
           fontWeight="700"

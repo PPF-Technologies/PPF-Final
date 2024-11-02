@@ -29,7 +29,8 @@ const Hero = () => {
 
           {/* Text Section */}
           <Box textAlign={{ base: "center", md: "left" }} w="full" maxW={{ base: "395px", lg: '50%'}}  >
-            <Heading as="h1" fontSize={{ base: "3xl", md: "4xl", lg: '5xl', '2xl': '5xl' }} fontWeight="bold" mb={4}>
+            <Heading
+              fontFamily="" as="h1" fontSize={{ base: "3xl", md: "4xl", lg: '5xl', '2xl': '5xl' }} fontWeight="bold" mb={4}>
               Unmatched Protection, Unbeatable Shine with Camio PPF
             </Heading>
             <Text mb={6} fontSize={{ base: "md", md: "md" }}>

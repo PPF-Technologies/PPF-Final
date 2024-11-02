@@ -4,6 +4,9 @@ import Navbar from "@/components/Navbar";
 import { Providers } from "./providers";
 import Footer from "@/components/Footer";
 import { IoLogoWhatsapp } from "react-icons/io";
+import {Sora} from "next/font/google"
+
+const sora = Sora({subsets: ['latin']})
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -25,7 +28,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}
+        className={`${sora.className} antialiased overflow-x-hidden`}
       >
         <Providers>
           <Navbar />

@@ -73,7 +73,8 @@ const WhyChoose = () => {
                   {feature.number}
                 </Circle>
                 <Box px={10}>
-                  <Heading size="lg" mb={{ base: 0, lg: 2 }}>
+                  <Heading
+              fontFamily="" size="lg" mb={{ base: 0, lg: 2 }}>
                     {feature.title}
                   </Heading>
                   <Text color="gray.600" minH={42}>

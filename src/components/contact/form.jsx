@@ -83,6 +83,7 @@ const ContactForm = () => {
       px={{ base: "10px", lg: "150px" }} // Padding for larger screens
     >
       <Heading
+              fontFamily=""
         my={{ base: "20px", lg: "50px" }}
         fontSize={{ base: "30px", md: "47px" }}
         fontWeight={700}
@@ -110,6 +111,7 @@ const ContactForm = () => {
           mb={{ base: 6, lg: 0 }}
         >
           <Heading
+              fontFamily=""
             fontSize={{ base: "30px", md: "35px", lg: "43px" }} // Responsive font size
             fontWeight={700}
             lineHeight={{ base: "40px", md: "50px", lg: "62px" }}

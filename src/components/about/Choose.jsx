@@ -17,6 +17,7 @@ const Choose = () => {
         
       >
         <Heading
+              fontFamily=""
           as="h2"
           fontSize={{ base: "28px", md: "36px", lg: "42px" }} // Responsive font size
           fontWeight="700"

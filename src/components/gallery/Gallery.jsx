@@ -17,7 +17,8 @@ const Gallery = () => {
   return (
     <Box w="full" px={{ base: 4, md: 16 }} py={8}>
       {/* Heading */}
-      <Heading mb={{base:2, md:4}} textAlign="center" fontSize={{base:"20px", md:"32px"}} fontWeight="700">
+      <Heading
+              fontFamily="" mb={{base:2, md:4}} textAlign="center" fontSize={{base:"20px", md:"32px"}} fontWeight="700">
         Gallery
       </Heading>
       <Text mb={{base:5, md:10}} textAlign="center" fontSize={{base:"16px", md:"20px"}} fontWeight="400" color="#121212CC">

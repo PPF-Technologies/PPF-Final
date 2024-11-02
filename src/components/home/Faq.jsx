@@ -191,6 +191,7 @@ const Faq = () => {
     >
       <Box textAlign="start" mb={8} w={{ base: "100%", md: "35%" }}>
         <Heading
+              fontFamily=""
           fontSize={{ base: "35px", lg: "45px" }}
           fontWeight={600}
           mb={6}

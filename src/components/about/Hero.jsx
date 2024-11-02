@@ -29,6 +29,7 @@ const Hero = () => {
       
       <Box textAlign="left" maxW={{ base: "100%", md: "600px" }} gap="30px">
         <Heading
+              fontFamily=""
           fontSize={{ base: "28px", md: "36px", lg: "43px" }} // Responsive font size
           fontWeight="700"
           lineHeight={{ base: "36px", md: "56px", lg: "61.1px" }} // Responsive line height
