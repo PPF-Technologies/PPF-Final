@@ -89,7 +89,7 @@ const WhyCamio = ({ products }) => {
               <Box
                 key={product.id}
                 width={{ base: "95%", sm: "45%", lg: "22%" }}
-                height="399px"
+                height={{base:"400px", lg:"355px"}}
                 borderWidth="1px"
                 borderRadius="20px 20px 20px 20px"
                 overflow="hidden"
@@ -98,12 +98,13 @@ const WhyCamio = ({ products }) => {
                 m={2}
               >
                 <Flex direction="column" height="100%">
-                  <Box className=" overflow-hidden p-5">
+                  <Box className=" overflow-hidden p-5 rounded-2xl">
                     <Image
                       src={product.image}
                       alt={product.name}
                       width={400}
                       height={400}
+                      className="rounded-2xl"
                     />
                   </Box>
 

@@ -12,7 +12,7 @@ const ProductProp = ({
   flexDirection = "flex",
 }) => {
   return (
-    <div className="max-w-full mx-auto p-4 md:p-8 lg:px-3">
+    <div className="max-w-full mx-auto p-4 md:p-8 lg:px-3 pb-16">
       <Card overflow="hidden" boxShadow="none" border="none">
         <div className={`md:flex flex-col ${flexDirection === "reverse-flex"
             ? "md:flex-row-reverse"

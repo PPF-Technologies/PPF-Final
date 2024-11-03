@@ -20,11 +20,11 @@ const Gallery = () => {
             <Box width={'full'} p={2}><Image src={logo} alt='logo' className='w-full' height={120} width={400} /></Box>
           </Box>
         </Flex>
-        <Box width={'100%'} p={2}>
+        <Box width={'100%'} p={2} display={{base:"none", lg:"block"}}>
           <Image src={toppicks} alt='camio' width={800} height={60} className='w-full rounded-2xl' />
         </Box>
       </Box>
-      <Flex width={{base:'100%', lg:'33%'}} flexDir={'column'}>
+      <Flex width={{base:'100%', lg:'33%'}} flexDir={'column'} display={{base:"none", lg:"block"}}>
         <Box p={2}><Image src={journey} alt='logo' className='w-full' height={60} width={400} /></Box>
         <Box p={2}><Image src={bikeimg} alt='camio' width={400} height={520} className='w-full rounded-2xl' /></Box>
         {/* <Box><Image src={camio} alt='camio' width={400} height={300} className='w-full' /></Box> */}

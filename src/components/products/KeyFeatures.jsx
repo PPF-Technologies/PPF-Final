@@ -93,8 +93,8 @@ const KeyFeatures = () => {
             borderColor="gray.300"
             rounded="xl"
             width={{ base: "95%", sm: "46%", md: "30%", lg: "23%" }}
-            p={6}
-            mb={6}
+            p={{base:3, lg:6}}
+            mb={{base:0, lg:6}}
             spacing={4}
             bg="white"
             align={"start"}

@@ -7,6 +7,8 @@ import Footer from "@/components/Footer";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { Sora } from "next/font/google";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
+import whatsapp from "@/assets/whatsapp.png"
 
 const sora = Sora({ subsets: ["latin"] });
 
@@ -51,7 +53,7 @@ export default function RootLayout({ children }) {
               aria-label="Message us on WhatsApp about this awesome product"
             >
               <div className="bg-white p-2">
-                <IoLogoWhatsapp className="text-[50px] p-1 fixed bottom-14 right-14 text-green-400" />
+                <Image width={50} height={50}  src={whatsapp} className="text-[50px] p-1 fixed bottom-14 right-14 text-green-400"/>
               </div>
             </a>
           )}

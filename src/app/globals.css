@@ -35,7 +35,8 @@ html {
   .custom-btn2{
     /* box-shadow: inset 0px -2px 4px rgb(163, 108, 4); */
     border-radius: 30px;
-    padding: 4px 6px;
+    padding: 6px 15px ;
+    gap: 10px;
   }
 }
 

@@ -29,9 +29,9 @@ const Footer = () => {
     About: "about",
     "Contact Us": "contact",
     Products: "products",
-    "Installation Guide": "installation-guide",
+    
     Blog: "blog",
-    FAQ: "faq",
+    
   };
 
   return (
@@ -142,10 +142,9 @@ const Footer = () => {
                       {[
                         "About",
                         "Products",
-                        "Installation Guide",
                         "Blog",
                         "Contact Us",
-                        "FAQ",
+                        
                       ].map((link) => (
                         <Text
                           fontSize={{ base: "14px", lg: "16px" }}
@@ -167,9 +166,9 @@ const Footer = () => {
                     </Text>
                     <Stack spacing={2}>
                       {[
-                        "Community",
+                       
                         "Knowledge Base",
-                        "Academy",
+                        
                         "Support",
                       ].map((help) => (
                         <Text

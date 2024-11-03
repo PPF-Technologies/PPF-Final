@@ -25,7 +25,7 @@ const Values = () => {
   return (
     <Flex direction="column" align="center" p={8}>
       <Heading
-              fontFamily="" pb={{base:6, lg:0}} py={{base:0, lg:16}} fontSize={{base:'3xl', lg:"5xl"}} fontWeight="700" lineHeight="37px">
+              fontFamily="" pb={{base:8, lg:0}} py={{base:0, lg:16}} fontSize={{base:'3xl', lg:"5xl"}} fontWeight="700" lineHeight="37px">
         Our Values
       </Heading>
       <SimpleGrid columns={{ base: 1, lg: 4 }} w="100%" spacing={6}>
@@ -33,7 +33,7 @@ const Values = () => {
           <Box
             key={index}
             textAlign="center"
-            px={4}
+            px={{base:2, lg:4}}
             py={4}
             position="relative"
             borderBottom={{ base: index < valuesData.length - 1 ? '3px solid' : 'none', lg: 'none' }}

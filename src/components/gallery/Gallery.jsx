@@ -1,5 +1,7 @@
-import React from "react";
-import { SimpleGrid, GridItem, Box, Heading, Text } from "@chakra-ui/react";
+'use client'
+import React, { useState } from "react";
+import { SimpleGrid, GridItem, Box, Heading, Text, Modal, ModalOverlay, ModalContent, ModalBody, IconButton, useDisclosure } from "@chakra-ui/react";
+import { CloseIcon } from "@chakra-ui/icons";
 import Image from "next/image";
 import camio from "../../assets/camio.png";
 import carimage from "../../assets/carimage.png";
@@ -13,6 +15,16 @@ const Gallery = () => {
   // List of images for easy maintenance
   const imagesLeftColumn = [camio, carimage, toppicks2, toppicks3];
   const imagesRightColumn = [journey, toppicks1, camio, toppicks4];
+
+  // State and hooks for modal functionality
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  // Function to handle image click
+  const handleImageClick = (src) => {
+    setSelectedImage(src);
+    onOpen();
+  };
 
   return (
     <Box w="full" px={{ base: 4, md: 16 }} py={8}>
@@ -37,7 +49,7 @@ const Gallery = () => {
       </Text>
 
       {/* Image Grid */}
-      <SimpleGrid columns="2" spacing={4}>
+      <SimpleGrid columns={2} spacing={4}>
         {/* Left column */}
         <GridItem>
           {imagesLeftColumn.map((src, index) => (
@@ -47,6 +59,8 @@ const Gallery = () => {
               boxShadow="md"
               borderRadius="2xl"
               mb={4}
+              cursor="pointer"
+              onClick={() => handleImageClick(src)}
             >
               <Image
                 src={src}
@@ -67,6 +81,8 @@ const Gallery = () => {
               boxShadow="md"
               borderRadius="2xl"
               mb={4}
+              cursor="pointer"
+              onClick={() => handleImageClick(src)}
             >
               <Image
                 src={src}
@@ -78,6 +94,39 @@ const Gallery = () => {
           ))}
         </GridItem>
       </SimpleGrid>
+
+      {/* Modal for larger image view */}
+      <Modal isOpen={isOpen} onClose={onClose} isCentered size="xl">
+        <ModalOverlay />
+        <ModalContent bg="transparent" boxShadow="none">
+          <ModalBody p={0} position="relative">
+            {/* Close button */}
+            <IconButton
+              icon={<CloseIcon />}
+              position="absolute"
+              top={2}
+              right={2}
+              colorScheme="whiteAlpha"
+              onClick={onClose}
+              zIndex={2}
+              aria-label="Close image modal"
+            />
+            {/* Display selected image */}
+            {selectedImage && (
+              <Image
+                src={selectedImage}
+                alt="Selected Gallery Image"
+                layout="responsive"
+                width={800} // Larger size for modal
+                height={600}
+                objectFit="cover"
+                priority
+                style={{ borderRadius: "1rem" }}
+              />
+            )}
+          </ModalBody>
+        </ModalContent>
+      </Modal>
     </Box>
   );
 };

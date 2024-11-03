@@ -74,17 +74,18 @@ const Navbar = () => {
           >
             About Us
           </Link>
-          <Link
-            className={getLinkClassName("/contact")}
-            href={"/contact"}
-          >
-            Contact
-          </Link>
+        
           <Link
             className={getLinkClassName("/gallery")}
             href={"/gallery"}
           >
             Gallery
+          </Link>
+          <Link
+            className={getLinkClassName("/contact")}
+            href={"/contact"}
+          >
+            Contact
           </Link>
         </nav>
 
@@ -167,15 +168,6 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                className={getMobileLinkClassName("/contact")}
-                onClick={toggleMenu}
-                href={"/contact"}
-              >
-                Contact
-              </Link>
-            </li>
-            <li>
-              <Link
                 className={getMobileLinkClassName("/gallery")}
                 onClick={toggleMenu}
                 href={"/gallery"}
@@ -183,6 +175,16 @@ const Navbar = () => {
                 Gallery
               </Link>
             </li>
+            <li>
+              <Link
+                className={getMobileLinkClassName("/contact")}
+                onClick={toggleMenu}
+                href={"/contact"}
+              >
+                Contact
+              </Link>
+            </li>
+           
           </ul>
         </nav>
       )}

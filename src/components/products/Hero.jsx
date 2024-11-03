@@ -11,7 +11,7 @@ import Link from 'next/link';
 const Hero = () => {
   return (
     <Flex
-      direction={{ base: 'column', md: 'row' }}
+      direction={{ base: 'column-reverse', md: 'row' }}
       align="center"
       justify="center"
       p={{ base: 4, md: 8 }}

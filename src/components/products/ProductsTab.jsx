@@ -263,13 +263,16 @@ const ProductsTab = () => {
         <TabList
           justifyContent="center"
           borderBottomWidth="0" // Removes default full-width bottom border
+          className="px-2"
         >
           {productData.map((tab, index) => (
             <Tab
               fontSize={{ base: "xl", md: "2xl", lg: "5xl" }}
               fontWeight={"semibold"}
               key={index}
-              _selected={{ borderBottom: "2px solid", borderColor: "black" }} // Customizes selected tab border
+              color={"gray.500"}
+              _selected={{ borderBottom: "2px solid", borderColor: "black", bg:"gray.100", color:"black" }} 
+              
             >
               {tab.series}
             </Tab>
@@ -299,7 +302,7 @@ const ProductsTab = () => {
                     />
                   </Box>
                   <Box
-                    height={{base:"460px", lg:"500px"}}
+                    height={{base:"550px", md:"750px", lg:"500px"}}
                     width={{ base: "100%", md: "50%" }}
                     padding={{ base: 4, md: 8 }}
                   >
@@ -323,7 +326,7 @@ const ProductsTab = () => {
                         <Tab py={{ base: 3, md: 6 }}>Usages</Tab>
                         <Tab py={{ base: 3, md: 6 }}>Specifications</Tab>
                       </TabList>
-                      <TabPanels height="230px" overflowY={"auto"}>
+                      <TabPanels height={{base:"300px", lg:"230px"}} overflowY={"auto"}>
                         <TabPanel>
                           <UnorderedList>
                             {product.details.keyFeatures.map((feature, i) => (

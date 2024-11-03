@@ -216,15 +216,18 @@ const PremiumProtection = () => {
               </CardBody>
             </Card>
 
-            <Box
-              display={{ base: "none", lg: "flex" }}
-              justifyContent="center"
-              alignItems="center"
+            <Card
+              bg="white"
+              borderRadius="2xl"
+              overflow="hidden"
+              boxShadow="sm"
             >
-              <Link href={"/products"}>
-                <Button2>Explore Our Products</Button2>
-              </Link>
-            </Box>
+              <CardBody p={{ base: "15px", md: "25px", lg: "30px" }} className="flex justify-center items-center">
+                <Link href={"/products"}>
+                  <Button2>Explore Our Products</Button2>
+                </Link>
+              </CardBody>
+            </Card>
 
             {/* Fourth Product Card */}
             <Card

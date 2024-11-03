@@ -15,6 +15,15 @@ import React, { useState } from "react";
 import { FiChevronRight } from "react-icons/fi";
 import Whyusimg1 from '../../assets/whyusimg1.png'
 
+import blackgloss from '@/assets/products/blackgloss.jpg';
+import whitegloss from '@/assets/products/whitegloss.jpg';
+import clearmatte from '@/assets/products/clearmatte.jpg';
+import blackmatte from '@/assets/products/blackmatte.jpg';
+import mghectar from '@/assets/products/mghectar.jpg';
+import img7 from '@/assets/products/IMG-20241023-WA0036.jpg'
+import img8 from '@/assets/products/IMG-20240908-WA0000.jpg'
+import img9 from '@/assets/products/IMG-20240809-WA0004.jpg'
+
 // import AnimButton from "../components/props/Button";
 
 import Link from "next/link";
@@ -40,56 +49,56 @@ const WhyUs = () => {
       title: "Self-Healing Technology",
       content:
         "Minor scratches heal automatically, keeping your car’s surface flawless.",
-      imageUrl: "/images/scratch-resistant.jpg",
+      imageUrl: blackgloss,
     },
     {
       id: 3,
       title: "Non-Yellowing Formula",
       content:
         " CAMIO PPF is designed with anti-yellowing technology, ensuring the film remains crystal clear and doesn’t discolor over time.",
-      imageUrl: "/images/self-healing.jpg",
+      imageUrl: whitegloss,
     },
     {
       id: 4,
       title: "Long-Lasting Durability",
       content:
         " Engineered for durability, CAMIO PPF maintains its integrity for years, providing reliable protection without cracking or peeling.",
-      imageUrl: "/images/self-healing.jpg",
+      imageUrl: clearmatte,
     },
     {
       id: 5,
       title: "5-Year Warranty",
       content:
         "CAMIO PPF comes with a 5-year warranty, giving you peace of mind that your vehicle is protected by a product that stands the test of time.",
-      imageUrl: "/images/self-healing.jpg",
+      imageUrl: blackmatte,
     },
     {
       id: 6,
       title: "Customizable Coverage",
       content:
         "Available in various finishes and customizable for any vehicle, CAMIO PPF ensures a perfect fit and full protection wherever you need it.",
-      imageUrl: "/images/self-healing.jpg",
+      imageUrl: mghectar,
     },
     {
       id: 7,
       title: "Ultra Hydrophobic",
       content:
         "CAMIO PPF features ultra-hydrophobic properties, allowing water to bead off easily and making the film resistant to stains and contaminants.",
-      imageUrl: "/images/self-healing.jpg",
+      imageUrl: img7,
     },
     {
       id: 8,
       title: "Enhanced Gloss Finish",
       content:
         "The high-gloss finish of CAMIO PPF enhances your vehicle’s appearance, providing a sleek and polished look while protecting the paint underneath.",
-      imageUrl: "/images/self-healing.jpg",
+      imageUrl: img8,
     },
     {
       id: 9,
       title: "No Residue",
       content:
         "CAMIO PPF can be removed cleanly without leaving any adhesive residue, ensuring your vehicle’s paintwork remains unblemished even after the film is removed.",
-      imageUrl: "/images/self-healing.jpg",
+      imageUrl: img9,
     },
   ];
 
