@@ -1,18 +1,72 @@
 'use client'
 
-import { useState } from 'react'
-import { usePathname } from 'next/navigation'
+import { useState, useEffect } from 'react'
+import { usePathname, useRouter } from 'next/navigation'
 import Image from 'next/image'
-import logo from '@/assets/logo.png'
 import Link from 'next/link'
-
+import logo from '@/assets/logo.png'
 
 export default function AdminLayout({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
   const pathname = usePathname()
+  const router = useRouter()
+
+  useEffect(() => {
+    // Check if admin_token cookie exists
+    const checkLoginStatus = () => {
+      const cookies = document.cookie.split(';').reduce((acc, cookie) => {
+        const [key, value] = cookie.trim().split('=')
+        acc[key] = value
+        return acc
+      }, {})
+
+      const hasAdminToken = cookies['admin_token'] === 'authenticated'
+      
+      // Only update login state and redirect if the state actually changed
+      if (hasAdminToken !== isLoggedIn) {
+        setIsLoggedIn(hasAdminToken)
+        
+        // Only redirect if not logged in and not on login page
+        if (!hasAdminToken && pathname !== '/admin/login') {
+          router.replace('/admin/login')
+        }
+        // Only redirect if logged in and on login page
+        else if (hasAdminToken && pathname === '/admin/login') {
+          router.replace('/admin/home')
+        }
+      }
+    }
+
+    checkLoginStatus()
+
+    // Set up interval to check login status periodically
+    const interval = setInterval(checkLoginStatus, 1000)
+
+    return () => clearInterval(interval)
+  }, [pathname, router, isLoggedIn]) // Add isLoggedIn to dependencies
+
+  const handleLogout = async () => {
+    try {
+      const res = await fetch('/api/admin/logout', {
+        method: 'POST',
+      })
+      if (res.ok) {
+        setIsLoggedIn(false)
+        router.replace('/admin/login')
+      }
+    } catch (error) {
+      console.error('Logout failed:', error)
+    }
+  }
+
+  //Don't show layout on login page
+  if (pathname === '/admin/login') {
+    return children
+  }
 
   return (
-    <div className="min-h-screen bg-gray-900">
+    <div className="admin min-h-screen bg-gray-900">
       <nav className="fixed top-0 z-50 w-full bg-gray-800 border-b border-gray-700">
         <div className="px-3 py-3 lg:px-5 lg:pl-3">
           <div className="flex items-center justify-between">
@@ -30,9 +84,18 @@ export default function AdminLayout({ children }) {
                   <path clipRule="evenodd" fillRule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
                 </svg>
               </button>
-              <Link href="/admin/home" className="flex ml-2 md:mr-24">
-                <Image src={logo} alt="logo" width={68} height={100}  />
+              <Link href="/" className="flex ml-2 md:mr-24">
+                <Image src={logo} alt="logo" width={68} height={100} />
               </Link>
+            </div>
+           <div className="flex items-center">
+              <button
+                onClick={handleLogout}
+                type="button"
+                className="text-white bg-red-500 hover:bg-red-600 hover:text-white px-4 py-2 rounded-md text-sm font-medium flex items-center gap-2"
+              >
+                Logout
+              </button>
             </div>
           </div>
         </div>

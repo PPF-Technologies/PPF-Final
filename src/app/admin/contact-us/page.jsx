@@ -25,8 +25,10 @@ import {
   getSortedRowModel,
   getFilteredRowModel
 } from '@tanstack/react-table';
+import { useRouter } from 'next/navigation';
 
 const Page = () => {
+  const router = useRouter();
   const [contacts, setContacts] = useState([]);
   const [sorting, setSorting] = useState([]);
   const [columnFilters, setColumnFilters] = useState([]);
@@ -74,6 +76,15 @@ const Page = () => {
       ),
     },
     {
+      accessorKey: "subject",
+      header: "Subject",
+      cell: ({ row }) => (
+        <div className="max-w-[200px] truncate text-gray-300">
+          {row.getValue("subject")}
+        </div>
+      ),
+    },
+    {
       accessorKey: "message",
       header: "Message",
       cell: ({ row }) => (
@@ -89,6 +100,23 @@ const Page = () => {
         <div className="text-sm text-gray-400">
           {new Date(row.getValue("timestamp")).toLocaleString()}
         </div>
+      ),
+    },
+    {
+      accessorKey: "id",
+      header: "Actions",
+      cell: ({ row }) => (
+        <Button
+          size="sm"
+          colorScheme="blue"
+          onClick={() => {
+            const contact = row.original;
+            const encodedData = encodeURIComponent(JSON.stringify(contact));
+            router.push(`/admin/contact-us/${encodedData}`);
+          }}
+        >
+          View Details
+        </Button>
       ),
     },
   ];
@@ -155,7 +183,7 @@ const Page = () => {
         </Menu>
       </div>
 
-      <div className="rounded-md border border-gray-700">
+      <div className="rounded-md border border-gray-700 overflow-x-scroll">
         <ChakraTable>
           <Thead>
             {table.getHeaderGroups().map((headerGroup) => (
