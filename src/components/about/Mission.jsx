@@ -11,7 +11,7 @@ const Mission = () => {
       justify="center"
       direction={{ base: "column", lg: "row" }}
       px={{ base: "20px", md: "150px" }} // Responsive padding
-      py="10px"
+      py={10}
       gap={{ base: "30px", md: "50px" }} // Responsive gap
     >
       <Box textAlign="left" maxW={{ base: "100%", md: "600px" }}>

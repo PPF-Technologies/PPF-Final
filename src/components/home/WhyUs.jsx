@@ -126,6 +126,7 @@ const WhyUs = () => {
           width={{ base: "100%", lg: "55%" }}
           fontSize={{ base: "32px", lg: "48px" }}
           textAlign={{ base: "center", lg: "left" }}
+          px={{base:0, lg:2}}
         >
           Why is CAMIO PPF the Ultimate Choice for Vehicle Protection?
         </Heading>

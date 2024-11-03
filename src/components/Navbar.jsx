@@ -77,6 +77,7 @@ const Navbar = () => {
 
         {/* Quote Button for larger screens */}
         <div className="hidden md:block">
+          <Link href={'/contact'}>
           <Button
             bg={"#FFBB4E"}
             _focus={{ boxShadow: "none", bg: "#FFBB4E" }}
@@ -86,7 +87,7 @@ const Navbar = () => {
             _hover={{ bg: "#FFBB4E" }}
           >
             Get a Quote
-          </Button>
+          </Button></Link>
         </div>
 
         {/* Hamburger Icon for Mobile */}
@@ -169,7 +170,7 @@ const Navbar = () => {
                 Contact
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Button
                 bg={"#FFBB4E"}
                 _focus={{ boxShadow: "none", bg: "#FFBB4E" }}
@@ -181,7 +182,7 @@ const Navbar = () => {
               >
                 Get a Quote
               </Button>
-            </li>
+            </li> */}
           </ul>
         </nav>
       )}

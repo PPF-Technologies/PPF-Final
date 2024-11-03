@@ -4,6 +4,8 @@ import { FaArrowRight } from 'react-icons/fa';
 import Image from 'next/image';
 import heroimg from '../../assets/camio.png'
 import Button2 from '../props/Button2';
+import Link from 'next/link';
+
 
 
 const Hero = () => {
@@ -54,9 +56,10 @@ const Hero = () => {
         <Text fontSize={{ base: 'md', md: 'md', lg:'lg' }} color="gray.600">
        <strong style={{ color: 'black' }}>At CAMIO</strong>, we offer two premium Paint Protection Film (PPF) series—TPU and TPH—designed to meet different needs and budgets. Both series deliver top-tier protection and aesthetic enhancement, while preserving your vehicle’s paint. Whether you want the flexibility of TPU or the affordability of TPH, CAMIO has you covered.
     </Text>
+        <Link  href={'/about'}>
         <Button2>
           Who We Are
-        </Button2>
+        </Button2></Link>
       </Stack>
 
       <Box

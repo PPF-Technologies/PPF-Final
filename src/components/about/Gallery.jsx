@@ -4,7 +4,9 @@ import React from 'react'
 import camio from "@/assets/camio.png"
 import carimage from "@/assets/carimage.png"
 import logo from "@/assets/logo.png"
-import danda from "@/assets/CAMIO1.png"
+import journey from "@/assets/journey.png"
+import toppicks from "@/assets/topPicks21.png"
+import bikeimg from "@/assets/products/mghectar.jpg"
 
 
 const Gallery = () => {
@@ -19,12 +21,12 @@ const Gallery = () => {
           </Box>
         </Flex>
         <Box width={'100%'} p={2}>
-          <Image src={danda} alt='camio' width={800} height={60} className='w-full' />
+          <Image src={toppicks} alt='camio' width={800} height={60} className='w-full rounded-2xl' />
         </Box>
       </Box>
       <Flex width={{base:'100%', lg:'33%'}} flexDir={'column'}>
-        <Box p={2}><Image src={logo} alt='logo' className='w-full' height={60} width={400} /></Box>
-        <Box p={2}><Image src={camio} alt='camio' width={400} height={520} className='w-full' /></Box>
+        <Box p={2}><Image src={journey} alt='logo' className='w-full' height={60} width={400} /></Box>
+        <Box p={2}><Image src={bikeimg} alt='camio' width={400} height={520} className='w-full rounded-2xl' /></Box>
         {/* <Box><Image src={camio} alt='camio' width={400} height={300} className='w-full' /></Box> */}
       </Flex>
     </Flex>

@@ -224,6 +224,7 @@ const Advantage = () => {
         mx={"auto"}
         width={{ base: "100%", lg: "45%" }}
         textAlign={"center"}
+        py={4}
       >
         Discover the CAMIO Advantage: Premium Protection for Your Vehicle
       </Heading>
