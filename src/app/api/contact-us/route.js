@@ -3,6 +3,29 @@ import { NextResponse } from 'next/server';
 
 const uri = process.env.MONGODB_URI;
 
+export async function GET() {
+    try {
+        // Connect to MongoDB
+        const client = await MongoClient.connect(uri);
+        const db = client.db('camio-ppf');
+        
+        // Get all contacts
+        const contacts = await db.collection('contacts').find({}).toArray();
+        
+        // Close connection
+        await client.close();
+
+        return NextResponse.json(contacts, { status: 200 });
+
+    } catch (error) {
+        console.error('Error fetching contacts:', error);
+        return NextResponse.json(
+            { error: 'Failed to fetch contacts' },
+            { status: 500 }
+        );
+    }
+}
+
 export async function POST(request) {
     try {
         // Parse the request body
