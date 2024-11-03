@@ -13,6 +13,8 @@ import {
 import { FiChevronDown } from "react-icons/fi";
 import { useState } from "react"; // Import useState for state management
 import AnimButton from "../../components/props/Button";
+import Link from "next/link";
+
 
 const FAQData = [
   {
@@ -198,13 +200,14 @@ const Faq = () => {
         >
           Frequently Asked Questions
         </Heading>
+        <Link href={'/contact'} >
         <AnimButton
           fontSize="18.98px"
           fontWeight={500}
           _hover={{ bg: "transparent" }}
         >
           Customer Support
-        </AnimButton>
+        </AnimButton></Link>
       </Box>
 
       <Flex

@@ -9,7 +9,6 @@ import {
   Input,
   InputGroup,
   InputRightElement,
-  Link,
   Icon,
   HStack,
   VStack,
@@ -22,18 +21,26 @@ import { IoLocationOutline } from "react-icons/io5";
 import { FiPhone } from "react-icons/fi";
 import logo from "@/assets/logo.png";
 import Image from "next/image";
+import Link from "next/link";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const routes = {
+    About: "about",
+    "Contact Us": "contact",
+    Products: "products",
+    "Installation Guide": "installation-guide",
+    Blog: "blog",
+    FAQ: "faq",
+  };
 
   return (
     <Box
       bg="linear-gradient(-49.05deg, #282B33 20.98%, #4A7280 72.1%, #D2B6A0 99.13%)"
       color="white"
       py={{ base: 8, md: 4 }}
-      m={{lg:4,'2xl':10}}
-      borderRadius={{lg:25}}
-      
+      m={{ lg: 4, "2xl": 10 }}
+      borderRadius={{ lg: 25 }}
     >
       <Container maxW="100%" px={{ base: 8, lg: 16 }} py={{ base: 8, lg: 16 }}>
         <Stack spacing={10}>
@@ -146,7 +153,7 @@ const Footer = () => {
                           color="#E0E0E0"
                           key={link}
                         >
-                          <Link href="#">{link}</Link>
+                          <Link href={`/${routes[link]}`}>{link}</Link>
                         </Text>
                       ))}
                     </Stack>
@@ -328,7 +335,7 @@ const Footer = () => {
             <Text fontSize={{ base: "10px", lg: "16px" }}>
               © {currentYear} Copyright By Camio PPF
             </Text>
-            <Image src={logo} width={150} height="auto"  alt="logo" />
+            <Image src={logo} width={150} height="auto" alt="logo" />
             <HStack spacing={4}>
               {["Terms", "Privacy", "Cookies", "Legal", "Recalls"].map(
                 (policy) => (

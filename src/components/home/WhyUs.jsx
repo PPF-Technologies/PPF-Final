@@ -156,7 +156,7 @@ const WhyUs = () => {
             owners. Here’s why CAMIO PPF is the ultimate choice:
           </Text>
           <Box px={8} py={4} my={{base:6, lg:0}} className="flex justify-center lg:block" >
-            <Link href={"/"}>
+            <Link href={"/about"}>
               <Button3>Learn More</Button3>
             </Link>
           </Box>
