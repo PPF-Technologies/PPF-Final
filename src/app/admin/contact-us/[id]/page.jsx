@@ -45,6 +45,10 @@ const ContactDetail = () => {
               <Text pt={2} color="green.200">{contact.phoneNumber}</Text>
             </Box>
             <Box>
+              <Heading size="xs" color="gray.400">Subject</Heading>
+              <Text pt={2} color="gray.200">{contact.subject}</Text>
+            </Box>
+            <Box>
               <Heading size="xs" color="gray.400">Message</Heading>
               <Text pt={2} color="gray.300">{contact.message}</Text>
             </Box>

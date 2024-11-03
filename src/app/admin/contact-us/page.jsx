@@ -76,6 +76,15 @@ const Page = () => {
       ),
     },
     {
+      accessorKey: "subject",
+      header: "Subject",
+      cell: ({ row }) => (
+        <div className="max-w-[200px] truncate text-gray-300">
+          {row.getValue("subject")}
+        </div>
+      ),
+    },
+    {
       accessorKey: "message",
       header: "Message",
       cell: ({ row }) => (
@@ -174,7 +183,7 @@ const Page = () => {
         </Menu>
       </div>
 
-      <div className="rounded-md border border-gray-700">
+      <div className="rounded-md border border-gray-700 overflow-x-scroll">
         <ChakraTable>
           <Thead>
             {table.getHeaderGroups().map((headerGroup) => (

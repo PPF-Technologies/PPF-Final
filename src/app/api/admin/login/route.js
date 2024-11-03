@@ -1,5 +1,5 @@
 import { cookies } from 'next/headers'
-import { NextResponse } from 'next/response'
+import { NextResponse } from 'next/server'
 
 export async function POST(request) {
   try {
@@ -28,6 +28,7 @@ export async function POST(request) {
       { status: 401 }
     )
   } catch (error) {
+    console.error('Login error:', error)
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }

@@ -13,6 +13,7 @@ export default function LoginPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    setError('')
     
     try {
       const res = await fetch('/api/admin/login', {
@@ -22,16 +23,20 @@ export default function LoginPage() {
         },
         body: JSON.stringify({ username, password }),
       })
-
-      if (res.ok) {
-        router.push('/admin/home')
+  
+      const data = await res.json()
+  
+      if (res.ok && data.success) {
+        window.location.href = '/admin/home' // Use window.location for full page refresh
       } else {
-        setError('Invalid credentials')
+        setError(data.error || 'Invalid credentials')
       }
     } catch (err) {
+      console.error('Login error:', err)
       setError('Something went wrong')
     }
   }
+
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-900 py-12 px-4 sm:px-6 lg:px-8">
