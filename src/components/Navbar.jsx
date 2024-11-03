@@ -61,12 +61,12 @@ const Navbar = () => {
           >
             About Us
           </Link>
-          <Link
+          {/* <Link
             className="opacity-80 hover:opacity-100 transition-all duration-100"
             href={"/warranty"}
           >
             Warranty
-          </Link>
+          </Link> */}
           <Link
             className="opacity-80 hover:opacity-100 transition-all duration-100"
             href={"/contact"}
@@ -151,7 +151,7 @@ const Navbar = () => {
                 About Us
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link
                 className="block py-2 px-3 rounded hover:bg-gray-100"
                 onClick={toggleMenu}
@@ -159,7 +159,7 @@ const Navbar = () => {
               >
                 Warranty
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link
                 className="block py-2 px-3 rounded hover:bg-gray-100"
