@@ -1,8 +1,8 @@
 "use client";
-import React, { useRef, useState } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
+import React, { useRef, useState, Suspense } from "react";
+import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import { OrbitControls, Environment, Html, Line } from "@react-three/drei";
-import Earth from "../../../public/Earth";
+import Earth from "../../../public/Earth"; // Assuming Earth is a GLTF/GLB model
 
 function LabeledBentLine({ start, bend, end, label }) {
   return (
@@ -41,8 +41,8 @@ function RotatingEarth({ isInteracting }) {
   return (
     <mesh ref={earthRef}>
       <Earth />
-      {/* Example of labeled bent lines */}
-      <LabeledBentLine
+     {/* Example of labeled bent lines */}
+     <LabeledBentLine
         start={[-2.5, 0.3, 0]}
         bend={[-2.7, 0.8, 0]}
         end={[-3.4, 1, 0]}
@@ -112,27 +112,31 @@ function RotatingEarth({ isInteracting }) {
   );
 }
 
+const LoadingSpinner = () => (
+  <Html center>
+    <div className="text-white text-lg font-bold">Loading...</div>
+  </Html>
+);
+
 const Car = () => {
   const [isInteracting, setIsInteracting] = useState(false);
-
+  const isMobile = window.innerWidth < 768;
   return (
-    <div className="h-[100vh] w-[100vw] bg-black flex items-center">
-      <div className="w-[80vw] h-full m-auto">
-        <Canvas camera={{ position: [2.9, 2, 2.9] }}>
-          {" "}
-          {/* Adjust to your preferred fixed position */}
+    <div className="lg:h-[100vh] h-[70vh] w-[100vw] bg-black flex items-center">
+      <div className={`w-full h-full m-auto ${isMobile ? "p-4" : "w-[80vw]"}`}>
+        <Canvas camera={{ position: isMobile ? [4.5, 3.5, 4.5] : [2.9, 2, 2.9] }}>
           <ambientLight />
           <OrbitControls
-            enableZoom={false}
-            enablePan={false}
-            minPolarAngle={Math.PI / 3} // Lock polar rotation to keep x-axis fixed
-            maxPolarAngle={Math.PI / 3} // Lock polar rotation to keep x-axis fixed
-            minAzimuthAngle={-Infinity} // Allow full rotation on the y-axis
-            maxAzimuthAngle={Infinity} // Allow full rotation on the y-axis
-            onStart={() => setIsInteracting(true)} // Stop rotation on interaction
-            onEnd={() => setIsInteracting(false)} // Resume rotation when interaction ends
+            enableZoom={false} // Disable zoom on mobile for ease
+            enablePan={false} // Disable pan on mobile
+            minPolarAngle={Math.PI / 3}
+            maxPolarAngle={Math.PI / 3}
+            onStart={() => setIsInteracting(true)}
+            onEnd={() => setIsInteracting(false)}
           />
-          <RotatingEarth isInteracting={isInteracting} />
+          <Suspense fallback={<LoadingSpinner />}>
+            <RotatingEarth isInteracting={isInteracting} />
+          </Suspense>
           <Environment preset="sunset" />
         </Canvas>
       </div>

@@ -57,10 +57,10 @@ const Protection = () => {
               fontFamily=""
         as="h2"
         textAlign="center"
-        py={8}
+        py={{base:8, lg:20}}
         bgGradient="linear(to-r, red.400, yellow.400)"
         bgClip="text"
-        fontSize={{ base: "3xl", md: "4xl" }}
+        fontSize={{ base: "3xl", md: "4xl", lg:'5xl' }}
         fontWeight="bold"
       >
         CLEAR AND COMPLETE <Text as="span" display="block">PROTECTION AGAINST</Text>
