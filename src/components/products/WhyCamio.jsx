@@ -34,7 +34,13 @@ const WhyCamio = ({ products }) => {
   ];
 
   return (
-    <Box width="100vw" height="auto" px={{base:0, lg:32}}>
+    <Box
+      width="100vw"
+      height="auto"
+      px={{ base: 0, lg: 32 }}
+      maxW={{ "2xl": "1500px" }}
+      mx={{ "2xl": "auto" }}
+    >
       <Flex
         direction="column"
         align="center"
@@ -54,18 +60,31 @@ const WhyCamio = ({ products }) => {
         <Box
           width="100%"
           p={4}
-          my={{base:0, lg:12}}
-          py={{base:0, lg:12}}
+          my={{ base: 0, lg: 12 }}
+          py={{ base: 0, lg: 12 }}
           bgGradient="linear(to-r, rgba(158, 194, 194, 0.2) 21.17%, rgba(213, 203, 159, 0.2) 91.44%)"
           position="relative"
           borderRadius={14}
         >
           <Heading
-              fontFamily="" as="h1" size="xl" textAlign="center" mb={8} mt={4}>
+            fontFamily=""
+            as="h1"
+            size="xl"
+            textAlign="center"
+            mb={8}
+            mt={4}
+          >
             Available Products in TPU Series
           </Heading>
 
-          <Flex justify="center" wrap="wrap" gap={0} p={1} maxW={{'2xl':"1500px"}} mx={{'2xl':"auto"}}>
+          <Flex
+            justify="center"
+            wrap="wrap"
+            gap={0}
+            p={1}
+            maxW={{ "2xl": "1500px" }}
+            mx={{ "2xl": "auto" }}
+          >
             {products.map((product) => (
               <Box
                 key={product.id}
@@ -83,16 +102,18 @@ const WhyCamio = ({ products }) => {
                     <Image
                       src={product.image}
                       alt={product.name}
-                      
                       width={400}
                       height={400}
-                      
                     />
                   </Box>
 
                   <Box minH="48px" px={5} mb={2} align="start" flex="1">
                     <Heading
-              fontFamily="" fontSize="24px" fontWeight="600" m={0}>
+                      fontFamily=""
+                      fontSize="24px"
+                      fontWeight="600"
+                      m={0}
+                    >
                       {product.name}
                     </Heading>
                   </Box>

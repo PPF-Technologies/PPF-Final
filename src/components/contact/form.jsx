@@ -1,15 +1,14 @@
 "use client"; // This line marks the component as a Client Component
 
 import React, { useState } from "react";
+import axios from "axios";
 import {
   Button,
   Box,
   Checkbox,
   FormControl,
-  FormLabel,
   Heading,
   Input,
-  Select,
   Stack,
   Textarea,
   HStack,
@@ -21,10 +20,7 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
-  MenuItemOption,
-  MenuGroup,
-  MenuOptionGroup,
-  MenuDivider,
+  useToast
 } from "@chakra-ui/react";
 
 import {
@@ -46,6 +42,7 @@ import Button2 from "../props/Button2";
 import { color } from "framer-motion";
 
 const ContactForm = () => {
+  const toast = useToast()
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -63,20 +60,72 @@ const ContactForm = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubjectChange = (subject) => {
+    setFormData((prevState) => ({
+      ...prevState,
+      subject,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Show loading toast
+    const toastId = toast({
+      title: "Submitting Request",
+      description: "Please wait while we submit your request",
+      status: "loading",
+      duration: null, // Keeps the toast open until manually closed
+      isClosable: true,
+    });
+
     // Basic validation
     if (!formData.name || !formData.email || !formData.message) {
-      alert("Please fill in all required fields.");
+      toast.update(toastId, {
+        title: "Error",
+        description: "Please fill in all required fields.",
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+      });
       return;
     }
 
     if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      alert("Please enter a valid email address.");
+      toast.update(toastId, {
+        title: "Invalid Email",
+        description: "Please enter a valid email address.",
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+      });
       return;
     }
 
-    console.log("Form submitted:", formData);
+    try {
+      const response = await axios.post("/api/contact-us", formData);
+      console.log(response.data);
+
+      // Update toast to success
+      toast.update(toastId, {
+        title: "Success",
+        description: "Your request has been successfully submitted.",
+        status: "success",
+        duration: 5000,
+        isClosable: true,
+      });
+    } catch (error) {
+      console.log(error);
+
+      // Update toast to error
+      toast.update(toastId, {
+        title: "Submission Failed",
+        description: "Something went wrong. Please try again.",
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+      });
+    }
   };
 
   return (
@@ -312,19 +361,31 @@ const ContactForm = () => {
                           gap={36}
                           rightIcon={<GoTriangleDown />}
                           _hover={{ bg: "white" }}
-                          _active={{ bg: "white", color: "#98A2B3" }} 
+                          _active={{ bg: "white", color: "#98A2B3" }}
                           _focus={{
                             boxShadow: "none",
                             bg: "white",
                             color: "#98A2B3",
-                          }} 
+                          }}
                         >
-                          Subject
+                          {formData.subject || "Select Subject"}
                         </MenuButton>
                         <MenuList>
-                          <MenuItem>Enquiry</MenuItem>
-                          <MenuItem>Order Related</MenuItem>
-                          <MenuItem>Complaint</MenuItem>
+                          <MenuItem
+                            onClick={() => handleSubjectChange("Enquiry")}
+                          >
+                            Enquiry
+                          </MenuItem>
+                          <MenuItem
+                            onClick={() => handleSubjectChange("Order Related")}
+                          >
+                            Order Related
+                          </MenuItem>
+                          <MenuItem
+                            onClick={() => handleSubjectChange("Complaint")}
+                          >
+                            Complaint
+                          </MenuItem>
                         </MenuList>
                       </Menu>
                     </HStack>
