@@ -25,8 +25,10 @@ import {
   getSortedRowModel,
   getFilteredRowModel
 } from '@tanstack/react-table';
+import { useRouter } from 'next/navigation';
 
 const Page = () => {
+  const router = useRouter();
   const [contacts, setContacts] = useState([]);
   const [sorting, setSorting] = useState([]);
   const [columnFilters, setColumnFilters] = useState([]);
@@ -89,6 +91,23 @@ const Page = () => {
         <div className="text-sm text-gray-400">
           {new Date(row.getValue("timestamp")).toLocaleString()}
         </div>
+      ),
+    },
+    {
+      accessorKey: "id",
+      header: "Actions",
+      cell: ({ row }) => (
+        <Button
+          size="sm"
+          colorScheme="blue"
+          onClick={() => {
+            const contact = row.original;
+            const encodedData = encodeURIComponent(JSON.stringify(contact));
+            router.push(`/admin/contact-us/${encodedData}`);
+          }}
+        >
+          View Details
+        </Button>
       ),
     },
   ];
