@@ -80,8 +80,8 @@ const Car = () => {
         <Canvas camera={{ position: isMobile ? [4.5, 3.5, 4.5] : [2.9, 2, 2.9] }}>
           <ambientLight />
           <OrbitControls
-            enableZoom={!isMobile}
-            enablePan={!isMobile}
+            enableZoom={isMobile}
+            enablePan={isMobile}
             minPolarAngle={Math.PI / 3}
             maxPolarAngle={Math.PI / 3}
             onStart={() => setIsInteracting(true)}
