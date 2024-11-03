@@ -29,7 +29,7 @@ export async function GET() {
 export async function POST(request) {
     try {
         // Parse the request body
-        const { name, email, phone, message } = await request.json();
+        const { name, email, phone, message, subject } = await request.json();
 
         // Validate required fields
         if (!name || !email || !phone) {
@@ -49,6 +49,7 @@ export async function POST(request) {
             name,
             email,
             phoneNumber:phone,
+            subject,
             message: message || '', // Make message optional with empty string default
             timestamp: istTime,
             createdAt: new Date()

@@ -26,7 +26,6 @@ const Gallery = () => {
       >
         Gallery
       </Heading>
-<<<<<<< HEAD
       <Text
         mb={{ base: 5, md: 10 }}
         textAlign="center"
@@ -35,10 +34,6 @@ const Gallery = () => {
         color="#121212CC"
       >
         &quot;Unmatched Protection, Unbeatable Shine&quot;
-=======
-      <Text mb={{base:5, md:10}} textAlign="center" fontSize={{base:"16px", md:"20px"}} fontWeight="400" color="#121212CC">
-      "Unmatched Protection, Unbeatable Shine"
->>>>>>> b815e81ae3bd6ed3528542cc1d53a5c1592cfe10
       </Text>
 
       {/* Image Grid */}
