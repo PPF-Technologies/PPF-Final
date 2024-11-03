@@ -3,18 +3,19 @@ import React, { useState, useEffect } from "react";
 import logo from "@/assets/logo.png";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from 'next/navigation';
 import { Button, IconButton } from "@chakra-ui/react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
-  // Close the mobile menu when scrolling
   useEffect(() => {
     const handleScroll = () => {
       if (isOpen) {
@@ -23,12 +24,25 @@ const Navbar = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    // Clean up the event listener on component unmount
+    
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [isOpen]);
+
+  const getLinkClassName = (href) => {
+    const baseClasses = "opacity-80 hover:opacity-100 transition-all duration-100";
+    return pathname === href
+      ? `${baseClasses} text-[#000000] font-bold`
+      : baseClasses;
+  };
+
+  const getMobileLinkClassName = (href) => {
+    const baseClasses = "block py-2 px-3 rounded hover:bg-gray-100";
+    return pathname === href
+      ? `${baseClasses} text-[#000000] font-bold`
+      : baseClasses;
+  };
 
   return (
     <header className="flex items-center bg-transparent w-full z-50 px-5 md:px-10 py-3">
@@ -43,51 +57,51 @@ const Navbar = () => {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex gap-10 md:gap-8 font-semibold w-full justify-center text-gray-700 items-center">
           <Link
-            className="opacity-80 hover:opacity-100 transition-all duration-100"
+            className={getLinkClassName("/")}
             href={"/"}
           >
             Home
           </Link>
-         
           <Link
-            className="opacity-80 hover:opacity-100 transition-all duration-100"
+            className={getLinkClassName("/products")}
             href={"/products"}
           >
             Products
           </Link>
           <Link
-            className="opacity-80 hover:opacity-100 transition-all duration-100"
+            className={getLinkClassName("/about")}
             href={"/about"}
           >
             About Us
           </Link>
-          {/* <Link
-            className="opacity-80 hover:opacity-100 transition-all duration-100"
-            href={"/warranty"}
-          >
-            Warranty
-          </Link> */}
           <Link
-            className="opacity-80 hover:opacity-100 transition-all duration-100"
+            className={getLinkClassName("/contact")}
             href={"/contact"}
           >
             Contact
+          </Link>
+          <Link
+            className={getLinkClassName("/gallery")}
+            href={"/gallery"}
+          >
+            Gallery
           </Link>
         </nav>
 
         {/* Quote Button for larger screens */}
         <div className="hidden md:block">
           <Link href={'/contact'}>
-          <Button
-            bg={"#FFBB4E"}
-            _focus={{ boxShadow: "none", bg: "#FFBB4E" }}
-            rounded={"full"}
-            fontWeight={500}
-            fontSize={"14px"}
-            _hover={{ bg: "#FFBB4E" }}
-          >
-            Get a Quote
-          </Button></Link>
+            <Button
+              bg={"#FFBB4E"}
+              _focus={{ boxShadow: "none", bg: "#FFBB4E" }}
+              rounded={"full"}
+              fontWeight={500}
+              fontSize={"14px"}
+              _hover={{ bg: "#FFBB4E" }}
+            >
+              Get a Quote
+            </Button>
+          </Link>
         </div>
 
         {/* Hamburger Icon for Mobile */}
@@ -126,17 +140,16 @@ const Navbar = () => {
           <ul className="bg-white flex flex-col gap-4 font-medium text-gray-700 pl-6 pb-4">
             <li>
               <Link
-                className="block py-2 px-3 rounded hover:bg-gray-100"
+                className={getMobileLinkClassName("/")}
                 onClick={toggleMenu}
                 href={"/"}
               >
                 Home
               </Link>
             </li>
-            
             <li>
               <Link
-                className="block py-2 px-3 rounded hover:bg-gray-100"
+                className={getMobileLinkClassName("/products")}
                 onClick={toggleMenu}
                 href={"/products"}
               >
@@ -145,44 +158,31 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                className="block py-2 px-3 rounded hover:bg-gray-100"
+                className={getMobileLinkClassName("/about")}
                 onClick={toggleMenu}
                 href={"/about"}
               >
                 About Us
               </Link>
             </li>
-            {/* <li>
-              <Link
-                className="block py-2 px-3 rounded hover:bg-gray-100"
-                onClick={toggleMenu}
-                href={"/warranty"}
-              >
-                Warranty
-              </Link>
-            </li> */}
             <li>
               <Link
-                className="block py-2 px-3 rounded hover:bg-gray-100"
+                className={getMobileLinkClassName("/contact")}
                 onClick={toggleMenu}
                 href={"/contact"}
               >
                 Contact
               </Link>
             </li>
-            {/* <li>
-              <Button
-                bg={"#FFBB4E"}
-                _focus={{ boxShadow: "none", bg: "#FFBB4E" }}
-                rounded={"full"}
-                fontWeight={500}
-                fontSize={"14px"}
-                _hover={{ bg: "#FFBB4E" }}
+            <li>
+              <Link
+                className={getMobileLinkClassName("/gallery")}
                 onClick={toggleMenu}
+                href={"/gallery"}
               >
-                Get a Quote
-              </Button>
-            </li> */}
+                Gallery
+              </Link>
+            </li>
           </ul>
         </nav>
       )}

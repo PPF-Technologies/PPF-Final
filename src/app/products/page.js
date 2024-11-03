@@ -18,25 +18,25 @@ const Page = () => {
       name: "Camio TPU Clear Gloss",
       image: tpuSeries1, 
       id: 1,
-      details: "Details about Camio TPU Clear Gloss.",
+      details: "This ultra-gloss film provides enhanced shine, self-healing, and water repellency. With a non-yellowing formula and 5-year warranty, it's ideal for luxury vehicles and easy to install on large surfaces.",
     },
     {
       name: "CAMIO TPU Black Gloss",
       image: tpuSeries1,
       id: 2,
-      details: "Details about CAMIO TPU Black Gloss.",
+      details: "This high-gloss black film offers a bold finish, self-healing, and hydrophobic properties. With stain resistance, a non-yellowing formula, and a 5-year warranty, it’s ideal for dark or luxury vehicles and easy to apply to large areas.",
     },
     {
       name: "CAMIO TPU Clear Matte",
       image: tpuSeries3,
       id: 3,
-      details: "Details about CAMIO TPU Clear Matte.",
+      details: "This matte film provides a stealthy, non-reflective look with self-healing, hydrophobic, and non-yellowing properties. It offers long-lasting durability with a 5-year warranty, ideal for a modern, low-gloss aesthetic and large coverage areas.",
     },
     {
-      name: "CAMIO TPU Another Matte",
+      name: "CAMIO TPU Black Matte",
       image: tpuSeries4,
       id: 4,
-      details: "Details about CAMIO TPU Another Matte.",
+      details: "This matte black film offers a sophisticated, non-reflective finish with self-healing and hydrophobic properties. It provides durable, non-yellowing protection with a 5-year warranty, ideal for a bold, modern appearance on high-end dark vehicles.",
     },
   ];
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { SimpleGrid, GridItem, Box, Heading, Text} from "@chakra-ui/react";
+import { SimpleGrid, GridItem, Box, Heading, Text } from "@chakra-ui/react";
 import Image from "next/image";
 import camio from "../../assets/camio.png";
 import carimage from "../../assets/carimage.png";
@@ -18,11 +18,22 @@ const Gallery = () => {
     <Box w="full" px={{ base: 4, md: 16 }} py={8}>
       {/* Heading */}
       <Heading
-              fontFamily="" mb={{base:2, md:4}} textAlign="center" fontSize={{base:"20px", md:"32px"}} fontWeight="700">
+        fontFamily=""
+        mb={{ base: 2, md: 4 }}
+        textAlign="center"
+        fontSize={{ base: "20px", md: "32px" }}
+        fontWeight="700"
+      >
         Gallery
       </Heading>
-      <Text mb={{base:5, md:10}} textAlign="center" fontSize={{base:"16px", md:"20px"}} fontWeight="400" color="#121212CC">
-      &&quot;Unmatched Protection, Unbeatable Shine&&quot;
+      <Text
+        mb={{ base: 5, md: 10 }}
+        textAlign="center"
+        fontSize={{ base: "16px", md: "20px" }}
+        fontWeight="400"
+        color="#121212CC"
+      >
+        &quot;Unmatched Protection, Unbeatable Shine&quot;
       </Text>
 
       {/* Image Grid */}
@@ -30,7 +41,13 @@ const Gallery = () => {
         {/* Left column */}
         <GridItem>
           {imagesLeftColumn.map((src, index) => (
-            <Box key={index} overflow="hidden" boxShadow="md" borderRadius="lg" mb={4}>
+            <Box
+              key={index}
+              overflow="hidden"
+              boxShadow="md"
+              borderRadius="2xl"
+              mb={4}
+            >
               <Image
                 src={src}
                 alt={`Gallery Image ${index + 1}`}
@@ -44,7 +61,13 @@ const Gallery = () => {
         {/* Right column */}
         <GridItem>
           {imagesRightColumn.map((src, index) => (
-            <Box key={index} overflow="hidden" boxShadow="md" borderRadius="lg" mb={4}>
+            <Box
+              key={index}
+              overflow="hidden"
+              boxShadow="md"
+              borderRadius="2xl"
+              mb={4}
+            >
               <Image
                 src={src}
                 alt={`Gallery Image ${index + 5}`}

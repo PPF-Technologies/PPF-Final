@@ -29,10 +29,10 @@ export async function GET() {
 export async function POST(request) {
     try {
         // Parse the request body
-        const { name, email, phoneNumber, message } = await request.json();
+        const { name, email, phone, message, subject } = await request.json();
 
         // Validate required fields
-        if (!name || !email || !phoneNumber) {
+        if (!name || !email || !phone) {
             return NextResponse.json(
                 { error: 'Name, email and phone number are required' },
                 { status: 400 }
@@ -48,7 +48,8 @@ export async function POST(request) {
         const contactData = {
             name,
             email,
-            phoneNumber,
+            phoneNumber:phone,
+            subject,
             message: message || '', // Make message optional with empty string default
             timestamp: istTime,
             createdAt: new Date()
