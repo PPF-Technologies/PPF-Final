@@ -39,6 +39,7 @@ export default function RootLayout({ children }) {
       <head>
         {/* Setting the title and description within <head> */}
         <title>{metadata.title}</title>
+        {/* <link rel="icon" href="/favicon.ico" /> */}
         <meta name="description" content={metadata.description} />
       </head>
       <body className={`${sora.className} antialiased overflow-x-hidden`}>
