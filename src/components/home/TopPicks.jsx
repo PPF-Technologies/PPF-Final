@@ -40,15 +40,15 @@ const PremiumProtection = () => {
               cursor={"default"}
             >
               <Text pb={{ base: 0, lg: 0 }}>Features that we provide</Text>{" "}
-              <FiChevronRight />
+              
             </Button>
 
             <Heading
               fontFamily=""
               fontSize={{ base: "30px", lg: "45px" }}
               fontWeight={600}
-              mb={{ base: 2, lg: 8 }}
-              mt={{ base: 2 }}
+              mb={{ base: 2, lg: 4 }}
+              mt={{ base: 2, lg:6 }}
               color="#010205"
             >
               Top Picks for Premium Protection
@@ -58,7 +58,7 @@ const PremiumProtection = () => {
               fontSize={{ base: "16px", lg: "18px" }}
               fontWeight={400}
               color="#000000"
-              mb={8}
+              mb={6}
             >
               Explore our best-selling CAMIO PPF products, trusted for their
               unmatched protection and flawless finish.
