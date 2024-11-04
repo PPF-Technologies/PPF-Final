@@ -1,455 +1,245 @@
-"use client"; // This line marks the component as a Client Component
-
-import React, { useState } from "react";
-import axios from "axios";
+"use client";
 import {
-  Button,
   Box,
-  Checkbox,
-  FormControl,
+  Button,
   Heading,
-  Input,
-  Stack,
-  Textarea,
-  HStack,
-  Icon,
   Text,
   Flex,
-  Grid,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  useToast
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
 } from "@chakra-ui/react";
+import { FiChevronDown } from "react-icons/fi";
+import { useState } from "react"; // Import useState for state management
+import AnimButton from "../../components/props/Button";
+import Link from "next/link";
 
-import { useSearchParams } from "next/navigation";
 
-import {
-  FaMapMarkerAlt,
-  FaRegEnvelope,
-  FaPhoneAlt,
-  FaInstagram,
-  FaFacebook,
-  FaYoutube,
-  FaUser,
-  FaPenSquare,
-} from "react-icons/fa";
-import { FaChevronDown } from "react-icons/fa6";
-import { GoTriangleDown } from "react-icons/go";
-import { FaPen } from "react-icons/fa6";
-import Image from "next/image";
-import whatsApp from "../../assets/icons/whatsapp.svg";
-import Button2 from "../props/Button2";
-import { color } from "framer-motion";
+const FAQData = [
+  {
+    question: "What is Paint Protection Film (PPF)?",
+    answer:
+      "Paint Protection Film (PPF) is a transparent film applied to a vehicle's surface to protect it from scratches, stone chips, and environmental damage. CAMIO PPF also enhances the appearance by providing an ultra-high gloss finish.",
+  },
+  {
+    question: "What are the key features of CAMIO PPF?",
+    answer:
+      "CAMIO PPF offers self-healing properties, hydrophobic capabilities (water repellent), ultra-high gloss, durability, and protection from yellowing. It also comes at a competitive price compared to other premium brands.",
+  },
+  {
+    question: "What is the difference between TPU and TPH films?",
+    answer:
+      "CAMIO TPU films are more durable, stretchable, and offer better resistance, with a 5-year warranty. TPH films are less strong and flexible but still provide excellent protection and come with a 3-year warranty. Both have a thickness of 190 microns and share self-healing and hydrophobic features.",
+  },
+  {
+    question: "Can CAMIO PPF be installed on any type of vehicle?",
+    answer:
+      "Yes, CAMIO PPF can be applied to cars, motorcycles, and other types of vehicles. It’s designed to protect all kinds of painted surfaces.",
+  },
+  {
+    question: "Is CAMIO PPF easy to install?",
+    answer:
+      "While CAMIO PPF can be installed by professionals for optimal results, it is designed to be user-friendly for experienced installers. We recommend consulting with an expert for the best application and long-term protection.",
+  },
+  {
+    question: "How does CAMIO PPF’s self-healing feature work?",
+    answer:
+      "CAMIO PPF is made with an advanced polymer that can self-heal minor scratches and swirls. When exposed to heat (from the sun or a heat gun), the film restores itself, maintaining a pristine appearance.",
+  },
+  {
+    question: "How long does CAMIO PPF last?",
+    answer:
+      "CAMIO TPU PPF has a 5-year warranty, while CAMIO TPH PPF has a 3-year warranty. Both films are designed to provide long-term protection against environmental damage.",
+  },
+  {
+    question: "What maintenance does CAMIO PPF require?",
+    answer:
+      "CAMIO PPF requires minimal maintenance. Simply wash your vehicle regularly to remove dirt and debris. Avoid using abrasive chemicals or high-pressure washing directly on the film.",
+  },
+  {
+    question: "Does CAMIO PPF affect the vehicle’s paint?",
+    answer:
+      "No, CAMIO PPF is non-invasive and designed to protect your paint without altering or damaging it. In fact, it adds a layer of protection, keeping your paint looking new.",
+  },
+  {
+    question: "Can CAMIO PPF be removed?",
+    answer:
+      "Yes, CAMIO PPF can be removed without causing damage to the vehicle’s paint. However, it is recommended that removal be done by a professional.",
+  },
+  {
+    question: "What vehicles are ideal for CAMIO PPF application?",
+    answer:
+      "CAMIO PPF is ideal for all vehicle types, from luxury cars and motorcycles to commercial vehicles, protecting them from daily wear, UV exposure, and environmental damage.",
+  },
+  {
+    question: "Is CAMIO PPF available internationally?",
+    answer:
+      "Yes, CAMIO PPF is available globally. We offer shipping to various countries. Contact us for details regarding availability in your region.",
+  },
+  {
+    question: "How do I purchase CAMIO PPF?",
+    answer:
+      "You can purchase CAMIO PPF by contacting us directly through the website, or by visiting our authorized dealers. For more information, check out our 'Contact Us' page.",
+  },
+  {
+    question: "How does CAMIO PPF compare to other brands?",
+    answer:
+      "CAMIO PPF offers premium features like self-healing, hydrophobic coating, and durability at a more affordable price than many competitors. Our film also provides superior clarity and high gloss, ensuring your vehicle looks its best.",
+  },
+  {
+    question: "Does CAMIO PPF prevent yellowing?",
+    answer:
+      "Yes, CAMIO PPF is designed to resist yellowing over time, maintaining its clarity and protective properties for years.",
+  },
+  {
+    question:
+      "What should I do if I notice bubbles or imperfections after installation?",
+    answer:
+      "Small bubbles or imperfections can sometimes occur after installation. They typically disappear on their own within a few days as the film settles. If they persist or if you have concerns, contact your installer for assistance.",
+  },
+  {
+    question: "How does CAMIO PPF perform in extreme weather conditions?",
+    answer:
+      "CAMIO PPF is designed to withstand extreme weather conditions, including high temperatures, heavy rain, and UV exposure. It offers robust protection against environmental damage.",
+  },
+  {
+    question: "What factors influence the cost of CAMIO PPF?",
+    answer:
+      "The cost of CAMIO PPF can vary based on the size of the vehicle, the type of film chosen (TPU vs. TPH), and the complexity of the installation. For an accurate quote, please contact us or visit an authorized dealer.",
+  },
+  {
+    question: "Is CAMIO PPF worth the investment?",
+    answer:
+      "CAMIO PPF is a valuable investment for protecting your vehicle's paint from damage, enhancing its appearance, and potentially increasing its resale value. Its durability and long-term benefits often outweigh the initial cost.",
+  },
+  {
+    question: "Can I install CAMIO PPF myself?",
+    answer:
+      "While CAMIO PPF is designed to be user-friendly for experienced installers, we recommend professional installation for optimal results and to avoid potential issues.",
+  },
+  {
+    question: "Do you provide installation services for CAMIO PPF?",
+    answer:
+      "We do not offer installation services directly. We recommend consulting with professional installers who are experienced with applying paint protection films to ensure the best results.",
+  },
+];
 
-const ContactForm = () => {
-  const toast = useToast()
-  const searchParams = useSearchParams();
- 
-  const [formData, setFormData] = useState({
-    name: "",
-    email: searchParams.get("email") || "",
-    phone: "",
-    subject: searchParams.get("subject")||"",
-    message: "",
-    agreeToTerms: false,
-  });
+const FaqItem = ({ question, answer }) => (
+  <AccordionItem
+    border="none"
+    mb={4}
+    borderRadius="md"
+    maxW="100%"
+    mr={8}
+    background="linear-gradient(96.56deg, rgba(194, 218, 218, 0.3) 27.8%, rgba(240, 237, 226, 0.3) 53.91%)"
+  >
+    {({ isExpanded }) => (
+      <>
+        <AccordionButton p={4} borderRadius="md" _hover={{ bg: "transparent" }}>
+          <Flex flex="1" justify="space-between" align="center">
+            <Text
+              align="left"
+              fontSize={{ base: "18", lg: "22" }}
+              fontWeight={500}
+            >
+              {question}
+            </Text>
 
-  const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: type === "checkbox" ? checked : value,
-    }));
-  };
+            <Text fontSize="2xl" ml={2}>
+              {isExpanded ? "×" : "+"}
+            </Text>
+          </Flex>
+        </AccordionButton>
+        <AccordionPanel
+          pb={4}
+          px={4}
+          transition="max-height 0.3s ease-in-out, opacity 0.3s ease-in-out"
+          maxHeight={isExpanded ? "200px" : "0px"}
+          overflow="hidden"
+        >
+          <Text
+            color="#6C6C6C"
+            fontSize={{ base: "14px", lg: "16px" }}
+            fontWeight={400}
+          >
+            {answer}
+          </Text>
+        </AccordionPanel>
+      </>
+    )}
+  </AccordionItem>
+);
 
-  const handleSubjectChange = (subject) => {
-    setFormData((prevState) => ({
-      ...prevState,
-      subject,
-    }));
-  };
+const Faq = () => {
+  // State to manage the number of questions to show
+  const [visibleCount, setVisibleCount] = useState(4);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    // Show loading toast
-    const toastId = toast({
-      title: "Submitting Request",
-      description: "Please wait while we submit your request",
-      status: "loading",
-      duration: null, // Keeps the toast open until manually closed
-      isClosable: true,
-    });
-
-    // Basic validation
-    if (!formData.name || !formData.email || !formData.message) {
-      toast.update(toastId, {
-        title: "Error",
-        description: "Please fill in all required fields.",
-        status: "error",
-        duration: 5000,
-        isClosable: true,
-      });
-      return;
-    }
-
-    if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      toast.update(toastId, {
-        title: "Invalid Email",
-        description: "Please enter a valid email address.",
-        status: "error",
-        duration: 5000,
-        isClosable: true,
-      });
-      return;
-    }
-
-    try {
-      const response = await axios.post("/api/contact-us", formData);
-      console.log(response.data);
-
-      // Update toast to success
-      toast.update(toastId, {
-        title: "Success",
-        description: "Your request has been successfully submitted.",
-        status: "success",
-        duration: 5000,
-        isClosable: true,
-      });
-    } catch (error) {
-      console.log(error);
-
-      // Update toast to error
-      toast.update(toastId, {
-        title: "Submission Failed",
-        description: "Something went wrong. Please try again.",
-        status: "error",
-        duration: 5000,
-        isClosable: true,
-      });
-    }
+  // Handler for showing more questions
+  const showMore = () => {
+    setVisibleCount((prevCount) => prevCount + 4);
   };
 
   return (
     <Flex
-      direction="column"
-      align="center"
-      justify="center"
-      width="100vw" // Set to 100vw to ensure full width
-      px={{ base: "10px", lg: "150px" }} // Padding for larger screens
+      direction={{ base: "column", md: "row" }}
+      align="top"
+      justify="space-between"
+      w="100%"
+      maxW="100vw"
+      mx={4}
+      py={32}
+      px={{ base: 6, lg: 40, "2xl": 80 }}
     >
-      <Heading
-        fontFamily=""
-        my={{ base: "20px", lg: "50px" }}
-        fontSize={{ base: "5xl", md: "47px" }}
-        fontWeight={700}
-        lineHeight="61.1px"
-        textAlign="center"
-      >
-        Contact Us
-      </Heading>
+      <Box textAlign="start" mb={8} w={{ base: "100%", md: "35%" }}>
+        <Heading
+              fontFamily=""
+          fontSize={{ base: "35px", lg: "45px" }}
+          fontWeight={600}
+          mb={6}
+        >
+          Frequently Asked Questions
+        </Heading>
+        <Link href={`/contact?subject=Enqui`} >
+        <AnimButton
+          fontSize="18.98px"
+          fontWeight={500}
+          _hover={{ bg: "transparent" }}
+        >
+          Customer Support
+        </AnimButton></Link>
+      </Box>
 
       <Flex
-        // Remove maxW to allow full width
-        mx="auto"
-        p={{ base: 4, md: 6 }}
-        direction={{ base: "column", lg: "row" }}
-        spacing={6}
-        width="100%" // Ensure full width
-        justify="center"
-        my={{ base: "30px", lg: "50px" }}
+        wrap="wrap"
+        justify="flex-end"
+        alignItems="flex-end"
+        gap={4}
+        w={{ base: "100%", md: "60%" }}
       >
-        {/* Contact information */}
-        <Box
-          w={{ base: "100%", lg: "490px" }}
-          h="auto"
-          px={3}
-          mb={{ base: 6, lg: 0 }}
-        >
-          <Heading
-            fontFamily=""
-            fontSize={{ base: "30px", md: "35px", lg: "43px" }} // Responsive font size
-            fontWeight={700}
-            lineHeight={{ base: "40px", md: "50px", lg: "62px" }}
-            mb={2}
+        <Accordion allowToggle w="100%">
+          {FAQData.slice(0, visibleCount).map((faq, index) => (
+            <FaqItem key={index} question={faq.question} answer={faq.answer} />
+          ))}
+        </Accordion>
+
+        {visibleCount < FAQData.length && (
+          <Button
+            variant="link"
+            colorScheme="black"
+            alignSelf="flex-end"
+            rightIcon={<FiChevronDown />}
+            mt={4}
+            mr={6}
+            onClick={showMore} // Call the showMore function when clicked
+            _hover={{ bg: "transparent", color: "inherit" }}
           >
-            Have Questions?
-            <br /> Get in Touch!
-          </Heading>
-
-          <Text
-            fontSize={{ base: "12px", md: "14px", lg: "16px" }} // Responsive font size
-            fontWeight="400"
-            lineHeight="23.8px"
-            color="#454D55"
-            mb={6}
-          >
-            Rudra Enterprises
-          </Text>
-
-          <HStack mb={6}>
-            <Box p={2} borderRadius="md" bg="#EDECE2">
-              <FaMapMarkerAlt color="#344054" size={20} />
-            </Box>
-            <Text
-              fontSize={{ base: "14px", md: "16px" }}
-              fontWeight="400"
-              color="#344054"
-            >
-              Ground Floor, Right Portion, KHASRA NO. 29/23, Theke Wali Gali,
-              Near Sai Baba Mandir, Alipur, Delhi 110036
-            </Text>
-          </HStack>
-
-          <HStack mb={6}>
-            <Box p={2} borderRadius="md" bg="#EDECE2">
-              <FaRegEnvelope color="#344054" size={20} />
-            </Box>
-            <Text
-              fontSize={{ base: "14px", md: "16px" }}
-              fontWeight="400"
-              color="#344054"
-            >
-              temporary@gmail.com
-            </Text>
-          </HStack>
-
-          <HStack mb={6}>
-            <Box p={2} borderRadius="md" bg="#EDECE2">
-              <FaPhoneAlt color="#344054" size={20} />
-            </Box>
-            <Text
-              fontSize={{ base: "14px", md: "16px" }}
-              fontWeight="400"
-              color="#344054"
-            >
-              +91 9212302362 | +91 9315892606
-            </Text>
-          </HStack>
-
-          <Flex align="center" pr={10} justifyContent="center" width="100%">
-            <HStack spacing={6}>
-              <Box bg="#EDECE2" p={2} borderRadius="md">
-                <FaInstagram color="#1B1B1B" size={24} />
-              </Box>
-              <Box bg="#EDECE2" p={2} borderRadius="md">
-                <FaFacebook color="#1B1B1B" size={24} />
-              </Box>
-              <Box bg="#EDECE2" p={2} borderRadius="md">
-                <FaYoutube color="#1B1B1B" size={24} />
-              </Box>
-              <Box bg="#EDECE2" p={2} borderRadius="md">
-                <Image src={whatsApp} alt="WhatsApp" width={24} height={24} />
-              </Box>
-            </HStack>
-          </Flex>
-        </Box>
-
-        {/* Form */}
-        <Box w={{ base: "100%", md: "592px" }} h="auto" px={0}>
-          <Flex justify="center">
-            <form onSubmit={handleSubmit}>
-              <Stack spacing={{ base: 6, md: 8, lg: 12 }}>
-                <Grid
-                  templateColumns={{
-                    base: "repeat(1, 1fr)",
-                    md: "repeat(2, 1fr)",
-                  }}
-                  gap={6}
-                >
-                  <FormControl
-                    isRequired
-                    borderBottom="2px"
-                    borderColor="#98A2B3"
-                    pb={1}
-                    width="100%"
-                  >
-                    <HStack spacing={2} width="100%">
-                      <Icon as={FaUser} color="#98A2B3" boxSize={5} />
-                      <Input
-                        type="text"
-                        name="name"
-                        placeholder="Name"
-                        border="none"
-                        focusBorderColor="transparent"
-                        width="100%" 
-                        value={formData.name}
-                        onChange={handleChange}
-                        sx={{
-                          "::placeholder": {
-                            fontSize: "16px",
-                            fontWeight: 400,
-                            lineHeight: "24px",
-                            textAlign: "left",
-                            color: "#98A2B3",
-                          },
-                        }}
-                      />
-                    </HStack>
-                  </FormControl>
-
-                  <FormControl
-                    isRequired
-                    borderBottom="2px"
-                    borderColor="#98A2B3"
-                    pb={1}
-                    width="100%"
-                  >
-                    <HStack spacing={2} width="100%">
-                      <Icon as={FaRegEnvelope} color="#98A2B3" boxSize={5} />
-                      <Input
-                        type="email"
-                        name="email"
-                        placeholder="Email Address"
-                        border="none"
-                        focusBorderColor="transparent"
-                        width="100%" // Ensure Input takes 100% width
-                        value={formData.email}
-                        onChange={handleChange}
-                        sx={{
-                          "::placeholder": {
-                            fontSize: "16px",
-                            fontWeight: 400,
-                            lineHeight: "24px",
-                            textAlign: "left",
-                            color: "#98A2B3",
-                          },
-                        }}
-                      />
-                    </HStack>
-                  </FormControl>
-
-                  <FormControl
-                    borderBottom="2px"
-                    borderColor="#98A2B3"
-                    pb={1}
-                    width="100%"
-                  >
-                    <HStack spacing={2} width="100%">
-                      <Icon as={FaPhoneAlt} color="#98A2B3" boxSize={5} />
-                      <Input
-                        type="tel"
-                        name="phone"
-                        placeholder="Phone"
-                        border="none"
-                        focusBorderColor="transparent"
-                        width="100%" // Ensure Input takes 100% width
-                        value={formData.phone}
-                        onChange={handleChange}
-                        sx={{
-                          "::placeholder": {
-                            fontSize: "16px",
-                            fontWeight: 400,
-                            lineHeight: "24px",
-                            textAlign: "left",
-                            color: "#98A2B3",
-                          },
-                        }}
-                      />
-                    </HStack>
-                  </FormControl>
-                  <FormControl
-                    borderBottom="2px"
-                    borderColor="#98A2B3"
-                    pb={1}
-                    width="100%"
-                  >
-                    <HStack spacing={2} width="100%">
-                      <Menu>
-                        <MenuButton
-                          as={Button}
-                          bg="white"
-                          color="#98A2B3"
-                          gap={36}
-                          rightIcon={<GoTriangleDown />}
-                          _hover={{ bg: "white" }}
-                          _active={{ bg: "white", color: "#98A2B3" }}
-                          _focus={{
-                            boxShadow: "none",
-                            bg: "white",
-                            color: "#98A2B3",
-                          }}
-                        >
-                          {formData.subject || "Select Subject"}
-                        </MenuButton>
-                        <MenuList>
-                          <MenuItem
-                            onClick={() => handleSubjectChange("Enquiry")}
-                          >
-                            Enquiry
-                          </MenuItem>
-                          <MenuItem
-                            onClick={() => handleSubjectChange("Order Related")}
-                          >
-                            Order Related
-                          </MenuItem>
-                          <MenuItem
-                            onClick={() => handleSubjectChange("Complaint")}
-                          >
-                            Complaint
-                          </MenuItem>
-                        </MenuList>
-                      </Menu>
-                    </HStack>
-                  </FormControl>
-                </Grid>
-
-                <FormControl
-                  isRequired
-                  borderBottom="2px"
-                  borderColor="#98A2B3"
-                  pb={1}
-                >
-                  <HStack spacing={2} alignItems="flex-start">
-                    {" "}
-                    <Icon as={FaPen} color="#98A2B3" boxSize={5} mt={3} />
-                    <Textarea
-                      name="message"
-                      placeholder="Message"
-                      border="none"
-                      borderRadius="none"
-                      focusBorderColor="transparent"
-                      value={formData.message}
-                      onChange={handleChange}
-                      rows={4}
-                      maxHeight="100px" // Set your desired max height here
-                      resize="none" // Prevent resizing if needed
-                      sx={{
-                        "::placeholder": {
-                          fontSize: "16px",
-                          fontWeight: 400,
-                          lineHeight: "24px",
-                          textAlign: "left",
-                          color: "#98A2B3",
-                        },
-                      }}
-                      flex="1" // Allow the Textarea to take the remaining width
-                    />
-                  </HStack>
-                </FormControl>
-
-                <HStack spacing={2}>
-                  <Checkbox
-                    name="agreeToTerms"
-                    isChecked={formData.agreeToTerms}
-                    onChange={handleChange}
-                    colorScheme="green"
-                  />
-                  <Text fontSize="sm" color="#98A2B3">
-                    I agree to the terms and conditions
-                  </Text>
-                </HStack>
-
-                <Button2>Get In Touch</Button2>
-              </Stack>
-            </form>
-          </Flex>
-        </Box>
+            More Questions
+          </Button>
+        )}
       </Flex>
     </Flex>
   );
 };
 
-export default ContactForm;
+export default Faq;

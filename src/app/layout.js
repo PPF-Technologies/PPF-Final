@@ -53,7 +53,7 @@ export default function RootLayout({ children }) {
               aria-label="Message us on WhatsApp about this awesome product"
             >
               <div className="bg-white p-2">
-                <Image width={50} height={50}  src={whatsapp} className="text-[50px] p-1 fixed bottom-14 right-14 text-green-400"/>
+                <Image width={50} height={50} alt="whatsapp" src={whatsapp} className="text-[50px] p-1 fixed bottom-14 right-14 text-green-400"/>
               </div>
             </a>
           )}

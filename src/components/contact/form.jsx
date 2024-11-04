@@ -1,6 +1,6 @@
 "use client"; // This line marks the component as a Client Component
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import {
   Button,
@@ -20,10 +20,10 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
-  useToast
+  useToast,
 } from "@chakra-ui/react";
 
-import { useSearchParams } from "next/navigation";
+
 
 import {
   FaMapMarkerAlt,
@@ -44,14 +44,27 @@ import Button2 from "../props/Button2";
 import { color } from "framer-motion";
 
 const ContactForm = () => {
-  const toast = useToast()
-  const searchParams = useSearchParams();
- 
+  const toast = useToast();
+
+
+  useEffect(() => {
+    // Using window object in useEffect ensures it runs only on the client side
+    const currentUrl = window.location.href;
+    const url = new URL(currentUrl);
+    const params = new URLSearchParams(url.search);
+
+    // Set initial form values from search params
+    setFormData((prevData) => ({
+      ...prevData,
+      email: params.get("email") || "",
+      subject: params.get("subject") || "",
+    }));
+  }, []);
   const [formData, setFormData] = useState({
     name: "",
-    email: searchParams.get("email") || "",
+    email:  "",
     phone: "",
-    subject: searchParams.get("subject")||"",
+    subject: "",
     message: "",
     agreeToTerms: false,
   });
@@ -274,7 +287,7 @@ const ContactForm = () => {
                         placeholder="Name"
                         border="none"
                         focusBorderColor="transparent"
-                        width="100%" 
+                        width="100%" // Ensure Input takes 100% width
                         value={formData.name}
                         onChange={handleChange}
                         sx={{

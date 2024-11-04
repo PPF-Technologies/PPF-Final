@@ -8,7 +8,7 @@ import {
 } from "@chakra-ui/react";
 import Image from "next/image";
 import React from "react";
-import icon from "@/assets/icons/icon.png";
+import icon from "@/assets/icons/Icon.png";
 import At1 from "@/assets/jsxIcons/at1";
 import At3 from "@/assets/jsxIcons/at3";
 import At2 from "@/assets/jsxIcons/at2";
