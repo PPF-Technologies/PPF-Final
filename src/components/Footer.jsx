@@ -1,5 +1,4 @@
 "use client";
-
 import {
   Box,
   Container,
@@ -22,17 +21,27 @@ import { FiPhone } from "react-icons/fi";
 import logo from "@/assets/logo.png";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 const Footer = () => {
+
+  const [email, setEmail] = useState("");
   const currentYear = new Date().getFullYear();
   const routes = {
     About: "about",
     "Contact Us": "contact",
     Products: "products",
-    
+
     Blog: "blog",
-    
   };
+
+  const handleRedirect = () => {
+    if (email.includes("@") && email.includes(".")) {
+      window.location.href = `/contact?email=${email}`
+    }else{
+      alert("Invalid email address. Please enter a valid email address.")
+    }
+  }
 
   return (
     <Box
@@ -86,9 +95,11 @@ const Footer = () => {
                     borderColor: "white",
                     boxShadow: "none",
                   }}
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
                 <InputRightElement>
-                  <Icon as={BsArrowUpRight} boxSize={6} color="#FFBB4E" />
+                  <button onClick={handleRedirect}><Icon as={BsArrowUpRight}  boxSize={6} color="#FFBB4E" /></button>
                 </InputRightElement>
               </InputGroup>
             </Box>
@@ -139,22 +150,18 @@ const Footer = () => {
                       Company
                     </Text>
                     <Stack spacing={{ base: 2 }}>
-                      {[
-                        "About",
-                        "Products",
-                        "Blog",
-                        "Contact Us",
-                        
-                      ].map((link) => (
-                        <Text
-                          fontSize={{ base: "14px", lg: "16px" }}
-                          fontWeight="400"
-                          color="#E0E0E0"
-                          key={link}
-                        >
-                          <Link href={`/${routes[link]}`}>{link}</Link>
-                        </Text>
-                      ))}
+                      {["About", "Products", "Blog", "Contact Us"].map(
+                        (link) => (
+                          <Text
+                            fontSize={{ base: "14px", lg: "16px" }}
+                            fontWeight="400"
+                            color="#E0E0E0"
+                            key={link}
+                          >
+                            <Link href={`/${routes[link]}`}>{link}</Link>
+                          </Text>
+                        )
+                      )}
                     </Stack>
                   </Stack>
                 </Box>
@@ -165,12 +172,7 @@ const Footer = () => {
                       Help Center
                     </Text>
                     <Stack spacing={2}>
-                      {[
-                       
-                        "Knowledge Base",
-                        
-                        "Support",
-                      ].map((help) => (
+                      {["Knowledge Base", "Support"].map((help) => (
                         <Text
                           fontSize={{ base: "14px", lg: "16px" }}
                           fontWeight="400"

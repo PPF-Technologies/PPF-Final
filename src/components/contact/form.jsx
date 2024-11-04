@@ -23,6 +23,8 @@ import {
   useToast
 } from "@chakra-ui/react";
 
+import { useSearchParams } from "next/navigation";
+
 import {
   FaMapMarkerAlt,
   FaRegEnvelope,
@@ -43,11 +45,13 @@ import { color } from "framer-motion";
 
 const ContactForm = () => {
   const toast = useToast()
+  const searchParams = useSearchParams();
+ 
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
+    email: searchParams.get("email") || "",
     phone: "",
-    subject: "",
+    subject: searchParams.get("subject")||"",
     message: "",
     agreeToTerms: false,
   });
@@ -270,7 +274,7 @@ const ContactForm = () => {
                         placeholder="Name"
                         border="none"
                         focusBorderColor="transparent"
-                        width="100%" // Ensure Input takes 100% width
+                        width="100%" 
                         value={formData.name}
                         onChange={handleChange}
                         sx={{

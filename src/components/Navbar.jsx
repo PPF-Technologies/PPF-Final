@@ -91,7 +91,7 @@ const Navbar = () => {
 
         {/* Quote Button for larger screens */}
         <div className="hidden md:block">
-          <Link href={'/contact'}>
+          <Link href={'/contact?subject=Enquiry'}>
             <Button
               bg={"#FFBB4E"}
               _focus={{ boxShadow: "none", bg: "#FFBB4E" }}
