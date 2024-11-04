@@ -218,6 +218,7 @@ const PremiumProtection = () => {
 
             <Card
               bg="white"
+              zIndex={'0'}
               borderRadius="2xl"
               overflow="hidden"
               boxShadow="sm"
