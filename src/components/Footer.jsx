@@ -122,7 +122,7 @@ const Footer = () => {
                 >
                   Social Media
                 </Text>
-                <HStack spacing={{ base: 4, lg: 6 }}>
+                <Flex flexWrap={'wrap'} gap={4} spacing={{ base: 4, lg: 6 }}>
                   {[
                     { name: "Instagram", url: "https://www.instagram.com/camioppf?igsh=MW1lemlmZmx0b3E4Yw==" },
                     { name: "Facebook", url: "https://www.facebook.com/profile.php?id=100094786827356&mibextid=ZbWKwL " },
@@ -137,6 +137,7 @@ const Footer = () => {
                       key={platform.name}
                       isExternal
                     >
+                      <Flex alignItems={'center'} gap={1}>
                       <Text
                         mr={1}
                         fontWeight="400"
@@ -146,9 +147,10 @@ const Footer = () => {
                         {platform.name}
                       </Text>
                       <Icon color="#FFBB4E" as={BsArrowUpRight} />
+                      </Flex>
                     </Link>
                   ))}
-                </HStack>
+                </Flex >
               </VStack>
             </Box>
 
