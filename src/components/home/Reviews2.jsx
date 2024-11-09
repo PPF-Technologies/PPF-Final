@@ -3,45 +3,40 @@ import React from 'react';
 import { Box, Flex, Text, Avatar, VStack, HStack, Icon, Button } from '@chakra-ui/react';
 import { FaStar } from 'react-icons/fa';
 import { FiChevronRight } from "react-icons/fi";
+import Marquee from "react-fast-marquee";
 
 const Reviews2 = () => {
   
   const reviews = [
     {
-      text: "Camio PPF transformed our vehicle protection. The high gloss finish delivers a stunning shine, and the self-healing technology keeps it pristine—an invaluable investment.",
-      author: "Charlotte Hanlin",
-      designation: "Co-Founder, Heroes Digital",
-      rating: 4.8,
+      text: "The CAMIO TPU Clear Gloss has completely transformed my car’s look. It adds an incredible mirror-like shine that catches everyone’s attention. Plus, it protects the paint perfectly—worth every bit!",
+      author: "Amit P.",
+      rating: 5,
     },
     {
-      text: "Camio PPF is a game-changer! The glossy finish looks incredible, and the self-healing feature ensures it stays flawless. Highly recommend for any vehicle owner.",
-      author: "Novák Balázs",
-      designation: "Co-Founder, WoCommerce",
-      rating: 4.8,
+      text: "I tried the TPH Clear Gloss on my SUV, and it’s exactly what I needed. It’s protective, easy to clean, and has a nice shine. Perfect for everyday use!",
+      author: "Rajesh K.",
+      rating: 5,
     },
     {
-      text: "With Camio PPF, my car looks stunning every day. The high gloss finish and self-healing properties make it a fantastic investment for any luxury vehicle.",
-      author: "Orosz Boldizsár",
-      designation: "Founder, Okta",
-      rating: 4.8,
+      text: "I got the CAMIO TPU Black Gloss, and I’m thrilled with the self-healing feature. Minor scratches disappear with a little warmth, and the glossy finish makes the car shine. Highly recommended.",
+      author: "Arjun M.",
+      rating: 5,
     },
     {
-      text: "This website exceeded my expectations! The high gloss finish is beautiful, and the self-healing technology keeps my car looking new!",
-      author: "Floyd Miles",
-      designation: "Co-Founder, Slack",
-      rating: 4.8,
+      text: "I’ve had the CAMIO TPU Clear Gloss on my car for months now, and it’s still as glossy as day one. It’s incredibly durable and has held up even in rough weather conditions. Super satisfied!",
+      author: "Priyanka S.",
+      rating: 5,
     },
     {
-      text: "I'm thrilled with Camio PPF! The glossy shine enhances my vehicle's appearance, and the protection it offers is top-notch. It's a must-have for any car enthusiast.",
-      author: "Darrell Steward",
-      designation: "Co-Founder, Heroes Digital",
-      rating: 4.8,
+      text: "The CAMIO TPH Matte was exactly what I was looking for. It has a great matte finish, and the protection is noticeable. I feel like I got a premium product without the premium price tag!",
+      author: "Karan P.",
+      rating: 5,
     },
     {
-      text: "My car looks stunning with its high gloss finish. The self-healing feature is fantastic, making it the perfect choice for everyday protection!",
-      author: "Devon Lane",
-      designation: "Marketing, Google",
-      rating: 4.8,
+      text: "With CAMIO’s TPU series, I don’t worry about scratches or fading. The hydrophobic layer works wonders, especially during the rainy season. My car always looks polished.",
+      author: "Vishal T.",
+      rating: 4,
     },
   ];
 
@@ -70,42 +65,60 @@ const Reviews2 = () => {
       <Text fontSize="3xl" fontWeight="bold" textAlign="center" mb={8}>
         What Our Customers Are Saying About CAMIO PPF
       </Text>
-      <Flex wrap="wrap" justify="center" gap={6}>
+      <Marquee gradient={false} speed={50} className="overflow-hidden ">
         {reviews.map((review, index) => (
-          <Box
+          <div
             key={index}
-            maxW="320px"
-            bg="white"
-            shadow="lg"
-            borderRadius="lg"
-            p={6}
-            textAlign="left"
+            className="mx-6 p-6 bg-gray-100 rounded-lg shadow-md w-[300px] min-w-[300px] text-gray-800 flex flex-col justify-between"
           >
-            <VStack spacing={4} align="flex-start">
-              <HStack>
-                {Array.from({ length: 5 }, (_, i) => (
-                  <Icon
-                    as={FaStar}
-                    key={i}
-                    color={i < Math.floor(review.rating) ? 'yellow.400' : 'gray.300'}
-                  />
-                ))}
-                <Text>{review.rating}</Text>
-              </HStack>
-              <Text fontWeight={'semibold'} minH={'144px'}>&quot;{review.text}&quot;</Text>
-              <HStack spacing={3}>
-                <Avatar name={review.author} />
-                <VStack spacing={0} align="flex-start">
-                  <Text fontWeight="bold">{review.author}</Text>
-                  <Text fontSize="sm" color="gray.500">
-                    {review.designation}
-                  </Text>
-                </VStack>
-              </HStack>
-            </VStack>
-          </Box>
+            <div>
+              <div className="flex items-center mb-4">
+                {Array(review.rating)
+                  .fill(0)
+                  .map((_, i) => (
+                    <svg
+                      key={i}
+                      className="w-5 h-5 text-yellow-400"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.518 4.674a1 1 0 00.95.69h4.908c.969 0 1.371 1.24.588 1.81l-3.973 2.884a1 1 0 00-.364 1.118l1.518 4.674c.3.921-.755 1.688-1.539 1.118l-3.973-2.884a1 1 0 00-1.176 0l-3.973 2.884c-.783.57-1.838-.197-1.539-1.118l1.518-4.674a1 1 0 00-.364-1.118L.98 9.401c-.784-.57-.38-1.81.588-1.81h4.908a1 1 0 00.95-.69l1.518-4.674z" />
+                    </svg>
+                  ))}
+              </div>
+              <p className="text-lg mb-4 h-[224px]">{review.text}</p>
+            </div>
+            <p className="font-semibold text-gray-500">@{review.author}</p>
+          </div>
         ))}
-      </Flex>
+      </Marquee>
+      <Marquee gradient={false} direction="right" speed={50} className="overflow-hidden my-10">
+        {reviews.map((review, index) => (
+          <div
+            key={index}
+            className="mx-6 p-6 bg-gray-100 rounded-lg shadow-md w-[300px] min-w-[300px] text-gray-800 flex flex-col justify-between"
+          >
+            <div>
+              <div className="flex items-center mb-4">
+                {Array(review.rating)
+                  .fill(0)
+                  .map((_, i) => (
+                    <svg
+                      key={i}
+                      className="w-5 h-5 text-yellow-400"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.518 4.674a1 1 0 00.95.69h4.908c.969 0 1.371 1.24.588 1.81l-3.973 2.884a1 1 0 00-.364 1.118l1.518 4.674c.3.921-.755 1.688-1.539 1.118l-3.973-2.884a1 1 0 00-1.176 0l-3.973 2.884c-.783.57-1.838-.197-1.539-1.118l1.518-4.674a1 1 0 00-.364-1.118L.98 9.401c-.784-.57-.38-1.81.588-1.81h4.908a1 1 0 00.95-.69l1.518-4.674z" />
+                    </svg>
+                  ))}
+              </div>
+              <p className="text-lg mb-4 h-[224px]">{review.text}</p>
+            </div>
+            <p className="font-semibold text-gray-500 py-2">@{review.author}</p>
+          </div>
+        ))}
+      </Marquee>
     </Box>
   );
 };

@@ -11,6 +11,8 @@ import tpuSeries1 from '@/assets/tpuSeries1.png';
 import tpuSeries2 from '@/assets/tpuSeries2.png';
 import tpuSeries3 from '@/assets/tpuSeries3.png';
 import tpuSeries4 from '@/assets/tpuSeries4.png';
+import ComparisonTable from '@/components/products/ComparsionTable';
+
 
 const Page = () => {
   const products = [
@@ -49,6 +51,7 @@ const Page = () => {
       <WhyChoose />
       {/* <CamioSeries /> */}
       <ProductsTab />
+      <ComparisonTable />
       <Advantage />
     </div>
   );

@@ -56,7 +56,7 @@ const ContactForm = () => {
     // Set initial form values from search params
     setFormData((prevData) => ({
       ...prevData,
-      email: params.get("email") || "",
+      phone: params.get("phone") || "",
       subject: params.get("subject") || "",
     }));
   }, []);

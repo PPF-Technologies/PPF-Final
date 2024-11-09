@@ -39,7 +39,7 @@ const PremiumProtection = () => {
               borderColor={"#E2E2E2"}
               cursor={"default"}
             >
-              <Text pb={{ base: 0, lg: 0 }}>Features that we provide</Text>{" "}
+              <Text pb={{ base: 0, lg: 0 }}>Unmatched Protection & Finish</Text>{" "}
               
             </Button>
 
@@ -92,7 +92,7 @@ const PremiumProtection = () => {
                     color="#111928"
                     pb={2}
                   >
-                    CAMIO TPU CLEAR GLOSS
+                    CAMIO TPU Clear Gloss
                   </Text>
 
                   <Box
@@ -223,9 +223,9 @@ const PremiumProtection = () => {
               overflow="hidden"
               boxShadow="sm"
             >
-              <CardBody p={{ base: "15px", md: "25px", lg: "30px" }} className="flex justify-center items-center">
+              <CardBody p={{ base: "15px", md: "25px", lg: "30px" }} className=" lg:flex hidden justify-center items-center">
                 <Link href={"/products"}>
-                  <Button2>Explore Our Products</Button2>
+                  <Button2>Find the Right PPF for You</Button2>
                 </Link>
               </CardBody>
             </Card>
@@ -269,7 +269,7 @@ const PremiumProtection = () => {
                     pt={4}
                     pb={6}
                   >
-                    Affordable glass finish with 3-year warranty, great
+                    Affordable gloss finish with 3-year warranty, great
                     protection for everyday vehicles.
                   </Text>
                 </VStack>
@@ -291,7 +291,7 @@ const PremiumProtection = () => {
                     color="#111928"
                     pb={2}
                   >
-                    CAMIO TPU Clear Gloss
+                    CAMIO TPH Matte
                   </Text>
                   <Box
                     width="100%"
@@ -315,8 +315,7 @@ const PremiumProtection = () => {
                     pt={4}
                     pb={6}
                   >
-                    High gloss finish with premium, self-healing protection,
-                    ideal for a pristine look.
+                    Subtle, durable protection with a sleek, matte finish.
                   </Text>
                 </VStack>
               </CardBody>
@@ -330,7 +329,7 @@ const PremiumProtection = () => {
         alignItems="center"
       >
         <Link href={"/products"}>
-          <Button2>Explore Our Products</Button2>
+          <Button2>Find the Right PPF for You</Button2>
         </Link>
       </Box>
     </Box>

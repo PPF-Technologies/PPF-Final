@@ -3,12 +3,13 @@ import { Box, Container, Flex, Heading, Text } from "@chakra-ui/react";
 import Image from "next/image";
 import Button2 from "../props/Button2";
 import Link from "next/link";
-import car from "@/assets/herocar.png"
+import car from "@/assets/herocar2.png"
 
 
 
 
 const Hero = () => {
+  const imagesArr =[]
   return (
     <Box as="section" py={{ base: 10, md: 20 }} maxWidth={{'2xl':'1500px'}} mx={{'2xl':'auto'}}>
       <Container maxW={{ base: "container.xl", '2xl': 'full' }} px={4}>
@@ -20,7 +21,7 @@ const Hero = () => {
               alt="Hero SUV"
               width={600}
               height={400}
-              className="w-full h-auto"
+              className="w-full h-auto lg:min-h-[402px]"
               priority
 
             

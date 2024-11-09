@@ -24,7 +24,6 @@ import Link from "next/link";
 import { useState } from "react";
 
 const Footer = () => {
-
   const [email, setEmail] = useState("");
   const currentYear = new Date().getFullYear();
   const routes = {
@@ -36,12 +35,15 @@ const Footer = () => {
   };
 
   const handleRedirect = () => {
-    if (email.includes("@") && email.includes(".")) {
-      window.location.href = `/contact?email=${email}`
-    }else{
-      alert("Invalid email address. Please enter a valid email address.")
+    const mobileRegex = /^[0-9]{10}$/; // Matches a 10-digit number
+    if (mobileRegex.test(email)) {
+      window.location.href = `/contact?phone=${email}`;
+    } else {
+      alert(
+        "Invalid phone number. Please enter a valid 10-digit phone number."
+      );
     }
-  }
+  };
 
   return (
     <Box
@@ -80,7 +82,8 @@ const Footer = () => {
             >
               <InputGroup size="30px" bg="transparent">
                 <Input
-                  placeholder="Enter Your Email"
+                  placeholder="Enter Your Mobile No."
+                  type="number"
                   fontSize="30px"
                   fontWeight="400"
                   color="#FFFFEE"
@@ -99,7 +102,9 @@ const Footer = () => {
                   onChange={(e) => setEmail(e.target.value)}
                 />
                 <InputRightElement>
-                  <button onClick={handleRedirect}><Icon as={BsArrowUpRight}  boxSize={6} color="#FFBB4E" /></button>
+                  <button onClick={handleRedirect}>
+                    <Icon as={BsArrowUpRight} boxSize={6} color="#FFBB4E" />
+                  </button>
                 </InputRightElement>
               </InputGroup>
             </Box>
@@ -118,13 +123,19 @@ const Footer = () => {
                   Social Media
                 </Text>
                 <HStack spacing={{ base: 4, lg: 6 }}>
-                  {["Instagram", "Twitter", "YouTube"].map((platform) => (
+                  {[
+                    { name: "Instagram", url: "https://www.instagram.com/camioppf?igsh=MW1lemlmZmx0b3E4Yw==" },
+                    { name: "Facebook", url: "https://www.facebook.com/profile.php?id=100094786827356&mibextid=ZbWKwL " },
+                    { name: "YouTube", url: "https://m.youtube.com/@CamioPPF" },
+                    { name: "LinkedIn", url: "https://www.linkedin.com" },
+                  ].map((platform) => (
                     <Link
-                      href="#"
+                      href={platform.url}
                       display="flex"
                       alignItems="center"
-                      aria-label={platform}
-                      key={platform}
+                      aria-label={platform.name}
+                      key={platform.name}
+                      isExternal
                     >
                       <Text
                         mr={1}
@@ -132,7 +143,7 @@ const Footer = () => {
                         fontSize="18px"
                         color="#E0E0E0"
                       >
-                        {platform}
+                        {platform.name}
                       </Text>
                       <Icon color="#FFBB4E" as={BsArrowUpRight} />
                     </Link>
@@ -248,7 +259,7 @@ const Footer = () => {
                         color="#E0E0E0"
                         width="100%" // Set width to 100%
                       >
-                        contact@company.com
+                         ppf.camio@gmail.com 
                       </Text>
                     </HStack>
                   </VStack>
