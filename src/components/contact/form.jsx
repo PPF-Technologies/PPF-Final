@@ -443,7 +443,7 @@ const ContactForm = () => {
                   </HStack>
                 </FormControl>
 
-                <HStack spacing={2}>
+                {/* <HStack spacing={2}>
                   <Checkbox
                     name="agreeToTerms"
                     isChecked={formData.agreeToTerms}
@@ -453,7 +453,7 @@ const ContactForm = () => {
                   <Text fontSize="sm" color="#98A2B3">
                     I agree to the terms and conditions
                   </Text>
-                </HStack>
+                </HStack> */}
 
                 <Button2>Get In Touch</Button2>
               </Stack>
