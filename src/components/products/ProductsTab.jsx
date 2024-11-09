@@ -271,7 +271,8 @@ const ProductsTab = () => {
               fontWeight={"semibold"}
               key={index}
               color={"gray.500"}
-              _selected={{ borderBottom: "2px solid", borderColor: "black", bg:"gray.100", color:"black" }} 
+              _selected={{ borderBottom: "2px solid", borderColor: "black", bg:"gray.100", color:"black" }}
+              borderBottom={'2px solid'} 
               
             >
               {tab.series}

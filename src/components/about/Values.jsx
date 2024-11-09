@@ -92,7 +92,7 @@ const Values = () => {
               />
               <Heading
                 fontFamily=""
-                fontSize="30px"
+                fontSize="25px"
                 fontWeight="600"
                 lineHeight="31.78px"
                 my={4}
