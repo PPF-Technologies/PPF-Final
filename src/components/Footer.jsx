@@ -122,10 +122,16 @@ const Footer = () => {
                 >
                   Social Media
                 </Text>
-                <Flex flexWrap={'wrap'} gap={4} spacing={{ base: 4, lg: 6 }}>
+                <Flex flexWrap={"wrap"} gap={4} spacing={{ base: 4, lg: 6 }}>
                   {[
-                    { name: "Instagram", url: "https://www.instagram.com/camioppf?igsh=MW1lemlmZmx0b3E4Yw==" },
-                    { name: "Facebook", url: "https://www.facebook.com/profile.php?id=100094786827356&mibextid=ZbWKwL " },
+                    {
+                      name: "Instagram",
+                      url: "https://www.instagram.com/camioppf?igsh=MW1lemlmZmx0b3E4Yw==",
+                    },
+                    {
+                      name: "Facebook",
+                      url: "https://www.facebook.com/profile.php?id=100094786827356&mibextid=ZbWKwL ",
+                    },
                     { name: "YouTube", url: "https://m.youtube.com/@CamioPPF" },
                     { name: "LinkedIn", url: "https://www.linkedin.com" },
                   ].map((platform) => (
@@ -137,20 +143,20 @@ const Footer = () => {
                       key={platform.name}
                       isExternal
                     >
-                      <Flex alignItems={'center'} gap={1}>
-                      <Text
-                        mr={1}
-                        fontWeight="400"
-                        fontSize="18px"
-                        color="#E0E0E0"
-                      >
-                        {platform.name}
-                      </Text>
-                      <Icon color="#FFBB4E" as={BsArrowUpRight} />
+                      <Flex alignItems={"center"} gap={1}>
+                        <Text
+                          mr={1}
+                          fontWeight="400"
+                          fontSize="18px"
+                          color="#E0E0E0"
+                        >
+                          {platform.name}
+                        </Text>
+                        <Icon color="#FFBB4E" as={BsArrowUpRight} />
                       </Flex>
                     </Link>
                   ))}
-                </Flex >
+                </Flex>
               </VStack>
             </Box>
 
@@ -261,7 +267,7 @@ const Footer = () => {
                         color="#E0E0E0"
                         width="100%" // Set width to 100%
                       >
-                         ppf.camio@gmail.com 
+                        ppf.camio@gmail.com
                       </Text>
                     </HStack>
                   </VStack>
@@ -351,17 +357,16 @@ const Footer = () => {
             </Text>
             <Image src={logo} width={150} height="auto" alt="logo" />
             <HStack spacing={4}>
-              {["Terms", "Privacy", "Cookies", "Legal", "Recalls"].map(
-                (policy) => (
-                  <Link
-                    href="#"
-                    fontSize={{ base: "10px", lg: "16px" }}
-                    key={policy}
-                  >
-                    {policy}
-                  </Link>
-                )
-              )}
+              <Text className="text-end px-10 text-gray-400 lg:pb-0 pb-3">
+                Made with ❤️ by{" "}
+                <a
+                  href="https://www.yourwebsite.shop/"
+                  target="_blank"
+                  className="underline"
+                >
+                  YourWebsite.shop
+                </a>
+              </Text>
             </HStack>
           </Stack>
         </Stack>
