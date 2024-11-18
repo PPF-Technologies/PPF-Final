@@ -120,7 +120,7 @@ const Footer = () => {
                   fontWeight="500"
                   mb={{ base: 2, lg: 4 }}
                 >
-                  Social Media
+                  Social Medias
                 </Text>
                 <Flex flexWrap={"wrap"} gap={4} spacing={{ base: 4, lg: 6 }}>
                   {[

@@ -46,6 +46,7 @@ const Page = () => {
     },
   ];
 
+  
   const featuresTPU = [
     {
       number: 1,
@@ -63,6 +64,7 @@ const Page = () => {
       description: "Ideal for luxury and high-end vehicles where aesthetics and protection matter equally."
     }
   ];
+
 
   const featuresTPH = [
     {
