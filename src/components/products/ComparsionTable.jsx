@@ -14,7 +14,18 @@ import {
 const ComparisonTable = () => {
   return (
     <Box p={5}>
-        <Heading as={'h4'} maxWidth={'800px'} mx={'auto'} my={10} textAlign={'center'}>Not sure which CAMIO PPF is right for you? Use our comparison chart to find the best fit for your vehicle.</Heading>
+      <Heading
+        as="h4"
+        maxWidth="800px"
+        mx="auto"
+        my={10}
+        textAlign="center"
+        fontSize={{ base: "2xl", md: "3xl" }}
+        color="gray.700"
+        fontWeight="bold"
+      >
+        Not sure which CAMIO PPF is right for you? Use our comparison chart to find the best fit for your vehicle.
+      </Heading>
       <TableContainer>
         <Table variant="striped" colorScheme="gray">
           <Thead>
@@ -26,8 +37,8 @@ const ComparisonTable = () => {
               <Th>TPU Black Matte</Th>
               <Th>TPH Clear Gloss</Th>
               <Th>TPH Clear Matte</Th>
-              <Th>TPH Black Gloss</Th>
-              <Th>TPH Color Gloss</Th>
+              <Th>TPH Black Gloss</Th> {/* Added missing column */}
+              <Th>TPH Color Gloss</Th> {/* Added missing column */}
             </Tr>
           </Thead>
           <Tbody>

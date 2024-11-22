@@ -13,6 +13,7 @@ import tpuSeries3 from "@/assets/tpuSeries3.png";
 import tpuSeries4 from "@/assets/tpuSeries4.png";
 import ComparisonTable from "@/components/products/ComparsionTable";
 import carimg from '@/assets/carimage.png'
+import whyChooseTph from "@/assets/products/newImages/whyChooseTph.jpg"
 
 const Page = () => {
   const products = [
@@ -90,7 +91,7 @@ const Page = () => {
       <Hero />
       <WhyCamio products={products} />
       {/* <Products /> */}
-      <KeyFeatures />
+      
       <WhyChoose
         features={featuresTPU}
         text={'Why Choose CAMIO TPU'}
@@ -99,7 +100,7 @@ const Page = () => {
       />
       <WhyChoose
         features={featuresTPH}
-        Img={carimg}
+        Img={whyChooseTph}
         text={'Why Choose CAMIO TPH'}
       />
       {/* <CamioSeries /> */}

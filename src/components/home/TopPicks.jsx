@@ -20,6 +20,9 @@ import { FiChevronRight } from "react-icons/fi";
 import Button2 from "../props/Button";
 import Link from "next/link";
 // import AnimButton from "../components/props/Button";
+import tpuMatte from "@/assets/products/newImages/tpuMatte.jpg"
+import tphMatte from "@/assets/products/newImages/tphMatte.jpg"
+
 
 const PremiumProtection = () => {
   return (

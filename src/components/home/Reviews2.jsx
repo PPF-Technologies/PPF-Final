@@ -1,12 +1,8 @@
-'use client'
+'use client';
 import React from 'react';
-import { Box, Flex, Text, Avatar, VStack, HStack, Icon, Button } from '@chakra-ui/react';
-import { FaStar } from 'react-icons/fa';
-import { FiChevronRight } from "react-icons/fi";
-import Marquee from "react-fast-marquee";
+import { Box, Text, VStack, HStack, Button } from '@chakra-ui/react';
 
 const Reviews2 = () => {
-  
   const reviews = [
     {
       text: "The CAMIO TPU Clear Gloss has completely transformed my car’s look. It adds an incredible mirror-like shine that catches everyone’s attention. Plus, it protects the paint perfectly—worth every bit!",
@@ -41,38 +37,56 @@ const Reviews2 = () => {
   ];
 
   return (
-    <Box maxW="1200px" mx={{base:"14px", lg:'auto'}} py={10} px={4} bgGradient="linear(96.56deg, rgba(158, 194, 194, 0.3) 27.8%, rgba(213, 203, 159, 0.3) 53.91%)" borderRadius={'24px'} mt={10}>
-      
-        <Button
-        bg={"white"}
-        marginX={{ base: "auto", lg: 'auto' }}
-        borderStyle={"solid"}
-        borderRadius={"full"}
+    <Box
+      maxW="1200px"
+      mx={{ base: "14px", lg: "auto" }}
+      py={10}
+      px={4}
+      bgGradient="linear(96.56deg, rgba(158, 194, 194, 0.3) 27.8%, rgba(213, 203, 159, 0.3) 53.91%)"
+      borderRadius="24px"
+      mt={10}
+    >
+      <Button
+        bg="white"
+        marginX={{ base: "auto", lg: "auto" }}
+        borderStyle="solid"
+        borderRadius="full"
         fontWeight={500}
-        fontSize={{ base: "12px", md: "16px" }} // Responsive font size
+        fontSize={{ base: "12px", md: "16px" }}
         _hover={{ bg: "white" }}
-        borderWidth={"1px"}
-        borderColor={"#E2E2E2"}
-        display={"flex"}
-        alignItems={"center"}
-        height={'30px'}
+        borderWidth="1px"
+        borderColor="#E2E2E2"
+        display="flex"
+        alignItems="center"
+        height="30px"
         my={8}
         py={5}
       >
-        <Text pb={{base:0, lg:0}}>Testimonial</Text> 
+        <Text>Testimonial</Text>
       </Button>
-    
+
       <Text fontSize="3xl" fontWeight="bold" textAlign="center" mb={8}>
         What Our Customers Are Saying About CAMIO PPF
       </Text>
-      <Marquee gradient={false} speed={50} className="overflow-hidden ">
+
+      <Box
+        display="grid"
+        gridTemplateColumns={{ base: "1fr", md: "1fr 1fr", lg: "1fr 1fr 1fr" }}
+        gap={6}
+      >
         {reviews.map((review, index) => (
-          <div
+          <Box
             key={index}
-            className="mx-6 p-6 bg-gray-100 rounded-lg shadow-md w-[300px] min-w-[300px] text-gray-800 flex flex-col justify-between"
+            p={6}
+            bg="gray.100"
+            borderRadius="lg"
+            shadow="md"
+            display="flex"
+            flexDirection="column"
+            justifyContent="space-between"
           >
-            <div>
-              <div className="flex items-center mb-4">
+            <VStack align="start" spacing={4}>
+              <HStack>
                 {Array(review.rating)
                   .fill(0)
                   .map((_, i) => (
@@ -85,40 +99,15 @@ const Reviews2 = () => {
                       <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.518 4.674a1 1 0 00.95.69h4.908c.969 0 1.371 1.24.588 1.81l-3.973 2.884a1 1 0 00-.364 1.118l1.518 4.674c.3.921-.755 1.688-1.539 1.118l-3.973-2.884a1 1 0 00-1.176 0l-3.973 2.884c-.783.57-1.838-.197-1.539-1.118l1.518-4.674a1 1 0 00-.364-1.118L.98 9.401c-.784-.57-.38-1.81.588-1.81h4.908a1 1 0 00.95-.69l1.518-4.674z" />
                     </svg>
                   ))}
-              </div>
-              <p className="text-lg mb-4 h-[224px]">{review.text}</p>
-            </div>
-            <p className="font-semibold text-gray-500">@{review.author}</p>
-          </div>
+              </HStack>
+              <Text fontSize="lg">{review.text}</Text>
+            </VStack>
+            <Text mt={4} fontWeight="bold" color="gray.500">
+              @{review.author}
+            </Text>
+          </Box>
         ))}
-      </Marquee>
-      <Marquee gradient={false} direction="right" speed={50} className="overflow-hidden my-10">
-        {reviews.map((review, index) => (
-          <div
-            key={index}
-            className="mx-6 p-6 bg-gray-100 rounded-lg shadow-md w-[300px] min-w-[300px] text-gray-800 flex flex-col justify-between"
-          >
-            <div>
-              <div className="flex items-center mb-4">
-                {Array(review.rating)
-                  .fill(0)
-                  .map((_, i) => (
-                    <svg
-                      key={i}
-                      className="w-5 h-5 text-yellow-400"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.518 4.674a1 1 0 00.95.69h4.908c.969 0 1.371 1.24.588 1.81l-3.973 2.884a1 1 0 00-.364 1.118l1.518 4.674c.3.921-.755 1.688-1.539 1.118l-3.973-2.884a1 1 0 00-1.176 0l-3.973 2.884c-.783.57-1.838-.197-1.539-1.118l1.518-4.674a1 1 0 00-.364-1.118L.98 9.401c-.784-.57-.38-1.81.588-1.81h4.908a1 1 0 00.95-.69l1.518-4.674z" />
-                    </svg>
-                  ))}
-              </div>
-              <p className="text-lg mb-4 h-[224px]">{review.text}</p>
-            </div>
-            <p className="font-semibold text-gray-500 py-2">@{review.author}</p>
-          </div>
-        ))}
-      </Marquee>
+      </Box>
     </Box>
   );
 };

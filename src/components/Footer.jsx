@@ -232,7 +232,7 @@ const Footer = () => {
                         Wali Gali, Near Sai Baba Mandir, Alipur, Delhi 110036
                       </Text>
                     </HStack>
-                    <HStack spacing={3}>
+                    {/* <HStack spacing={3}>
                       <Icon
                         as={FiPhone}
                         border="2px"
@@ -250,7 +250,7 @@ const Footer = () => {
                       >
                         9212302362 / 9315892606
                       </Text>
-                    </HStack>
+                    </HStack> */}
                     <HStack spacing={3}>
                       <Icon
                         as={HiOutlineMail}
@@ -300,7 +300,7 @@ const Footer = () => {
                   Gali, Near Sai Baba Mandir, Alipur, Delhi 110036
                 </Text>
               </HStack>
-              <HStack spacing={3}>
+              {/* <HStack spacing={3}>
                 <Icon
                   as={FiPhone}
                   border="2px"
@@ -318,7 +318,7 @@ const Footer = () => {
                 >
                   9212302362 / 9315892606
                 </Text>
-              </HStack>
+              </HStack> */}
               <HStack spacing={3}>
                 <Icon
                   as={HiOutlineMail}
