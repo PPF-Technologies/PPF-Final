@@ -202,7 +202,7 @@ export default function WarrantyRegistration() {
                 onChange={handleRcImageChange}
                 p={1}
               />
-              <FormHelperText>Upload a photo of your car's Registration Certificate (RC)</FormHelperText>
+              <FormHelperText>Upload a photo of your car&apos;s Registration Certificate (RC)</FormHelperText>
               {rcImagePreview && (
                 <ChakraImage
                   src={rcImagePreview}
