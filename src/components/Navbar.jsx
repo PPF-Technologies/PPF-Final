@@ -3,8 +3,15 @@ import React, { useState, useEffect } from "react";
 import logo from "@/assets/logo.png";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from 'next/navigation';
-import { Button, IconButton, Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
+import { usePathname } from "next/navigation";
+import {
+  Button,
+  IconButton,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+} from "@chakra-ui/react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaTimes } from "react-icons/fa";
 import { ChevronDownIcon } from "@chakra-ui/icons";
@@ -25,14 +32,15 @@ const Navbar = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [isOpen]);
 
   const getLinkClassName = (href) => {
-    const baseClasses = "opacity-80 hover:opacity-100 transition-all duration-100";
+    const baseClasses =
+      "opacity-80 hover:opacity-100 transition-all duration-100";
     return pathname === href
       ? `${baseClasses} text-[#000000] font-bold`
       : baseClasses;
@@ -49,60 +57,61 @@ const Navbar = () => {
     <header className="flex items-center bg-transparent w-full z-50 px-5 md:px-10 py-3">
       <div className="flex items-center justify-between w-full">
         {/* Logo */}
-        <div className="p-2 w-40 h-32 flex items-center space-x-3 bg-black rounded-full">
+        <div
+          className="p-2 flex items-center space-x-3 rounded-3xl"
+          style={{
+            backgroundColor: "black",
+          }}
+        >
           <Link href={"/"}>
-            <Image src={logo} width={150} height={150} alt="logo" />
+            <Image src={logo} width={1000}alt="logo" className="lg:w-[140px] sm:w-[90px] w-[50px]" />
           </Link>
         </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex gap-10 md:gap-8 font-semibold w-full justify-center text-gray-700 items-center">
-          <Link
-            className={getLinkClassName("/")}
-            href={"/"}
-          >
+          <Link className={getLinkClassName("/")} href={"/"}>
             Home
           </Link>
-          <Link
-            className={getLinkClassName("/products")}
-            href={"/products"}
-          >
+          <Link className={getLinkClassName("/products")} href={"/products"}>
             Products
           </Link>
-          <Link
-            className={getLinkClassName("/about")}
-            href={"/about"}
-          >
+          <Link className={getLinkClassName("/about")} href={"/about"}>
             About Us
           </Link>
 
           <Menu isLazy>
-            <MenuButton className={getLinkClassName("/warranty")} onMouseEnter={(e) => e.currentTarget.click()}>
+            <MenuButton
+              className={getLinkClassName("/warranty")}
+              onMouseEnter={(e) => e.currentTarget.click()}
+            >
               E-Warranty <ChevronDownIcon />
             </MenuButton>
-            <MenuList onMouseLeave={(e) => e.currentTarget.parentElement.querySelector('button').click()}>
-              <MenuItem as={Link} href="/warranty/register">Register E-Warranty</MenuItem>
-              <MenuItem as={Link} href="/warranty/status">Check Status</MenuItem>
+            <MenuList
+              onMouseLeave={(e) =>
+                e.currentTarget.parentElement.querySelector("button").click()
+              }
+            >
+              <MenuItem as={Link} href="/warranty/register">
+                Register E-Warranty
+              </MenuItem>
+              <MenuItem as={Link} href="/warranty/status">
+                Check Status
+              </MenuItem>
             </MenuList>
           </Menu>
-        
-          <Link
-            className={getLinkClassName("/gallery")}
-            href={"/gallery"}
-          >
+
+          <Link className={getLinkClassName("/gallery")} href={"/gallery"}>
             Gallery
           </Link>
-          <Link
-            className={getLinkClassName("/contact")}
-            href={"/contact"}
-          >
+          <Link className={getLinkClassName("/contact")} href={"/contact"}>
             Contact
           </Link>
         </nav>
 
         {/* Quote Button for larger screens */}
         <div className="hidden md:block">
-          <Link href={'/contact?subject=Enquiry'}>
+          <Link href={"/contact?subject=Enquiry"}>
             <Button
               bg={"#FFBB4E"}
               _focus={{ boxShadow: "none", bg: "#FFBB4E" }}
@@ -213,7 +222,6 @@ const Navbar = () => {
                 Contact
               </Link>
             </li>
-           
           </ul>
         </nav>
       )}
